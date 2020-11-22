@@ -199,7 +199,50 @@ label A1Q3
             jump catDrinkMilk
 
 label lookNews
-    mc ""
+    mc "Oh, look at the news today!"
+
+    ai "Yeah, it's so horrible nowadays. I feel like the world is burning and has no hope for us to live any longer anymore"
+
+    ai "I don't know why are we here... just to suffer"
+
+    ai "Or you're still being alive for?" #this can remove cuz ^ sentence covered liao xd
+
+    ai "Why not retweet that? :D" #i think the expression can change gua? use sprite
+
+    "You started to fear being harmful" #why harmful? isnt this... fear of being social parasite
+
+    
+    jump stopPhone
+
+label catDrinkMilk
+    mc "Awww, the cat is drinking milk."
+
+    mc "How adorable! Let's retweet this."
+
+    "You tapped retweet."
+
+    ai "ARE YOU SERIOUS?!" #changed !? to ?!
+
+    ai "CAT CAN’T DIGEST MILK AND WE’RE TERRIBLE PERSON FOR ENJOYING ANIMAL ABUSE"
+
+    "You started to feat being bad person"
+
+    jump stopPhone
+
+label stopPhone
+    mc "Alright, I should stop looking at my phone now."
+
+    ai "Great! You should've did that earlier and let your mind rela-"
+
+    "Received notification from Instagram" #dududung notification sound
+
+    mc "Hey! I got notification from Instagram, let's check it out"
+
+    "You launched Instagram"
+
+    ai "Wow, this party looks kinda nice." #changed from mc to ai
+
+
 
     # This ends the game.
 

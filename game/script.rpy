@@ -54,7 +54,24 @@ label playWhat:
     
     mc "Why are you concerning me?"
 
-    return
+    salter "Because it is lunch time, and you are not eating but instead you are playing phone."
+
+    mc "Sure."
+
+    salter "Do you know staring at a phone consistently will make your eyes constraint and dry eyes?"
+
+    salter "Not just that, according to some research, there are reports showing that texting or looking on mobile phones is harmful for eyes for a long period of time."
+
+    salter "Sometimes they may cause irritability and aggressiveness, especially among children and teenagers."    
+    
+    mc "K"
+
+    salter "WHICH MEANS YOU WILL HAVE CANCER IN NO TIMEEEE."
+
+    "You started to fear being harmful" #change colour? add sound? idk decide later
+
+    jump A1Q2
+    
 
 label eatWhat:
 
@@ -62,13 +79,59 @@ label eatWhat:
     
     mc "Why are you concerning me?"
 
-    return
+    salter "Anyway, why are you eating while talking to me? Do you know it will make you indigestion, "
+
+    salter "and makes your body can’t absorb nutrients, WHICH WILL MAKE YOU-"
+
+    salter "DIEEEEEEEEEEEEEEEEEEEEEEEE"
+
+    salter "Also, why aren’t you eating with other humans and with me?"
+
+    salter "at this rate, you will get LONELY FOREVERRRRRRRRR"
+
+    "You started to being lonely" #change colour? add sound? idk decide later
+
+    jump A1Q2 
+    
 
 label whyNothing:
 
     salter "Why are you doing nothing?"
 
     mc "Why are you concerning me?"
+
+    salter "If you are not doing anything, this means you are not productive!"
+
+    mc "So?" #added myself
+
+    salter "Go read some book or at least do something!"
+
+    mc "But I am not feeling to anythin-" #removed 'g' from anything
+
+    salter "If we are not contributing to society then we are the so called..."
+
+    salter "SOCIETY PARASITE!"
+
+    mc "Uh huh. So?"
+
+    salter "The society-body will go to the society-doctor for medication to kill their society-parasites then we will-"
+
+    salter "DIEEEEEEEEEEEEEEEEEEEEEEEEE."    
+
+    "You started to fear being a bad person" #change colour? add sound? idk decide later
+
+    jump A1Q2
+
+label A1Q2:
+    mc "..."
+
+    mc "You know what, I should check Facebook now."
+
+    
+
+
+
+
 
 
     # This ends the game.

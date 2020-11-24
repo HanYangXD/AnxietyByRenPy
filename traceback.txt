@@ -1,24 +1,28 @@
 ﻿I'm sorry, but an uncaught exception occurred.
 
 While running game code:
-  File "game/script.rpy", line 254, in script
-    if $goingparty==true:
-SyntaxError: invalid syntax (game/script.rpy, line 254)
+  File "game/script.rpy", line 322, in script
+    while count < 3:
+  File "game/script.rpy", line 322, in <module>
+    while count < 3:
+NameError: name 'count' is not defined
 
 -- Full Traceback ------------------------------------------------------------
 
 Full traceback:
-  File "game/script.rpy", line 254, in script
-    if $goingparty==true:
-  File "C:\Users\aaron\Desktop\renpy-7.3.5-sdk\renpy\ast.py", line 1832, in execute
-    if renpy.python.py_eval(condition):
-  File "C:\Users\aaron\Desktop\renpy-7.3.5-sdk\renpy\python.py", line 2057, in py_eval
-    code = py_compile(code, 'eval')
-  File "C:\Users\aaron\Desktop\renpy-7.3.5-sdk\renpy\python.py", line 692, in py_compile
-    raise e
-SyntaxError: invalid syntax (game/script.rpy, line 254)
+  File "game/script.rpy", line 322, in script
+    while count < 3:
+  File "D:\PyRenFile\renpy-7.3.5-sdk\renpy\ast.py", line 1775, in execute
+    if renpy.python.py_eval(self.condition):
+  File "D:\PyRenFile\renpy-7.3.5-sdk\renpy\python.py", line 2059, in py_eval
+    return py_eval_bytecode(code, globals, locals)
+  File "D:\PyRenFile\renpy-7.3.5-sdk\renpy\python.py", line 2052, in py_eval_bytecode
+    return eval(bytecode, globals, locals)
+  File "game/script.rpy", line 322, in <module>
+    while count < 3:
+NameError: name 'count' is not defined
 
 Windows-8-6.2.9200
 Ren'Py 7.3.5.606
 Anxiety Simulator 1.0
-Tue Nov 24 13:21:01 2020
+Tue Nov 24 19:27:43 2020

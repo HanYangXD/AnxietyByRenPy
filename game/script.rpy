@@ -250,7 +250,9 @@ label stopPhone:
 #        "Nope, it doesn't seems nice to me":
 #            jump notNiceParty
     
-    if goingparty jump niceparty:
+    # Here got error so i temp change 
+    if goingparty: 
+        jump niceparty
 
 label niceParty:    
     mc "Everyone in the party looks so happy. Free from worry, and free from anxiety."
@@ -261,6 +263,111 @@ label notNiceParty:
     mc "But it looks way too crowded for my anxiety"
 
     mc "Maybe I shouldn't say yes after all."
+
+
+
+# Dummy variables (Need to verify at Act 2)
+default jumpFromRoof = False
+
+# Variables that only needed in Act 3
+default count = 0
+default talkFearHarmed = False
+default talkFearAlone = False
+default talkFearBad = False
+
+# Act 3
+# play sound "Bell rang.mp3" #Play bell rings
+
+label startAct3:
+    mc "..." #Sign sound insert
+    mc "What is the moral of this story?"
+    mc "What did we even learn? I was being stupid, my “friends” were using me. I almost die there."
+    if jumpFromRoof:
+        ai "Don’t do dumb stuff like... jumping from 3 levels building!"
+    else:
+        ai "Not to die…?"
+
+    ai "But at least. We survived!"
+    ai "Despite everything we went through."
+    
+    # Yes, no matter what user choose result will be same xd
+    menu: 
+        "You seems oddly calm":
+            mc "You seem pretty calm considering we went through a near-death experience."
+        "Why are you so calm!?":
+            mc "Why are you so calm? We almost die there if I am not rational enough!"
+        "...":
+            mc "..."
+
+    ai "Well at least it makes everything else less scary compared to others. This got me to think of…"
+    ai "If me fighting you sucks, because it doesn’t protect you..."
+    mc "But me fighting you also sucks, it just makes you more panic..." 
+    ai "Then maybe..."
+    mc "Maybe we don’t have to argue?"
+    mc "Don’t need to…"
+    ai "Don’t need to…"
+
+    mc "Hey…"
+    mc "I am sorry for not listening to you."
+    
+    ai "Nah, I am the one who should be sorry. I am just googling around the internet to keep you safe with facts. But not realizing it, whether they are helpful to you or not."
+    ai "Then when I found something that may threaten you, I will just.."
+    ai "DANGER DANGER DANGER!" # Shake the sprite
+    ai "But I don’t want to just be an imagery friend. I want to be your friend."
+    ai "So human… Would you like to continue to be my friend?"
+    mc "I... will try..."
+
+    mc "Okay, healthy relationship with emotions. Relationships need communication. So, let’s communicate."
+    mc "The next five minutes are going to sound cheesy but let’s just fake it till we make it."
+    ai "So human… how are you feeling?"
+
+    jump startConvo
+
+label startConvo:
+
+    while count < 3:
+        
+        menu:
+            "What should I talka bout?"
+            
+            "I feared to be harmed" if talkFearHarmed == False:
+                $ count += 1
+                $ talkFearHarmed = True
+                jump fearHarmed
+            
+            "I feared to be lonely" if talkFearAlone == False:
+                $ count += 1
+                $ talkFearAlone = True
+                jump fearAlone
+            
+            "I feared to be bad person" if talkFearBad == False:
+                $ talkFearBad = True
+                $ count += 1
+                jump fearBad
+            
+            "Thank you...":
+                $ count += 3
+                jump finshFearTalk
+                
+
+        label fearHarmed:
+            mc "Fear Harm route"
+            jump startConvo
+        
+        label fearAlone:
+            mc "Fear Alone route"
+            jump startConvo
+
+        label fearBad:
+            mc "Fear Bad route"
+            jump startConvo
+
+            
+label finshFearTalk:
+    mc "Thank you I am done talking"
+
+
+
 
     # This ends the game.
 

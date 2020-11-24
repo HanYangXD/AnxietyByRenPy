@@ -163,6 +163,7 @@ label goParty:
     ai "Huh?"
 
     mc "I will say no, just stop bothering me or I will uninstall you!" #changed popping up to bothering, can we actually change bothering to kacau?
+    $goingparty=true
     jump A1Q3
 
 label noParty:
@@ -177,7 +178,7 @@ label noParty:
     ai "Huh?"
 
     mc "I will say yes, just stop bothering me or I will uninstall you!" #changed popping up to bothering, can we actually change bothering to kacau?
-
+    $goingparty=true
     jump A1Q3
 
 label A1Q3:
@@ -240,9 +241,24 @@ label stopPhone:
 
     "You launched Instagram"
 
-    ai "Wow, this party looks kinda nice." #changed from mc to ai
+    menu:
+        ai "Wow, last week's party looks kinda nice." #changed from mc to ai
 
+        "Yea, it looks nice":
+            jump niceParty
 
+        "Nope, it doesn't seems nice to me":
+            jump notNiceParty
+    
+label niceParty:
+    mc "Everyone in the party looks so happy. Free from worry, and free from anxiety."
+
+    mc "Maybe I shouldn't reject them after all."
+
+label notNiceParty:
+    mc "But it looks way too crowded for my anxiety"
+
+    mc "Maybe I shouldn't say yes after all."
 
     # This ends the game.
 

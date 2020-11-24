@@ -1,22 +1,24 @@
 ﻿I'm sorry, but an uncaught exception occurred.
 
 While running game code:
-  File "game/script.rpy", line 63, in script
-    m "Why are you concerning me?"
-Exception: Sayer 'm' is not defined.
+  File "game/script.rpy", line 254, in script
+    if $goingparty==true:
+SyntaxError: invalid syntax (game/script.rpy, line 254)
 
 -- Full Traceback ------------------------------------------------------------
 
 Full traceback:
-  File "game/script.rpy", line 63, in script
-    m "Why are you concerning me?"
-  File "C:\Users\aaron\Desktop\renpy-7.3.5-sdk\renpy\ast.py", line 678, in execute
-    who = eval_who(self.who, self.who_fast)
-  File "C:\Users\aaron\Desktop\renpy-7.3.5-sdk\renpy\ast.py", line 576, in eval_who
-    raise Exception("Sayer '%s' is not defined." % who.encode("utf-8"))
-Exception: Sayer 'm' is not defined.
+  File "game/script.rpy", line 254, in script
+    if $goingparty==true:
+  File "C:\Users\aaron\Desktop\renpy-7.3.5-sdk\renpy\ast.py", line 1832, in execute
+    if renpy.python.py_eval(condition):
+  File "C:\Users\aaron\Desktop\renpy-7.3.5-sdk\renpy\python.py", line 2057, in py_eval
+    code = py_compile(code, 'eval')
+  File "C:\Users\aaron\Desktop\renpy-7.3.5-sdk\renpy\python.py", line 692, in py_compile
+    raise e
+SyntaxError: invalid syntax (game/script.rpy, line 254)
 
 Windows-8-6.2.9200
 Ren'Py 7.3.5.606
-HCIanxiety 1.0
-Sat Nov 21 22:11:05 2020
+Anxiety Simulator 1.0
+Tue Nov 24 13:21:01 2020

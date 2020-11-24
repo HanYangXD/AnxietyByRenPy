@@ -5,7 +5,7 @@
 
 define ai = Character("AI") #ai = anxiety
 define mc = Character(_("Me"), color="#c8c8ff") #mc = Main Character
-
+define goingparty = False
 # The game starts here.
 
 label start:
@@ -163,7 +163,7 @@ label goParty:
     ai "Huh?"
 
     mc "I will say no, just stop bothering me or I will uninstall you!" #changed popping up to bothering, can we actually change bothering to kacau?
-    $goingparty=true
+    $goingparty=False
     jump A1Q3
 
 label noParty:
@@ -178,7 +178,7 @@ label noParty:
     ai "Huh?"
 
     mc "I will say yes, just stop bothering me or I will uninstall you!" #changed popping up to bothering, can we actually change bothering to kacau?
-    $goingparty=true
+    $goingparty=True
     jump A1Q3
 
 label A1Q3:
@@ -241,16 +241,18 @@ label stopPhone:
 
     "You launched Instagram"
 
-    menu:
-        ai "Wow, last week's party looks kinda nice." #changed from mc to ai
-
-        "Yea, it looks nice":
-            jump niceParty
-
-        "Nope, it doesn't seems nice to me":
-            jump notNiceParty
+#    menu:
+#        ai "Wow, last week's party looks kinda nice." #changed from mc to ai
+#
+#        "Yea, it looks nice":
+#            jump niceParty
+#
+#        "Nope, it doesn't seems nice to me":
+#            jump notNiceParty
     
-label niceParty:
+    if goingparty jump niceparty:
+
+label niceParty:    
     mc "Everyone in the party looks so happy. Free from worry, and free from anxiety."
 
     mc "Maybe I shouldn't reject them after all."

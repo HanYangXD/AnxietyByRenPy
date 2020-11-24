@@ -140,12 +140,12 @@ label A1Q2:
     menu:
         "I am..."
 
-        "Going"
+        "Going":
             jump goParty
-        "Not going"
+        "Not going":
             jump noParty
 
-label goParty
+label goParty:
     ai "If you go you might encounter danger!"
 
     ai "For example there will be drugs inside the drinks."
@@ -165,7 +165,7 @@ label goParty
     mc "I will say no, just stop bothering me or I will uninstall you!" #changed popping up to bothering, can we actually change bothering to kacau?
     jump A1Q3
 
-label noParty
+label noParty:
     ai "Why not? If you don’t go you will be lonely forever!" #added why not
 
     ai "Researchers have found that loneliness is just as lethal as smoking 15 cigarettes per day. Lonely people are 50 percent more likely to die prematurely than those with healthy social relationships"
@@ -180,7 +180,7 @@ label noParty
 
     jump A1Q3
 
-label A1Q3
+label A1Q3:
     ai "But I just-"
 
     mc "Ughhhh, I need to make me calm and less anxiety." #changed
@@ -192,13 +192,13 @@ label A1Q3
     menu:
         "Hmmm what should I check?"
 
-        "News"
+        "News":
             jump lookNews
 
-        "Looking at cat drinking milk"
+        "Looking at cat drinking milk":
             jump catDrinkMilk
 
-label lookNews
+label lookNews:
     mc "Oh, look at the news today!"
 
     ai "Yeah, it's so horrible nowadays. I feel like the world is burning and has no hope for us to live any longer anymore"
@@ -214,7 +214,7 @@ label lookNews
     
     jump stopPhone
 
-label catDrinkMilk
+label catDrinkMilk:
     mc "Awww, the cat is drinking milk."
 
     mc "How adorable! Let's retweet this."
@@ -229,7 +229,7 @@ label catDrinkMilk
 
     jump stopPhone
 
-label stopPhone
+label stopPhone:
     mc "Alright, I should stop looking at my phone now."
 
     ai "Great! You should've did that earlier and let your mind rela-"

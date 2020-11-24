@@ -2,7 +2,33 @@
 errors listed below, and try again.
 
 
-File "game/script.rpy", line 66: Tab characters are not allowed in Ren'Py scripts.
+File "game/script.rpy", line 143: Line is followed by a block, despite not being a menu choice. Did you forget a colon at the end of the line?
+    "Going"
+           ^
+
+File "game/script.rpy", line 148: expected ':' not found.
+    label goParty
+                 ^
+
+File "game/script.rpy", line 168: expected ':' not found.
+    label noParty
+                 ^
+
+File "game/script.rpy", line 183: expected ':' not found.
+    label A1Q3
+              ^
+
+File "game/script.rpy", line 201: expected ':' not found.
+    label lookNews
+                  ^
+
+File "game/script.rpy", line 217: expected ':' not found.
+    label catDrinkMilk
+                      ^
+
+File "game/script.rpy", line 232: expected ':' not found.
+    label stopPhone
+                   ^
 
 Ren'Py Version: Ren'Py 7.3.5.606
-Sat Nov 21 22:13:29 2020
+Tue Nov 24 10:39:50 2020

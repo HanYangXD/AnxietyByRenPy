@@ -268,6 +268,7 @@ label notNiceParty:
 
 # Dummy variables (Need to verify at Act 2)
 default jumpFromRoof = False
+#testing commit
 
 # Variables that only needed in Act 3
 default count = 0

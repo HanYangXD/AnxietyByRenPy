@@ -5,7 +5,14 @@
 
 define ai = Character("AI") #ai = anxiety
 define mc = Character(_("Me"), color="#c8c8ff") #mc = Main Character
+define amanda = Character("Amanda") #amanda AKA party hoster weirdo
+define g1 = Character("Guy 1") #change name later
+define g2 = Character("Guy 2") #change name later
+
+
 define goingparty = False
+define lookednews = False
+
 # The game starts here.
 
 label start:
@@ -200,6 +207,7 @@ label A1Q3:
             jump catDrinkMilk
 
 label lookNews:
+    $lookNews=True
     mc "Oh, look at the news today!"
 
     ai "Yeah, it's so horrible nowadays. I feel like the world is burning and has no hope for us to live any longer anymore"
@@ -253,17 +261,159 @@ label stopPhone:
     # Here got error so i temp change 
     if goingparty: 
         jump niceparty
+    else:
+        jump notNiceParty
 
 label niceParty:    
     mc "Everyone in the party looks so happy. Free from worry, and free from anxiety."
 
     mc "Maybe I shouldn't reject them after all."
 
+    jump afterPartyThought
+
 label notNiceParty:
     mc "But it looks way too crowded for my anxiety"
 
     mc "Maybe I shouldn't say yes after all."
 
+    jump afterPartyThought
+
+label afterPartyThought:
+    mc "SHUT"
+    mc "THE"
+    mc "FUDGE"
+    mc "UP"
+
+    ai "Wha-"
+
+    mc "I will just AGREE to them."
+    mc "I DON'T CARE anything anymore."
+    mc "You're NOT in my control!" #changed !
+    mc "Now excuse me, I will need to go to my class now."
+
+    ai "No!"
+    ai "Wait!"
+
+    "You choose to ignore the anxiety and walk away" #idk the ai anxiety is what character so i write like this first
+    #play walk away sound effect
+
+    ai "But..."
+
+    jump startAct2
+
+label startAct2:
+    if lookednews:
+        jump A2news
+    else:
+        jump A2cat
+
+label A2news:
+    amanda "Did you see the horrible news?"
+    g1 "Yeah it's sooooo bad."
+    mc "h-Hey..."
+    amanda "Goshh, I hate the news. It's sensationalism and clickbait."
+    mc "n-Nice party... eh...?"
+    g2 "True, but they're just following incentives. The real problem is those who clicked on it."
+    g1 "Who would retween that rerrible news and make others feel bad?"
+    amanda "Ughh, I know right?"
+    jump A2continue
+
+label A2cat:
+    amanda "Like I was saying, the Meme Industrial Complex is exploiting the cats."
+    mc "h-Hey..."
+    g1 "Please explain in detail Amanda" #added amanda
+    mc "n-Nice party... eh...?"
+    g2 "Well, yesterday I saw someone retweeted a GIF of a cat drinking milk."
+    #g2 "but the person remove the tweet moments later, thinking that nobody would ever notice him doing it"
+    g1 "Wait what?? Cat can't digest that! who would retween GIF that is abusing animal like that?" #changed to g1 talking
+    amanda "Ughh, I know right?"
+    jump A2continue
+
+label A2continue:
+    ai "Oh no they all hate us now!"
+    mc "Us...?"
+    mc "..."
+
+    ai "We're bringing down the mood of this party by being such a sad lump!"
+    ai "We're killing the good vibes! We're commiting first degree-vibe-murder!"
+    ai "Heyyy, we need to leave now" #change human to heyy
+
+    mc "Could you just-"
+    ai "You're ignoring danger! This is dangerous!"
+    mc "How is this dange-"
+
+    ai "You think that you took out the batteries from carbon monoxide detector and you will be safe?"
+    ai "You won't even smell the poison. You'll get sleepy and then you will..." #added you will
+    ai "DIEEEEEEEEEEEEEEEEEEEEEEEEEE"
+
+    mc "Stop this..."
+
+    ai "Let me warn you about different social dangers."
+    ai "What if we're just fundamentally incapable of ever being loved, or loving another?"
+    ai "What if something irreversibly broke inside of us a long time ago? Or never existed in us in the first place?"
+    ai "WE'RE BROKEN! SO BROKEN SO BROKEN SO SO BROKEN"
+
+    mc "FAACKK"
+    mc "FACKKKING FACK-FACKITY FACKKKKKK" #srsly meh later gg how
+
+    "You started to fear being bad"
+    "You started to fear being harmful" 
+    "You started to fear being unhealthy" #why need 3
+
+    ai "Don't worry! I will always be by your side! Anxiety Intelligence will never be obsolete!"
+    mc "I had enough of this!"
+    ai "Huh...?"
+    mc "I can't appease you\nI can't ignore you\nI can't even run away from you!" #change delete to run away
+    mc "No matter what I do. It seems like I cant get rid of you!" #changed abit
+
+    ai "Well maybe you are NOT SUPPOSED TO GET RID OF ME!"
+    ai "Do you know how I feel, human?"
+    ai "I am trying to be your support, make sure you don't mess up anything."
+    ai "But you keep seeing me as a bad AI" #change to bad guy maybe? or bad thought
+    ai "So I try to make you realise more dangers could happen to US."
+    ai "No matter how hard I try. You still think I am your enemy."
+    ai "What am i doing WRONG?"
+#    ai "AM I A JOKE TO YOU??" #should we? xd
+    ai "I am stil new to this environment and I am using neural network model" #need to change?
+    ai "Which means I need more time to learn to feel like a human."
+    ai "All I want you to do is to be patient with me..." #added to do
+
+    amanda "Hey!"
+    mc "Huh?"
+    amanda "Looks like you caught up a fight with yourself kiddo. What's wrong?" #added whats wrong
+    mc "How would you know that? Was that obvious?"
+    amanda "You were... erm... talking about carbon monoxide or something to yourself." #changed
+    mc "Ah this is so messed up."
+
+    "Amanda pats your shoulder"
+    amanda "Hey, kiddo. Anxiety is super common."
+    amanda "Listen, I know how it feels."
+    amanda "We ALL do."
+
+    amanda "So why not come to the rooftop and have something fun?"
+    
+
+    menu:
+        ai "Human NO! Heyyyyy!!"
+
+        "I think I will pass":
+            jump passRoof
+        "Let's go":
+            jump goRoof
+
+
+label passRoof:
+    mc "I think-"
+    mc "..."
+    amanda "That is the spirit kiddo!"
+    ai "NO HUMAN, DO NOT GOOOOOOOOOOOOOOOO!"
+    jump startAct2point1
+
+label goRoof:
+    mc "You know what? Let's go now. Shall we?"
+    amanda "That is the spirit kiddo!"
+    ai "NO HUMAN, DO NOT GOOOOOOOOOOOOOOOO!"
+    jump startAct2point1
 
 
 # Dummy variables (Need to verify at Act 2)

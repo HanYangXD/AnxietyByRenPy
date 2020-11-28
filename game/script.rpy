@@ -416,6 +416,83 @@ label goRoof:
     jump startAct2point1
 
 
+label startAct2point1:
+    #change bg
+
+    amanda "Cheers!"
+    #play clink sound from https://www.youtube.com/watch?v=7A2pWA5Jq7w
+
+    "You drink the bottle of drink that Amanda gave you." #change to bottle cuz halal cannot drink beer LOOL
+
+    mc "Ahh... that hit the spot!"
+
+    "You feel nausea." #changed position with ^
+
+    amanda "You know, kiddo..."
+
+    mc "Specifically, the spots that are hitted are my both amygdala" #changed abit
+
+    amanda "You reminds me of my younger self. When anxiety hits me, I also tried the Anxiety Intellegence that was advertised recently."
+    amanda "Apparently for some reason, I can't uninstall it once it is installed."
+
+    mc "But it seems like you are free from anxiety now... how did you do that?"
+    amanda "Heh"
+    mc "Heh...?"
+    amanda "Modern problems require modern solutions. Since I can't uninstall it, all I have to do is to get a new smartphone."
+
+    mc "Wow, you're so rich!" #or rich af idk
+
+    amanda "I am so grateful that I am helping you to cope with your anxiety too."
+
+    mc "Heck yeah!"
+
+    "You take another sip of the drink" #Gulp sound effect*  24 second https://www.youtube.com/watch?v=BnF1GoUtkqM
+
+    "Your mind started to feel like flying\nYour vision is getting blur over time\nYou can't think properly" #changed abit
+
+    amanda "Quick question, truth or dar-"
+
+    mc "DARE!"
+
+    amanda "Haha! Good."
+    amanda "You see that baby-blue swimming pool down there?"
+
+    mc "y-Yea-hh? Like th-three floors down there?" #added drunken effect LOL
+
+    amanda "Jump in."
+
+    mc "."
+    mc ".."
+    mc "..." #pause effect? this is what i think of, idk
+
+    mc "Wait what?"
+
+    amanda "Your \"Anxiety Ingelligence\" is gonna start whinning isn't it?"
+    amanda "\"Oh, don't do that, it's too dangerous! Yadi yada yada." #blablabla suits malaysia more #localisationXD
+    amanda "Show that thing we don't give a damn about it's whinning. Now... JUMP IN." #whinning same as nagging?
+
+    mc "b-But... fear has a point..."
+
+    amanda "I'm sorry? Did you fall for that McMindfulness propaganda that claims feeling bad is good?"
+    amanda "These rich guy who run this world give the rest of us anxiety and depression."
+    amanda "Then makes some \"TED Talks\" to tell us to AcCepT that our life is bad and eMBraCe sadistic demon in our heads!"
+    amanda "Kid, we all know that it hurts people like us. Torture people like us" #what is this supposed to mean?
+    amanda "They are not human like us! It's not our friend. They shouldn't control over our decisions!"
+    menu:
+        amanda "If not, you're gonna let it win over you. AGAIN!"
+
+        "You're wrong!": 
+            jump gonnaJump
+
+label gonnaJump:
+    amanda "Yeah! I believe in you babe! Now let's do it!"
+    ai "Human..."
+
+    ""
+    
+
+
+
 # Dummy variables (Need to verify at Act 2)
 default jumpFromRoof = False
 #testing commit

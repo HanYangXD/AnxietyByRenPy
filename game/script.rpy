@@ -505,10 +505,13 @@ label startAct2point1:
             jump gonnaJump
 
 label gonnaJump:
+    mc "I am not letting it win."
     amanda "Yeah! I believe in you babe! Now let's do it!"
     ai "Human..."
 
-    ""
+    "Be the AI and convince the human" #convience as in convince him either jump or no jump?
+
+
     
 
 

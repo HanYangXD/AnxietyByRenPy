@@ -13,6 +13,12 @@ define g2 = Character("Guy 2") #change name later
 define goingparty = False
 define lookednews = False
 
+## Variables ##
+default totalFearNum = 0
+default fearHarmfulNum = 0
+default fearAloneNum = 0
+default fearBadPNum = 0
+
 # The game starts here.
 
 label start:
@@ -31,7 +37,7 @@ label start:
 
     # These display lines of dialogue.
 
-    "You have anxiety disorder, and you found out that you had created your own imaginary friend."
+    "You have an anxiety disorder, and you found out that you had created your own imaginary friend."
 
     "So choose wisely to protect yourself from something bad. Let the story begin"
 
@@ -74,6 +80,7 @@ label playWhat:
     ai "WHICH MEANS YOU WILL HAVE CANCER IN NO TIMEEEE."
 
     "You started to fear being harmful" #change colour? add sound? idk decide later
+    $ fearHarmfulNum += 1
 
     jump A1Q2
     
@@ -95,6 +102,7 @@ label eatWhat:
     ai "at this rate, you will get LONELY FOREVERRRRRRRRR"
 
     "You started to being lonely" #change colour? add sound? idk decide later
+    $ fearAloneNum += 1
 
     jump A1Q2 
     
@@ -124,6 +132,7 @@ label whyNothing:
     ai "DIEEEEEEEEEEEEEEEEEEEEEEEEE."    
 
     "You started to fear being a bad person" #change colour? add sound? idk decide later
+    $ fearBadPNum += 1
 
     jump A1Q2
 
@@ -164,6 +173,7 @@ label goParty:
     ai "DIEEEEEEEEEEEEEEEE"
 
     "You started to fear being harmful" #wait what? fear of getting harm is it?
+    $ fearHarmfulNum += 1
 
     mc "Okay fine!"
 
@@ -171,6 +181,7 @@ label goParty:
 
     mc "I will say no, just stop bothering me or I will uninstall you!" #changed popping up to bothering, can we actually change bothering to kacau?
     $goingparty=False
+    
     jump A1Q3
 
 label noParty:
@@ -186,6 +197,7 @@ label noParty:
 
     mc "I will say yes, just stop bothering me or I will uninstall you!" #changed popping up to bothering, can we actually change bothering to kacau?
     $goingparty=True
+
     jump A1Q3
 
 label A1Q3:
@@ -219,7 +231,7 @@ label lookNews:
     ai "Why not retweet that? :D" #i think the expression can change gua? use sprite
 
     "You started to fear being harmful" #why harmful? isnt this... fear of being social parasite
-
+    $ fearHarmfulNum += 1
     
     jump stopPhone
 
@@ -235,6 +247,7 @@ label catDrinkMilk:
     ai "CAT CAN’T DIGEST MILK AND WE’RE TERRIBLE PERSON FOR ENJOYING ANIMAL ABUSE"
 
     "You started to feat being bad person"
+    $ fearBadPNum += 1
 
     jump stopPhone
 
@@ -260,7 +273,7 @@ label stopPhone:
     
     # Here got error so i temp change 
     if goingparty: 
-        jump niceparty
+        jump niceParty
     else:
         jump notNiceParty
 
@@ -277,6 +290,8 @@ label notNiceParty:
     mc "Maybe I shouldn't say yes after all."
 
     jump afterPartyThought
+
+# Missing something here
 
 label afterPartyThought:
     mc "SHUT"
@@ -357,8 +372,11 @@ label A2continue:
     mc "FACKKKING FACK-FACKITY FACKKKKKK" #srsly meh later gg how
 
     "You started to fear being bad"
+    $ fearBadPNum += 1
     "You started to fear being harmful" 
-    "You started to fear being unhealthy" #why need 3
+    $ fearHarmfulNum += 1
+    "You started to fear being alone" #why need 3
+    $ fearAloneNum += 1
 
     ai "Don't worry! I will always be by your side! Anxiety Intelligence will never be obsolete!"
     mc "I had enough of this!"
@@ -405,9 +423,11 @@ label A2continue:
 label passRoof:
     mc "I think-"
     mc "..."
-    amanda "That is the spirit kiddo!"
-    ai "NO HUMAN, DO NOT GOOOOOOOOOOOOOOOO!"
-    jump startAct2point1
+
+    # amanda "That is the spirit kiddo!"
+    # ai "NO HUMAN, DO NOT GOOOOOOOOOOOOOOOO!"
+    # jump startAct2point1
+    jump goRoof # Should just like this nia
 
 label goRoof:
     mc "You know what? Let's go now. Shall we?"
@@ -549,6 +569,17 @@ label startAct3:
     mc "The next five minutes are going to sound cheesy but let’s just fake it till we make it."
     ai "So human… how are you feeling?"
 
+    $ totalFearNum = fearAloneNum + fearHarmfulNum + fearBadPNum
+    "Total Fears Had [totalFearNum]" # https://www.renpy.org/doc/html/text.html
+
+    "You feared being harmful : [fearHarmfulNum] times"
+
+    "You feared being alone : [fearAloneNum] times"
+
+    "You feared being bad person : [fearBadPNum] times"
+
+    "Which fear do you want to talk about? The other options can be talk later"
+
     jump startConvo
 
 label startConvo:
@@ -556,7 +587,7 @@ label startConvo:
     while count < 3:
         
         menu:
-            "What should I talka bout?"
+            "What should I talk about?"
             
             "I feared to be harmed" if talkFearHarmed == False:
                 $ count += 1

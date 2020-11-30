@@ -1,28 +1,22 @@
 ﻿I'm sorry, but an uncaught exception occurred.
 
 While running game code:
-  File "game/script.rpy", line 322, in script
-    while count < 3:
-  File "game/script.rpy", line 322, in <module>
-    while count < 3:
-NameError: name 'count' is not defined
+  File "game/script.rpy", line 276, in script
+    jump niceparty
+ScriptError: could not find label 'niceparty'.
 
 -- Full Traceback ------------------------------------------------------------
 
 Full traceback:
-  File "game/script.rpy", line 322, in script
-    while count < 3:
-  File "D:\PyRenFile\renpy-7.3.5-sdk\renpy\ast.py", line 1775, in execute
-    if renpy.python.py_eval(self.condition):
-  File "D:\PyRenFile\renpy-7.3.5-sdk\renpy\python.py", line 2059, in py_eval
-    return py_eval_bytecode(code, globals, locals)
-  File "D:\PyRenFile\renpy-7.3.5-sdk\renpy\python.py", line 2052, in py_eval_bytecode
-    return eval(bytecode, globals, locals)
-  File "game/script.rpy", line 322, in <module>
-    while count < 3:
-NameError: name 'count' is not defined
+  File "game/script.rpy", line 276, in script
+    jump niceparty
+  File "D:\PyRenFile\renpy-7.3.5-sdk\renpy\ast.py", line 1697, in execute
+    rv = renpy.game.script.lookup(target)
+  File "D:\PyRenFile\renpy-7.3.5-sdk\renpy\script.py", line 898, in lookup
+    raise ScriptError("could not find label '%s'." % str(original))
+ScriptError: could not find label 'niceparty'.
 
 Windows-8-6.2.9200
 Ren'Py 7.3.5.606
 Anxiety Simulator 1.0
-Tue Nov 24 19:27:43 2020
+Sun Nov 29 21:50:52 2020

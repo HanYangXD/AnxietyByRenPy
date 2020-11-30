@@ -534,7 +534,8 @@ label startAct3:
     mc "What is the moral of this story?"
     mc "What did we even learn? I was being stupid, my “friends” were using me. I almost die there."
     if jumpFromRoof:
-        ai "Don’t do dumb stuff like... jumping from 3 levels building!"
+        ai "Don’t do dumb stuff like..."
+        ai "JUMPING FROM 3 FLOORS DOWN!"
     else:
         ai "Not to die…?"
 
@@ -613,7 +614,16 @@ label startConvo:
                 
 
         label fearHarmed:
-            mc "Fear Harm route"
+
+            mc "I am scared that I will get harmed."
+            mc "I want to be physically safe."
+            mc "But the whole world seems dangerous. Full of tragedy and evil."
+
+            ai "You’re right. So let’s start protecting ourselves." 
+            ai "Or yourself, cause I am just a system that reacts with your emotions and responses." # Maybe can add pause
+            ai "Anyways, after looking through the internet." # Beep sound
+            ai "Perhaps learn self-defense, join a community which protects each other or improve our general health and personal boundaries."
+
             jump startConvo
         
         label fearAlone:

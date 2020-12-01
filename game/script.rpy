@@ -198,7 +198,7 @@ label noParty:
     ai "Researchers have found that loneliness is just as lethal as smoking 15 cigarettes per day. Lonely people are 50 percent more likely to die prematurely than those with healthy social relationships"
 
     $ renpy.notify("You started to fear being lonely")
-
+    $ fearAloneNum += 1
     mc "Okay fine!"
 
     ai "Huh?"
@@ -352,9 +352,15 @@ label A2continue:
 
     ai "We're bringing down the mood of this party by being such a sad lump!"
     ai "We're killing the good vibes! We're commiting first degree-vibe-murder!"
-    ai "Heyyy, we need to leave now" #change human to heyy
+    
+    menu:
+        ai "Heyyy, we need to leave now" #change human to heyy
 
-    mc "Could you just-"
+        "Could you just-":
+            mc "Could you just-"
+        "......":
+            mc "......"
+
     ai "You're ignoring danger! This is dangerous!"
     mc "How is this dange-"
 

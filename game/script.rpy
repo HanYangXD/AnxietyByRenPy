@@ -180,7 +180,7 @@ label goParty:
 
     ai "DIEEEEEEEEEEEEEEEE"
 
-    "You started to fear being harmful" #wait what? fear of getting harm is it?
+    $ renpy.notify("You started to fear being harmful") #wait what? fear of getting harm is it?
     $ fearHarmfulNum += 1
 
     mc "Okay fine!"
@@ -197,7 +197,7 @@ label noParty:
 
     ai "Researchers have found that loneliness is just as lethal as smoking 15 cigarettes per day. Lonely people are 50 percent more likely to die prematurely than those with healthy social relationships"
 
-    "You started to fear being lonely"
+    $ renpy.notify("You started to fear being lonely")
 
     mc "Okay fine!"
 
@@ -238,7 +238,7 @@ label lookNews:
 
     ai "Why not retweet that? :D" #i think the expression can change gua? use sprite
 
-    "You started to fear being harmful" #why harmful? isnt this... fear of being social parasite
+    $ renpy.notify("You started to fear being harmful") #why harmful? isnt this... fear of being social parasite
     $ fearHarmfulNum += 1
     
     jump stopPhone
@@ -254,7 +254,7 @@ label catDrinkMilk:
 
     ai "CAT CAN’T DIGEST MILK AND WE’RE TERRIBLE PERSON FOR ENJOYING ANIMAL ABUSE"
 
-    "You started to feat being bad person"
+    $ renpy.notify("You started to feat being bad person")
     $ fearBadPNum += 1
 
     jump stopPhone
@@ -372,11 +372,11 @@ label A2continue:
     mc "FAACKK"
     mc "FACKKKING FACK-FACKITY FACKKKKKK" #srsly meh later gg how
 
-    "You started to fear being bad"
+    $ renpy.notify("You started to fear being bad")
     $ fearBadPNum += 1
-    "You started to fear being harmful" 
+    $ renpy.notify("You started to fear being harmful") 
     $ fearHarmfulNum += 1
-    "You started to fear being alone" #why need 3
+    $ renpy.notify("You started to fear being alone") #why need 3
     $ fearAloneNum += 1
 
     ai "Don't worry! I will always be by your side! Anxiety Intelligence will never be obsolete!"

@@ -289,17 +289,18 @@ label notNiceParty:
 
     jump afterPartyThought
 
-# Missing something here
-
 label afterPartyThought:
+
+    ai "Hey maybe let’s choose-"
+    
     mc "SHUT"
     mc "THE"
-    mc "FUDGE"
+    mc "{size=32}FUDGE{/size}"
     mc "UP"
 
     ai "Wha-"
 
-    mc "I will just AGREE to them."
+    mc "I will just {size=30}AGREE{/size} to them."
     mc "I DON'T CARE anything anymore."
     mc "You're NOT in my control!" #changed !
     mc "Now excuse me, I will need to go to my class now."

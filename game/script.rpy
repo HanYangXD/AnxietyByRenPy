@@ -3,14 +3,16 @@
 # Declare characters used by this game. The color argument colorizes the
 # name of the character.
 
-define ai = Character("AI") #ai = anxiety
-define mc = Character(_("You"), color="#c8c8ff") #mc = Main Character
-define uai = Character("You", color="#c8c8ff") #mc but as AI
-define amanda = Character("Amanda") #amanda AKA party hoster weirdo
-define g1 = Character("Guy 1") #change name later
-define g2 = Character("Guy 2") #change name later
-define grace = Character("Grace", color="#7737FF") 
-define grAI = Character("Grace's AI", color="#970052") 
+define ai = Character("AI", color="#85B902") # Light Green # AI
+define mc = Character(_("You"), color="#0E6D01") # Dark Green # Player
+
+define uai = Character("You", color="#85B902") # Light Green # Player but as AI
+define amanda = Character("Amanda", color="#091B9B") # Dark Blue
+define g1 = Character("Guy 1", color="#FFF6C0") # Light Yellow
+define g2 = Character("Guy 2", color="#FFD3C9") # Light Red
+
+define grace = Character("Grace", color="#7737FF") # Purple
+define grAI = Character("Grace's AI", color="#970052")  # Dark Red
 
 define jumpFromRoof = False
 define goingparty = False

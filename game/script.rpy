@@ -7,6 +7,8 @@ define ai = Character("AI", color="#85B902") # Light Green # AI
 define mc = Character(_("You"), color="#0E6D01") # Dark Green # Player
 
 define uai = Character("You", color="#85B902") # Light Green # Player but as AI
+define mcDrunk = Character("[playername]", color="#0E6D01") # Player but not Player
+
 define amanda = Character("Amanda", color="#091B9B") # Dark Blue
 define g1 = Character("Guy 1", color="#FFF6C0") # Light Yellow
 define g2 = Character("Guy 2", color="#FFD3C9") # Light Red
@@ -18,6 +20,8 @@ define jumpFromRoof = False
 define goingparty = False
 define lookednews = False
 
+define playername = ""
+
 ## Variables ##
 default totalFearNum = 0
 default fearHarmfulNum = 0
@@ -28,31 +32,62 @@ default fearBadPNum = 0
 
 label start:
 
-    # Show a background. This uses a placeholder by default, but you can
-    # add a file (named either "bg room.png" or "bg room.jpg") to the
-    # images directory to show it.
+    # Intro
 
-    scene bg room
+    scene mcdorm_bg
 
-    # This shows a character sprite. A placeholder is used, but you can
-    # replace it by adding a file named "eileen happy.png" to the images
-    # directory.
+    "On a peaceful day of weekend in your bedroom."
 
-    show salter
+    "You were just scrolling through social media."
+    "You found an ad."
+    "It was about Anxiety Intelligence (AI)."
+    "You curiously download it and try."
 
-    # These display lines of dialogue.
+    "You open up the app and it prompt a text box." # Phone sound open
 
-    "You have an anxiety disorder, and you found out that you had created your own imaginary friend."
+    scene handphoneblur_bg
 
-    "So choose wisely to protect yourself from something bad. Let the story begin"
+    "It says {p}What is your name?"
 
-    "Tip: Choose the choices that hit your deepest and darkest fear."
+    $ playername = renpy.input("Enter name here :")
+    $ playername = playername.strip()
+
+    if not playername:
+        $ playername = "John Doe"
+        "Well then, you don't want to enter your name?"
+        "We will give you one"
+        ":)"
+
+
+    "Welcome [playername]!"
+
+    "As you entered your name.{p}You had accepted the T&C."
+
+    "This app could not be uninstall after any further notice."
+
+    "Have fun!"
+
+    mc "..."
+
+    scene black
+
+    "And so your anxiety journey begins..."
+
+    "Quick note: \n\nChoose wisely to protect yourself from something bad."
+
+    "Tip: \n\nChoose the choices that hit your deepest and darkest fear."
 
     #---------------- Act 1 -------------------#
 
-    "ACT 1 ~ Lunch time"
+    show screen nextSceneScreen("Some days later")
+    $ renpy.pause(2.0)
+    hide screen nextSceneScreen
 
-    ai "What are you doing now?"
+    # Show School Yard Scene
+    scene schoolyard1_bg
+    with fade
+
+    ai "Hey, what are you doing now?"
 
     menu:
         mc "I am..."

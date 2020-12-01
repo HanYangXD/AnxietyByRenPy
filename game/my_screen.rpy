@@ -1,3 +1,3 @@
 screen nextSceneScreen(word):
-    add "popupbox.png" at truecenter
+    add "images/bg/popupbox.png" at truecenter
     text word at truecenter

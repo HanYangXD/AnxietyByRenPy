@@ -87,6 +87,8 @@ label start:
     scene schoolyard1_bg
     with fade
 
+    show ai
+
     ai "Hey, what are you doing now?"
 
     menu:

@@ -636,7 +636,62 @@ label gratsGoodEnd:
     jump startAct3
 
 label badEnd:
+    "MC drinks the beer"
+    "You can feel MC starts to loss balance due to the gyroscope" #phone motion
+
+    uai "MC... please..."
     
+    menu:
+        mc "This is your last chance to convience me, choose your word carefully."
+
+        "Fine. I am done protecting you.":
+            jump jumpLaIDC
+        "I'm sorry":
+            jump soriDontJump
+
+label jumpLaIDC:
+    uai "Just jump then. I don't care anymore."
+    mc "..."
+    mc "Bottoms up!"
+    uai "WAIT\nTHAT WAS REVERSE PSYCHOLOGY. YOU WERE SUPPOSED TO DO THE OPPOSITE OF WHAT I SA-"
+    jump momentBeforeJump
+
+label soriDontJump:
+    mc "You're... sorry?"
+    uai "Yeah I'm sorry."
+    mc "Too late :)"
+    jump momentBeforeJump
+
+
+label momentBeforeJump:
+    mc "\"The only thing to fear is fear itself\""
+    mc "\"Don't worry, be happy~\""
+
+    uai "MC... don't..." #changed no  to dont
+    mc "A while back, I said \"I want to be free from all these pains...\""
+    mc "Now I got what i wish now. I no longer need to feel any pain, fear and anxiety."
+
+    mc "I don't feel anything at all now."
+
+    "MC throws the empty bottle of bear"
+
+    menu: 
+        "MC walk few steps backward."
+        
+        "Please... dont":
+            jump jumpNow
+        "...":
+            jump jumpNow
+
+
+label jumpNow:
+    "MC jumps"
+
+    https://github.com/ncase/anxiety/blob/gh-pages/sprites/act3/hospital.png
+
+    #mc fall from building #https://www.youtube.com/watch?v=VOptr76l3wQ&list=PL4JKIH8uMAXyoPh1E-VWatKqZKFCny64c&index=7
+
+
 # Dummy variables (Need to verify at Act 2)
 default jumpFromRoof = False
 #testing commit

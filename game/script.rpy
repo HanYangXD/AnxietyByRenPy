@@ -44,6 +44,8 @@ label start:
 
     "Tip: Choose the choices that hit your deepest and darkest fear."
 
+    #---------------- Act 1 -------------------#
+
     "ACT 1 ~ Lunch time"
 
     ai "What are you doing now?"
@@ -316,6 +318,8 @@ label afterPartyThought:
     ai "But..."
 
     jump startAct2
+
+#---------------- Act 2 -------------------#
 
 label startAct2:
     if lookednews:
@@ -637,6 +641,11 @@ label gratsGoodEnd:
 
 label badEnd:
     
+
+
+
+
+#---------------- Act 3 -------------------#
 # Dummy variables (Need to verify at Act 2)
 default jumpFromRoof = False
 #testing commit
@@ -647,7 +656,6 @@ default talkFearHarmed = False
 default talkFearAlone = False
 default talkFearBad = False
 
-# Act 3
 # play sound "Bell rang.mp3" #Play bell rings
 
 label startAct3:

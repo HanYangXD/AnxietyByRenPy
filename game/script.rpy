@@ -55,7 +55,7 @@ label start:
     ai "What are you doing now?"
 
     menu:
-        "I am..."
+        mc "I am..."
 
         "Playing phone.":
             jump playWhat
@@ -74,11 +74,11 @@ label playWhat:
 
     ai "Because it is lunch time, and you are not eating but instead you are playing phone."
 
-    mc "Sure."
+    mc "Uh huh."
 
     ai "Do you know staring at a phone consistently will make your eyes constraint and dry eyes?"
 
-    ai "Not just that, according to some research, there are reports showing that texting or looking on mobile phones is harmful for eyes for a long period of time."
+    ai "Not just that, according to some research.{p}There are reports showing that texting or looking on mobile phones is harmful for eyes for a long period of time."
 
     ai "Sometimes they may cause irritability and aggressiveness, especially among children and teenagers."    
     
@@ -86,7 +86,7 @@ label playWhat:
 
     ai "WHICH MEANS YOU WILL HAVE CANCER IN NO TIMEEEE."
 
-    "You started to fear being harmful" #change colour? add sound? idk decide later
+    "You started to fear being harmful" # Pop up to Click to Continue
     $ fearHarmfulNum += 1
 
     jump A1Q2
@@ -1004,9 +1004,9 @@ label finshFearTalk:
             mc "Just saying you can sit here if you want to."
 
             grAI "THEY’RE BEING TOO KIND! LIKE {a=https://en.wikipedia.org/wiki/Ted_Bundy}TED BUNDY{/a}, THE SERIAL KILLER!"
-            grAI "{size=12}RUN{/size}"
             grAI "{size=22}RUN{/size}"
-            grAI "{size=32}RUUUUUUN!{/size}"
+            grAI "{size=32}RUN{/size}"
+            grAI "{size=42}RUUUUUUN!{/size}"
 
         "Sorry I need to be alone right now.":
             mc "Sorry I need to be alone right now."
@@ -1016,9 +1016,9 @@ label finshFearTalk:
 
             grAI "WHAT IS THIS PSYCHO’s THOUGHTS NEED TO PROCESS WITH? HE MAY HAVE DARK DESIRES FILLED."
 
-            grAI "{size=12}RUN{/size}"
             grAI "{size=22}RUN{/size}"
-            grAI "{size=32}RUUUUUUN!{/size}"
+            grAI "{size=32}RUN{/size}"
+            grAI "{size=42}RUUUUUUN!{/size}"
 
     grace "Nevermind. Bye!"
 

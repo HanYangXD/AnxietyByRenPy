@@ -44,6 +44,8 @@ label start:
 
     "Tip: Choose the choices that hit your deepest and darkest fear."
 
+    #---------------- Act 1 -------------------#
+
     "ACT 1 ~ Lunch time"
 
     ai "What are you doing now?"
@@ -316,6 +318,8 @@ label afterPartyThought:
     ai "But..."
 
     jump startAct2
+
+#---------------- Act 2 -------------------#
 
 label startAct2:
     if lookednews:
@@ -641,6 +645,7 @@ label badEnd:
 
     uai "MC... please..."
     
+<<<<<<< HEAD
     menu:
         mc "This is your last chance to convience me, choose your word carefully."
 
@@ -685,13 +690,20 @@ label momentBeforeJump:
 
 
 label jumpNow:
-    "MC jumps"
+    "MC jumps" #done
 
     https://github.com/ncase/anxiety/blob/gh-pages/sprites/act3/hospital.png
 
     #mc fall from building #https://www.youtube.com/watch?v=VOptr76l3wQ&list=PL4JKIH8uMAXyoPh1E-VWatKqZKFCny64c&index=7
 
 
+=======
+
+
+
+
+#---------------- Act 3 -------------------#
+>>>>>>> 4feba8d85b47d15806c6c824eef28c4857901220
 # Dummy variables (Need to verify at Act 2)
 default jumpFromRoof = False
 #testing commit
@@ -702,7 +714,6 @@ default talkFearHarmed = False
 default talkFearAlone = False
 default talkFearBad = False
 
-# Act 3
 # play sound "Bell rang.mp3" #Play bell rings
 
 label startAct3:

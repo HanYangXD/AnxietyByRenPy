@@ -270,16 +270,6 @@ label stopPhone:
 
     "You launched Instagram"
 
-#    menu:
-#        ai "Wow, last week's party looks kinda nice." #changed from mc to ai
-#
-#        "Yea, it looks nice":
-#            jump niceParty
-#
-#        "Nope, it doesn't seems nice to me":
-#            jump notNiceParty
-    
-    # Here got error so i temp change 
     if goingparty: 
         jump niceParty
     else:

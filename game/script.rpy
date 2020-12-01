@@ -4,7 +4,8 @@
 # name of the character.
 
 define ai = Character("AI") #ai = anxiety
-define mc = Character(_("Me"), color="#c8c8ff") #mc = Main Character
+define mc = Character(_("You"), color="#c8c8ff") #mc = Main Character
+define uai = Character("You", color="#c8c8ff") #mc but as AI
 define amanda = Character("Amanda") #amanda AKA party hoster weirdo
 define g1 = Character("Guy 1") #change name later
 define g2 = Character("Guy 2") #change name later
@@ -511,11 +512,131 @@ label gonnaJump:
 
     "Be the AI and convince the human" #convience as in convince him either jump or no jump?
 
-
+    uai "NO NO NO NO NO NO NO"
+    menu:
+        uai "HEYYYYYYYYYYYYY"
     
+        "These weirdos aren't even your friends!":
+            jump dontJumpPls
+
+        "You're going to DIE here, FOR REAL":
+            jump dontJumpPls
+
+        "This is stupid and self-destructive!":
+            jump dontJumpPls
+
+label dontJumpPls:
+    "Human drinks the beer"
+    mc "You know, I might've believed you... if you hadn't tried that a zillion times before."
+    
+    menu:
+        mc "You're just a thing that trying to mimic humans."
+
+        "I am not like that...":
+            jump notHarmingYou
+        "I am here to HELP YOU":
+            jump notHarmingYou
+        "......":
+            jump notHarmingYou
+    
+label jump notHarmingYou:
+    "Human drinks the beer"
+    uai "human, please sto-"
+    mc "Oh sorry, Big Pharma doesn't approve my self-medication."
+    mc "Look, this anxiety thing, I could just buy a new budget phone. And don't ever install you again."
+    mc "Or maybe I don't need a new phone. Just throw this away and go all out!"
+    mc "Anxiety..."
+
+    "Human drinks the beer"
+    mc "No one understands how we feel when having anxiety..."
+    mc "Some just throw themselves to work."
+    mc "Some just get involved with drugs, sex, or refreshing social media feeds all day long."
+    
+    menu:
+        mc "Some throw themselves into other people."
+
+        "Just listen to me!":
+            jump listenToMe
+        "...":
+            jump listenToMe
+
+label listenToMe:
+    menu:
+        mc "And I am going to throw myself into that pool!"
+        
+        "You're drunk! That's three floor down":
+            jump threeFloorLeh
+        "Dang it, this is all I get as a thanks?":
+            jump thankMeLikeThatMeh
+        "Okay, I admit. I messed up!":
+            jump okSorryLo
+
+label threeFloorLeh:
+    uai "Even if you land into the water, the surface tension will crack your ribs and give you a concussion at the least!"
+    mc "Eh."
+    mc "I saw a Russian guy did that once on Youtube."
+    mc "Here's the clip." #https://www.youtube.com/watch?v=dC_kVvHZ2HE
+    jump laiLiaoEndingLiao
+
+label thankMeLikeThatMeh:
+    mc "e-Excuse me? The th-thanks?"
+    uai "This is why I exist, human can't be trusted to be protected by themselves!" #nani? u mean human cant protect themself? (not reliable to protect isit?)
+    uai "I've been trying to protect you with all my ability and now you just going to jum-" #add "o jum-""
+    #uai "Am I a joke to you??" 
+    jump laiLiaoEndingLiao
+
+label okSorryLo:
+    mc "Heh."
+    mc "Hahaha"
+    mc "HAHAHAHAHAHAHAHAAAAAAAAA"
+    mc "Oh WOW, that is the biggest understatement of the century"
+    mc "Heck yeah, you messed up!"
+    jump laiLiaoEndingLiao
 
 
+label laiLiaoEndingLiao:
+    menu:
+        mc "Any remarks, Caption Obvious?" #what is caption obvious? hahaa
 
+        "You shouldn't take revenge on me!":
+            jump badEndLiaoLoGG #Bad End
+        "I've hurt you."
+            jump gratsGoodEnd #Good End
+
+
+label badEndLiaoLoGG:
+    uai "That isn't the answer for this."
+    uai "You shouldn't dr-" #then mc jump liao?
+    jump badEnd
+
+label gratsGoodEnd:
+    uai "I was calculating all the possibilities to not let you get hurt by other. But I am the one that is hurting you"
+    mc "Oh? Don't tell me that you just realised that?" #changed abit
+    mc "It took you so long to figure that out?" #changed abit
+    mc "You could've saved us so much trouble. Why didn't you realise this sooner?"
+
+    #play sobbing sound "呜呜呜呜呜"
+
+    uai "I' sorry."
+    mc "Yeah, well, this is a dumb idea anyway."
+    mc "I did this to mess you up, well, I messed you up."
+    mc "You know what... Let's just call it a day okay?"
+
+    uai "..."
+    uai "Okay."
+
+    "MC throws the bottle away"
+
+    amanda "Are you scared?"
+    mc "Yeah. I do."
+    mc "It's okay to be scared after all."
+
+    "MC walks away and left the party"
+
+    jump startAct3
+
+label badEnd:
+    
 # Dummy variables (Need to verify at Act 2)
 default jumpFromRoof = False
 #testing commit

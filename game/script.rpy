@@ -86,7 +86,7 @@ label playWhat:
 
     ai "WHICH MEANS YOU WILL HAVE CANCER IN NO TIMEEEE."
 
-    "You started to fear being harmful" # Pop up to Click to Continue
+    $ renpy.notify("You started to fear being harmful")
     $ fearHarmfulNum += 1
 
     jump A1Q2
@@ -108,7 +108,7 @@ label eatWhat:
 
     ai "at this rate, you will get LONELY FOREVERRRRRRRRR"
 
-    "You started to being lonely" #change colour? add sound? idk decide later
+    $ renpy.notify("You started to being lonely") #change colour? add sound? idk decide later
     $ fearAloneNum += 1
 
     jump A1Q2 
@@ -135,10 +135,11 @@ label whyNothing:
     mc "Uh huh. So?"
 
     ai "The society-body will go to the society-doctor for medication to kill their society-parasites then we will-"
+    
+    ai "DIEEEEEEEEEEEEEEEEEEEEEEEEE." # Shaek screen    
 
-    ai "DIEEEEEEEEEEEEEEEEEEEEEEEEE."    
 
-    "You started to fear being a bad person" #change colour? add sound? idk decide later
+    $ renpy.notify("You started to fear being a bad person") #change colour? add sound? idk decide later
     $ fearBadPNum += 1
 
     jump A1Q2

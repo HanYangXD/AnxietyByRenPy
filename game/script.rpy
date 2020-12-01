@@ -645,7 +645,6 @@ label badEnd:
 
     uai "MC... please..."
     
-<<<<<<< HEAD
     menu:
         mc "This is your last chance to convience me, choose your word carefully."
 
@@ -697,13 +696,11 @@ label jumpNow:
     #mc fall from building #https://www.youtube.com/watch?v=VOptr76l3wQ&list=PL4JKIH8uMAXyoPh1E-VWatKqZKFCny64c&index=7
 
 
-=======
 
 
 
 
 #---------------- Act 3 -------------------#
->>>>>>> 4feba8d85b47d15806c6c824eef28c4857901220
 # Dummy variables (Need to verify at Act 2)
 default jumpFromRoof = False
 #testing commit
@@ -806,26 +803,262 @@ label startConvo:
             mc "I want to be physically safe."
             mc "But the whole world seems dangerous. Full of tragedy and evil."
 
-            ai "You’re right. So let’s start protecting ourselves." 
-            ai "Or yourself, cause I am just a system that reacts with your emotions and responses." # Maybe can add pause
+            mc "I don't know what I should say anymore, I am done. How about you AI?"
+
+            ai "You’re right. {p}So let’s start protecting ourselves." 
+            ai "Or just yourself. {p}Since I am just a system that reacts to your emotions and responses."
             ai "Anyways, after looking through the internet." # Beep sound
-            ai "Perhaps learn self-defense, join a community which protects each other or improve our general health and personal boundaries."
+            ai "Perhaps learn self-defense, join a community which protects each other or improve our general health and personal boundaries." 
+
+            # Harmful Decision
+            menu:
+                "But..."
+
+                "Where do we even start?":
+                    mc "Where do we even start?"
+                    mc "There are so much to do, so much we need to fix about myself.{p}What do we even begin with?"
+                    ai "You're doing it now!"
+                    mc "Huh."
+                    mc "Huh.."
+                    mc "Huh...?"
+
+                    ai "We are practicing good communication right now.{p}Which helps you detect danger better, with fewer false positives,"
+                    ai "And that will help protect yourself from harm!"
+                    ai "So it's kinda considered as a self defense training" # expression that looks like ?
+
+                    mc "Hmmm..."
+
+                    ai "What?"
+
+                    mc "I was expecting more of Taekwando or Kung Fu action pack style."
+
+                    ai "Hahaha!"
+                    
+                "What if they still don't work?":
+                    mc "What if they still don't work?"
+                    ai "True, there is no way to 100 %% protect ourselves…"
+                    ai "But even a 1 %% improvement is still worth something, right?"
+                    mc "So you’re seeing the glass as not 99 %% empty, but 1 %% full?"
+                    ai "Which is still worth something if you’re stranded in the desert."
+                    mc "Well.{p}Bottoms up, then."
+
+            ai "So, anything else you wanna chat about?"
 
             jump startConvo
         
         label fearAlone:
-            mc "Fear Alone route"
+            mc "I am scared to be alone."
+            mc "I am worried if anyone ever knows me,{p}the real me,{p}I may scare them away..."
+
+            ai "I agree, let’s work on our social life."
+            ai "I mean {i}your{/i} social life."
+            ai "You could try practicing your social skill."
+            ai "Maybe by questioning, listening and emphasizing, being open and vulnerable to others?"
+
+            ai "Or!"
+            ai "Make better social habits like schedule your time to meet up with your friends."
+            ai "Regularly go to the meetups."
+
+            ai "You could also get more comfortable with rejections."
+            ai "Or learns to understand people aren’t rejecting you by their emotions."
+            ai "Maybe they are just tired or have something going on in their mind."
+
+            mc "Thats a lot of options..."
+
+            # Alone Decision
+            menu:
+                "But learning so-called “Social Skills”..."
+
+                "Isn't that manipulative?":
+                    mc "Isn't that manipulative?"
+                    mc "Aren’t serial killers who can read their victims’ emotions great at “empathy”?"
+                    mc "If not mistaken, {a=https://en.wikipedia.org/wiki/Charles_Manson}Charles Manson{/a} wins friends and influences people to form a cult?" 
+
+                    mc "Look! This is how Wikipedia described!"
+
+                    ai "Wikipedia is not a reliable source ya know?"
+                    ai "But, you're not wrong."
+
+                    ai "“Social skills” mean nothing if we don’t genuinely care for people."
+                    ai "Well, just don’t be the bad guy."
+
+                    mc "Yeah... understood."
+
+                    ai "Good, what else you wanna talk about?"
+                    
+                "What if I still fail?":
+                    mc "What if I still fail?"
+                    ai "You might fail."
+                    ai "No, actually."
+                    ai "You will fail."
+                    ai "And that’s fine!" 
+                    ai "Failing is how anyone learns anything new at first!"
+
+                    ai "So let's fail together, shall we?"
+
+                    mc "Sure... Worst case scenario I would just leave town and get a new identity"
+
+                    ai "Yeah, roughly cost you around a bitcoin these days."
+                    
+                    ai "Anyways, anything else?"
+
             jump startConvo
 
         label fearBad:
-            mc "Fear Bad route"
+            mc "I am scared that I will become a bad person."
+            mc "I need to know how to defend my moral needs."
+            mc "So that I can become a better person."
+            mc "But deep down… I feel like I am fundamentally broken…"
+            
+            if jumpFromRoof:
+                mc "Don’t tell me I am not messed up, I {i}jumped{/i} off from a rooftop."
+            else:
+                mc "Don’t tell me I am not messed up, I almost wanted to jump off from a rooftop."
+
+            
+            mc "..."
+            window hide
+            pause
+            ai "..."
+            window hide
+            pause
+            mc "What?"
+
+            ai "So you’re broken, let’s accept it."
+            mc "Huh."
+            mc "Huh.."
+            mc "Huh...?"
+
+            ai "I mean that is what therapists say right?{p}Accept all your emotions, even the negative ones?"
+
+            menu:
+                mc "Wait... do you mean..."
+
+                "“Accept” as in give up?":
+                    mc "“Accept” as in give up?"
+                    ai "Accept bad things as in acknowledging them."
+                    ai "Although some may be hard to change."
+                    ai "But not necessarily giving up a commitment to change"
+
+                    mc "Then the therapists should say “acknowledge”"
+                    mc "Not “accept”"
+                    mc "=_="
+
+                    ai "True, “accept” is kinda confusing."
+
+                    mc "Well, I acknowledge that now :)" # Express happy and show at side
+                
+                "“Accept” as in approve?":
+                    mc "Like it’s good that we’re broken or something? Heck no!"
+                    mc "All those Hollywood screenwriters who romanticize mental illness are full of crud!"
+                    mc "Having a mental disorder sucks!{p}It robs people of lives!{p}Why should we “accept” that?!" # Express Angery
+
+                    ai "What therapists meant by “accept” is to be patient with them."
+                    ai "Like how struggling in quicksand makes you sink faster, and the solution is to patiently lie flat."
+
+                    if jumpFromRoof:
+                        ai "Fighting against the fear, just like jumping off a roof."
+                    else:
+                        ai "Fighting against the fear, just like almost led yourself to jump off a roof."
+                    
+                    ai "Instead, the solution is to do what we’re doing now.{p}Not to fight, but be patient with each other."
+                    mc "Then they should have said that, instead of confusing me like that." # Express Irritate
+                    ai "True, “accept” kinda sucks."
+
+            ai "Anyways, anything else?"
+
             jump startConvo
 
             
 label finshFearTalk:
-    mc "Thank you I am done talking"
+    mc "Nah, I’m good for now."
 
+    ai "..."
+    mc "..."
 
+    mc "This isn’t some game, you know."
+    mc "Building a healthy relationship with your emotion isn’t as simple as clicking on screen."
+    mc "Can me and my emotions get along?"
+    mc "Can I work together with them, as a team?"
+
+    ai "Well..."
+
+    #Femail student instead of name?
+    grace "Ex-excuse me…"
+    grace "Would you mind if I sat with you for lunch?"
+
+    grAI "So,{p}This is your crush?{p}Why is he sitting alone like a psycho serial killer?"
+
+    grace "I mean…{p}it’s okay if you can’t…{p}I will just…"
+
+    menu:
+        "Grace's waiting your reply..."
+
+        "Yeah of course you can!":
+            mc "Yeah of course you can!" 
+            # Grace expression in shocked
+            ai "Hang on human, you may be making them uncomfortable."
+            mc "Ah, no pressure of course"
+            mc "Just saying you can sit here if you want to."
+
+            grAI "THEY’RE BEING TOO KIND! LIKE {a=https://en.wikipedia.org/wiki/Ted_Bundy}TED BUNDY{/a}, THE SERIAL KILLER!"
+            grAI "{size=12}RUN{/size}"
+            grAI "{size=22}RUN{/size}"
+            grAI "{size=32}RUUUUUUN!{/size}"
+
+        "Sorry I need to be alone right now.":
+            mc "Sorry I need to be alone right now."
+            ai "Hang on human, you may be making them uncomfortable."
+            mc "Ah, I don’t mean to be rude!"
+            mc "I just need some time to process my emotions. Please don’t take it too personal."
+
+            grAI "WHAT IS THIS PSYCHO’s THOUGHTS NEED TO PROCESS WITH? HE MAY HAVE DARK DESIRES FILLED."
+
+            grAI "{size=12}RUN{/size}"
+            grAI "{size=22}RUN{/size}"
+            grAI "{size=32}RUUUUUUN!{/size}"
+
+    grace "Nevermind. Bye!"
+
+    # Grace leave the screen
+
+    "Grace left you alone"
+
+    mc "Huh, that was weird.{p}I wonder what's going on with her?"
+    mc "So you were saying?"
+    ai "..."
+    ai "Something about team and work?"
+    mc "{size=25}¯\\_(O.O)_/¯{/size}"
+    ai "Hmmm..."
+    ai "They say you should “make peace” with your emotions, as if your emotions are {i}war criminals{/i}."
+
+    ai "But I want you to make more than mere peace!{p}I want you and your emotions to be allies!"
+    ai "And…"
+    ai "I hope to be a good AI. So that I can help you or alarm you when you’re in need."
+    ai "I want to become the alarm for your psychological needs like your needs for safety, belonging and goodness."
+    ai "But I am still new. I suck… Need more data to learn from it."
+    ai "So please…"
+    ai "Help me help you!  (◕ ω ◕)"
+    ai "Although it may take a while or even years to do so."
+    ai "But if you’re patient with me… and just don’t uninstall me…"
+    ai "Maybe I can be your personal AI."
+
+    menu:
+        "Sure":
+            mc "Sure :)"
+            ai ":]"
+
+        "...":
+            mc "... I will try"
+            ai ":["
+    
+    window hide
+    $ renpy.pause(3.0)
+    
+    
+    ai "YOU’RE NOT DOING ANY PRODUCTIVE WORK.{p}YOU WILL BECOME SOCIAL PARASITE SOON!"
+    ai "QUICKLY GO DO SOMETHING!"
+    mc "..."
 
 
     # This ends the game.

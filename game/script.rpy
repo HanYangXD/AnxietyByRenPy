@@ -9,8 +9,10 @@ define uai = Character("You", color="#c8c8ff") #mc but as AI
 define amanda = Character("Amanda") #amanda AKA party hoster weirdo
 define g1 = Character("Guy 1") #change name later
 define g2 = Character("Guy 2") #change name later
+define grace = Character("Grace", color="#7737FF") 
+define grAI = Character("Grace's AI", color="#970052") 
 
-
+define jumpFromRoof = False
 define goingparty = False
 define lookednews = False
 
@@ -543,7 +545,7 @@ label dontJumpPls:
         "......":
             jump notHarmingYou
     
-label jump notHarmingYou:
+label notHarmingYou:
     "Human drinks the beer"
     uai "human, please sto-"
     mc "Oh sorry, Big Pharma doesn't approve my self-medication."
@@ -604,7 +606,7 @@ label laiLiaoEndingLiao:
 
         "You shouldn't take revenge on me!":
             jump badEndLiaoLoGG #Bad End
-        "I've hurt you."
+        "I've hurt you.":
             jump gratsGoodEnd #Good End
 
 
@@ -629,21 +631,21 @@ label gratsGoodEnd:
     uai "..."
     uai "Okay."
 
-    "MC throws the bottle away"
+    "Human throws the bottle away"
 
     amanda "Are you scared?"
     mc "Yeah. I do."
     mc "It's okay to be scared after all."
 
-    "MC walks away and left the party"
+    "Human walks away and left the party"
 
     jump startAct3
 
 label badEnd:
-    "MC drinks the beer"
-    "You can feel MC starts to loss balance due to the gyroscope" #phone motion
+    "Human drinks the beer"
+    "You can feel Human starts to loss balance due to the gyroscope" #phone motion
 
-    uai "MC... please..."
+    uai "Human... please..."
     
     menu:
         mc "This is your last chance to convience me, choose your word carefully."
@@ -671,16 +673,16 @@ label momentBeforeJump:
     mc "\"The only thing to fear is fear itself\""
     mc "\"Don't worry, be happy~\""
 
-    uai "MC... don't..." #changed no  to dont
+    uai "Human... don't..." #changed no  to dont
     mc "A while back, I said \"I want to be free from all these pains...\""
     mc "Now I got what i wish now. I no longer need to feel any pain, fear and anxiety."
 
     mc "I don't feel anything at all now."
 
-    "MC throws the empty bottle of bear"
+    "Human throws the empty bottle of bear"
 
     menu: 
-        "MC walk few steps backward."
+        "Human walk few steps backward."
         
         "Please... dont":
             jump jumpNow
@@ -689,9 +691,10 @@ label momentBeforeJump:
 
 
 label jumpNow:
-    "MC jumps" #done
+    $ jumpFromRoof = True
+    "Human jumps" #done
 
-    https://github.com/ncase/anxiety/blob/gh-pages/sprites/act3/hospital.png
+    # https://github.com/ncase/anxiety/blob/gh-pages/sprites/act3/hospital.png
 
     #mc fall from building #https://www.youtube.com/watch?v=VOptr76l3wQ&list=PL4JKIH8uMAXyoPh1E-VWatKqZKFCny64c&index=7
 
@@ -701,9 +704,6 @@ label jumpNow:
 
 
 #---------------- Act 3 -------------------#
-# Dummy variables (Need to verify at Act 2)
-default jumpFromRoof = False
-#testing commit
 
 # Variables that only needed in Act 3
 default count = 0

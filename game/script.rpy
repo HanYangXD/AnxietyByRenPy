@@ -189,17 +189,17 @@ label A1Q2:
     mc "..."
 
     mc "You know what, I should check Facebook now."
-
+    show romani2
     ai "Please Nooooooooooooooooooo" #changed noooooooooo
 
     mc "Huh? Amanda is hosting a party this weekend." #changed abit
-
+    show rn4
     ai "Doesn't that weirdo throw a party every weekend?"
-
+    show rn3
     ai "What inner void are they trying to fill? They must be deeply messed up inside."
 
     mc "Wait, I got an invitation too." #added wait
-
+    show romanidefault
     ai "Well then, What's your decision?"
 
     menu:

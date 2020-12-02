@@ -87,7 +87,8 @@ label start:
     scene schoolyard1_bg
     with fade
 
-    show hehface
+    show romanidefault
+    with dissolve
 
     ai "Hey, what are you doing now?"
 
@@ -104,23 +105,24 @@ label start:
             jump whyNothing
 
 label playWhat:
-
+    show romani5
+    #with dissolve
     ai "What are you playing?"
     
     mc "Why are you concerning me?"
-
+    show rn5
     ai "Because it is lunch time, and you are not eating but instead you are playing phone."
 
     mc "Uh huh."
-
+    show romani8
     ai "Do you know staring at a phone consistently will make your eyes constraint and dry eyes?"
-
+    show romani7
     ai "Not just that, according to some research.{p}There are reports showing that texting or looking on mobile phones is harmful for eyes for a long period of time."
-
+    show romani6
     ai "Sometimes they may cause irritability and aggressiveness, especially among children and teenagers."    
     
     mc "K"
-
+    show romani2
     ai "WHICH MEANS YOU WILL HAVE CANCER IN NO TIMEEEE."
 
     $ renpy.notify("You started to fear being harmful")
@@ -130,19 +132,20 @@ label playWhat:
     
 
 label eatWhat:
-
+    show romani5
+    #with dissolve
     ai "What are you eating?"
     
     mc "Why are you concerning me?"
-
+    show rn5
     ai "Anyway, why are you eating while talking to me? Do you know it will make you indigestion, "
 
     ai "and makes your body can’t absorb nutrients, WHICH WILL MAKE YOU-"
-
+    show rn2
     ai "DIEEEEEEEEEEEEEEEEEEEEEEEE"
-
+    show romani6
     ai "Also, why aren’t you eating with other humans and with me?"
-
+    show romani2
     ai "at this rate, you will get LONELY FOREVERRRRRRRRR"
 
     $ renpy.notify("You started to being lonely") #change colour? add sound? idk decide later
@@ -152,21 +155,22 @@ label eatWhat:
     
 
 label whyNothing:
-
+    show romani5
+    #with dissolve
     ai "Why are you doing nothing?"
 
     mc "Why are you concerning me?"
-
+    show rn5
     ai "If you are not doing anything, this means you are not productive!"
 
     mc "So?" #added myself
-
+    show rn3
     ai "Go read some book or at least do something!"
 
     mc "But I am not feeling to anythin-" #removed 'g' from anything
-
+    show romani10
     ai "If we are not contributing to society then we are the so called..."
-
+    show romani2
     ai "SOCIETY PARASITE!"
 
     mc "Uh huh. So?"

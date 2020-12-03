@@ -280,7 +280,7 @@ label A1Q3:
             jump catDrinkMilk
 
 label lookNews:
-    $lookNews=True
+    $ lookednews = True
     mc "Oh, look at the news today!"
     show ai notconfident neck
     ai "Yeah, it's so horrible nowadays. I feel like the world is burning and has no hope for us to live any longer anymore"

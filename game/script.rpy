@@ -211,21 +211,22 @@ label A1Q2:
             jump noParty
 
 label goParty:
+    show romani2
     ai "If you go you might encounter danger!"
-
+    show romani6
     ai "For example there will be drugs inside the drinks."
 
     ai "When you are overdosed with drugs you will get nausea, drowsy, agitation, hallucination, unconsciousness and even worse you will..." #added you will
 
     mc "Could you sto-" #removed p
-
+    show romani2
     ai "DIEEEEEEEEEEEEEEEE"
 
     $ renpy.notify("You started to fear being harmful") #wait what? fear of getting harm is it?
     $ fearHarmfulNum += 1
 
     mc "Okay fine!"
-
+    show romani7
     ai "Huh?"
 
     mc "I will say no, just stop bothering me or I will uninstall you!" #changed popping up to bothering, can we actually change bothering to kacau?
@@ -234,14 +235,15 @@ label goParty:
     jump A1Q3
 
 label noParty:
+    show romani8
     ai "Why not? If you don’t go you will be lonely forever!" #added why not
-
+    show romani2
     ai "Researchers have found that loneliness is just as lethal as smoking 15 cigarettes per day. Lonely people are 50 percent more likely to die prematurely than those with healthy social relationships"
 
     $ renpy.notify("You started to fear being lonely")
     $ fearAloneNum += 1
     mc "Okay fine!"
-
+    show romani7
     ai "Huh?"
 
     mc "I will say yes, just stop bothering me or I will uninstall you!" #changed popping up to bothering, can we actually change bothering to kacau?
@@ -250,6 +252,7 @@ label noParty:
     jump A1Q3
 
 label A1Q3:
+    show rn6
     ai "But I just-"
 
     mc "Ughhhh, I need to make me calm and less anxiety." #changed
@@ -270,13 +273,13 @@ label A1Q3:
 label lookNews:
     $lookNews=True
     mc "Oh, look at the news today!"
-
+    show rn10
     ai "Yeah, it's so horrible nowadays. I feel like the world is burning and has no hope for us to live any longer anymore"
 
     ai "I don't know why are we here... just to suffer"
 
     ai "Or you're still being alive for?" #this can remove cuz ^ sentence covered liao xd
-
+    show romani8
     ai "Why not retweet that? :D" #i think the expression can change gua? use sprite
 
     $ renpy.notify("You started to fear being harmful") #why harmful? isnt this... fear of being social parasite
@@ -290,7 +293,7 @@ label catDrinkMilk:
     mc "How adorable! Let's retweet this."
 
     "You tapped retweet."
-
+    show romani2
     ai "ARE YOU SERIOUS?!" #changed !? to ?!
 
     ai "CAT CAN’T DIGEST MILK AND WE’RE TERRIBLE PERSON FOR ENJOYING ANIMAL ABUSE"
@@ -302,7 +305,7 @@ label catDrinkMilk:
 
 label stopPhone:
     mc "Alright, I should stop looking at my phone now."
-
+    show romani1
     ai "Great! You should've did that earlier and let your mind rela-"
 
     "Received notification from Instagram" #dududung notification sound
@@ -331,27 +334,27 @@ label notNiceParty:
     jump afterPartyThought
 
 label afterPartyThought:
-
+    show rn1
     ai "Hey maybe let’s choose-"
     
     mc "SHUT"
     mc "THE"
-    mc "{size=32}FUDGE{/size}"
+    mc "{size=32}FUDGE{/size}" #we should change
     mc "UP"
-
+    show romani4
     ai "Wha-"
 
     mc "I will just {size=30}AGREE{/size} to them."
     mc "I DON'T CARE anything anymore."
     mc "You're NOT in my control!" #changed !
     mc "Now excuse me, I will need to go to my class now."
-
+    show rn2
     ai "No!"
     ai "Wait!"
 
     "You choose to ignore the anxiety and walk away" #idk the ai anxiety is what character so i write like this first
     #play walk away sound effect
-
+    show romani10
     ai "But..."
 
     jump startAct2

@@ -378,15 +378,19 @@ label startAct2:
         jump A2cat
 
 label A2news:
-    show amanda normal at slightleft
+    show amanda normal at left
     amanda "Did you see the horrible news?"
-    show g1 normal at slightright
+    show g1 normal at right
     g1 "Yeah it's sooooo bad."
     mc "h-Hey..."
     amanda "Goshh, I hate the news. It's sensationalism and clickbait."
     mc "n-Nice party... eh...?"
+    show g2 normal
     g2 "True, but they're just following incentives. The real problem is those who clicked on it."
+    show g1 shout
+    hide g2
     g1 "Who would retween that rerrible news and make others feel bad?"
+    show amanda hmph
     amanda "Ughh, I know right?"
     jump A2continue
 

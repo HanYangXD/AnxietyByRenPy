@@ -380,7 +380,7 @@ label startAct2:
 label A2news:
     show amanda normal at slightleft
     amanda "Did you see the horrible news?"
-    show jmdef at right
+    show g1 normal at slightright
     g1 "Yeah it's sooooo bad."
     mc "h-Hey..."
     amanda "Goshh, I hate the news. It's sensationalism and clickbait."
@@ -391,14 +391,19 @@ label A2news:
     jump A2continue
 
 label A2cat:
-    show amanda normal at slightleft
+    show amanda normal at left
     amanda "Like I was saying, the Meme Industrial Complex is exploiting the cats."
     mc "h-Hey..."
+    show g1 normal at right
     g1 "Please explain in detail Amanda" #added amanda
     mc "n-Nice party... eh...?"
+    show g2 normal 
     g2 "Well, yesterday I saw someone retweeted a GIF of a cat drinking milk."
     #g2 "but the person remove the tweet moments later, thinking that nobody would ever notice him doing it"
+    hide g2
+    show g1 surprised
     g1 "Wait what?? Cat can't digest that! who would retween GIF that is abusing animal like that?" #changed to g1 talking
+    show amanda hmph
     amanda "Ughh, I know right?"
     jump A2continue
 

@@ -412,37 +412,46 @@ label A2cat:
     jump A2continue
 
 label A2continue:
+    hide amanda
+    hide g1
+    hide g2
+    show ai shocked neck 
     ai "Oh no they all hate us now!"
     mc "Us...?"
     mc "..."
-
+    show ai notconfident
     ai "We're bringing down the mood of this party by being such a sad lump!"
     ai "We're killing the good vibes! We're commiting first degree-vibe-murder!"
-    
+    show ai serious neck
     menu:
+        
         ai "Heyyy, we need to leave now" #change human to heyy
 
         "Could you just-":
-            mc "Could you just-"
+            mc "Could you just-" #i think we dont have to repeat our selection is it?
         "......":
-            mc "......"
+            mc "......" #and this
 
+    show ai shocked
     ai "You're ignoring danger! This is dangerous!"
     mc "How is this dange-"
-
+    show ai worry
     ai "You think that you took out the batteries from carbon monoxide detector and you will be safe?"
     ai "You won't even smell the poison. You'll get sleepy and then you will..." #added you will
+    show ai shocked
     ai "DIEEEEEEEEEEEEEEEEEEEEEEEEEE"
 
     mc "Stop this..."
-
+    show ai normal
     ai "Let me warn you about different social dangers."
+    show ai worry
     ai "What if we're just fundamentally incapable of ever being loved, or loving another?"
     ai "What if something irreversibly broke inside of us a long time ago? Or never existed in us in the first place?"
+    show ai notconfident
     ai "WE'RE BROKEN! SO BROKEN SO BROKEN SO SO BROKEN"
 
-    mc "FAACKK"
-    mc "FACKKKING FACK-FACKITY FACKKKKKK" #srsly meh later gg how
+    mc "AAAAAAAAAHHHHHHHHHHH" #changed from faq
+    #mc "FACKKKING FACK-FACKITY FACKKKKKK" #srsly meh later gg how
 
     $ renpy.notify("You started to fear being bad")
     $ fearBadPNum += 1
@@ -451,24 +460,33 @@ label A2continue:
     $ renpy.notify("You started to fear being alone") #why need 3
     $ fearAloneNum += 1
 
+    show ai smile
     ai "Don't worry! I will always be by your side! Anxiety Intelligence will never be obsolete!"
     mc "I had enough of this!"
+    show ai worry neck
     ai "Huh...?"
     mc "I can't appease you\nI can't ignore you\nI can't even run away from you!" #change delete to run away
     mc "No matter what I do. It seems like I cant get rid of you!" #changed abit
 
+    show ai serious
     ai "Well maybe you are NOT SUPPOSED TO GET RID OF ME!"
     ai "Do you know how I feel, human?"
+    show ai serious neck
     ai "I am trying to be your support, make sure you don't mess up anything."
+    show ai notconfident neck
     ai "But you keep seeing me as a bad AI" #change to bad guy maybe? or bad thought
     ai "So I try to make you realise more dangers could happen to US."
     ai "No matter how hard I try. You still think I am your enemy."
+    show ai notconfident
     ai "What am i doing WRONG?"
 #    ai "AM I A JOKE TO YOU??" #should we? xd
     ai "I am stil new to this environment and I am using neural network model" #need to change?
     ai "Which means I need more time to learn to feel like a human."
+    show ai serious
     ai "All I want you to do is to be patient with me..." #added to do
+    hide ai with dissolve
 
+    show amanda normal with dissolve#fade in
     amanda "Hey!"
     mc "Huh?"
     amanda "Looks like you caught up a fight with yourself kiddo. What's wrong?" #added whats wrong

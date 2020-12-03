@@ -2,17 +2,9 @@
 errors listed below, and try again.
 
 
-File "game/script.rpy", line 572: expected statement.
-    totalFearNum += fearAloneNum 
-                 ^
-
-File "game/script.rpy", line 573: expected statement.
-    totalFearNum += fearHarmfulNum 
-                 ^
-
-File "game/script.rpy", line 574: expected statement.
-    totalFearNum += fearBadPNum
-                 ^
+File "game/script.rpy", line 427: expected menuitem
+    show ai serious neck
+    ^
 
 Ren'Py Version: Ren'Py 7.3.5.606
-Mon Nov 30 19:13:28 2020
+Thu Dec 03 22:17:26 2020

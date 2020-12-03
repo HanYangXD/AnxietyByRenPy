@@ -22,6 +22,14 @@ define lookednews = False
 
 define playername = ""
 
+transform slightleft:
+    xalign 0.25
+    yalign 1.0
+
+transform slightright:
+    xalign 0.75
+    yalign 1.0
+
 ## Variables ##
 default totalFearNum = 0
 default fearHarmfulNum = 0
@@ -274,7 +282,7 @@ label A1Q3:
 label lookNews:
     $lookNews=True
     mc "Oh, look at the news today!"
-    show ai notconfident neck0
+    show ai notconfident neck
     ai "Yeah, it's so horrible nowadays. I feel like the world is burning and has no hope for us to live any longer anymore"
 
     ai "I don't know why are we here... just to suffer"
@@ -363,13 +371,14 @@ label afterPartyThought:
 #---------------- Act 2 -------------------#
 
 label startAct2:
+    hide ai
     if lookednews:
         jump A2news
     else:
         jump A2cat
 
 label A2news:
-    show salterheh at left
+    show amanda normal at slightleft
     amanda "Did you see the horrible news?"
     show jmdef at right
     g1 "Yeah it's sooooo bad."
@@ -382,6 +391,7 @@ label A2news:
     jump A2continue
 
 label A2cat:
+    show amanda normal at slightleft
     amanda "Like I was saying, the Meme Industrial Complex is exploiting the cats."
     mc "h-Hey..."
     g1 "Please explain in detail Amanda" #added amanda

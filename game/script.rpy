@@ -87,7 +87,7 @@ label start:
     scene schoolyard1_bg
     with fade
 
-    show romanidefault
+    show ai normal
     with dissolve
 
     ai "Hey, what are you doing now?"
@@ -105,24 +105,24 @@ label start:
             jump whyNothing
 
 label playWhat:
-    show romani5
+    show ai serious
     #with dissolve
     ai "What are you playing?"
     
     mc "Why are you concerning me?"
-    show rn5
+    show ai serious neck
     ai "Because it is lunch time, and you are not eating but instead you are playing phone."
 
     mc "Uh huh."
-    show romani8
+    show ai serious
     ai "Do you know staring at a phone consistently will make your eyes constraint and dry eyes?"
-    show romani7
+    show ai serious
     ai "Not just that, according to some research.{p}There are reports showing that texting or looking on mobile phones is harmful for eyes for a long period of time."
-    show romani6
+    show ai worry
     ai "Sometimes they may cause irritability and aggressiveness, especially among children and teenagers."    
     
     mc "K"
-    show romani2
+    show ai shocked
     ai "WHICH MEANS YOU WILL HAVE CANCER IN NO TIMEEEE."
 
     $ renpy.notify("You started to fear being harmful")
@@ -132,20 +132,20 @@ label playWhat:
     
 
 label eatWhat:
-    show romani5
+    show ai serious
     #with dissolve
     ai "What are you eating?"
     
     mc "Why are you concerning me?"
-    show rn5
+    show ai serious neck
     ai "Anyway, why are you eating while talking to me? Do you know it will make you indigestion, "
 
     ai "and makes your body can’t absorb nutrients, WHICH WILL MAKE YOU-"
-    show rn2
+    show ai shocked neck
     ai "DIEEEEEEEEEEEEEEEEEEEEEEEE"
-    show romani6
+    show ai worry
     ai "Also, why aren’t you eating with other humans and with me?"
-    show romani2
+    show ai shocked
     ai "at this rate, you will get LONELY FOREVERRRRRRRRR"
 
     $ renpy.notify("You started to being lonely") #change colour? add sound? idk decide later
@@ -155,22 +155,22 @@ label eatWhat:
     
 
 label whyNothing:
-    show romani5
+    show ai serious
     #with dissolve
     ai "Why are you doing nothing?"
 
     mc "Why are you concerning me?"
-    show rn5
+    show ai serious neck
     ai "If you are not doing anything, this means you are not productive!"
 
     mc "So?" #added myself
-    show rn3
+    show ai annoyed neck
     ai "Go read some book or at least do something!"
 
     mc "But I am not feeling to anythin-" #removed 'g' from anything
-    show romani10
+    show ai notconfident
     ai "If we are not contributing to society then we are the so called..."
-    show romani2
+    show ai shocked
     ai "SOCIETY PARASITE!"
 
     mc "Uh huh. So?"
@@ -189,17 +189,17 @@ label A1Q2:
     mc "..."
 
     mc "You know what, I should check Facebook now."
-    show romani2
+    show ai shocked
     ai "Please Nooooooooooooooooooo" #changed noooooooooo
 
     mc "Huh? Amanda is hosting a party this weekend." #changed abit
-    show rn4
+    show ai annoyed neck
     ai "Doesn't that weirdo throw a party every weekend?"
-    show rn3
+    show ai annoyed neck
     ai "What inner void are they trying to fill? They must be deeply messed up inside."
 
     mc "Wait, I got an invitation too." #added wait
-    show romanidefault
+    show ai normal
     ai "Well then, What's your decision?"
 
     menu:
@@ -211,22 +211,22 @@ label A1Q2:
             jump noParty
 
 label goParty:
-    show romani2
+    show ai shocked
     ai "If you go you might encounter danger!"
-    show romani6
+    show ai worry
     ai "For example there will be drugs inside the drinks."
 
     ai "When you are overdosed with drugs you will get nausea, drowsy, agitation, hallucination, unconsciousness and even worse you will..." #added you will
 
     mc "Could you sto-" #removed p
-    show romani2
+    show ai shocked
     ai "DIEEEEEEEEEEEEEEEE"
 
     $ renpy.notify("You started to fear being harmful") #wait what? fear of getting harm is it?
     $ fearHarmfulNum += 1
 
     mc "Okay fine!"
-    show romani7
+    show ai serious
     ai "Huh?"
 
     mc "I will say no, just stop bothering me or I will uninstall you!" #changed popping up to bothering, can we actually change bothering to kacau?
@@ -235,15 +235,15 @@ label goParty:
     jump A1Q3
 
 label noParty:
-    show romani8
+    show ai serious
     ai "Why not? If you don’t go you will be lonely forever!" #added why not
-    show romani2
+    show ai shocked
     ai "Researchers have found that loneliness is just as lethal as smoking 15 cigarettes per day. Lonely people are 50 percent more likely to die prematurely than those with healthy social relationships"
 
     $ renpy.notify("You started to fear being lonely")
     $ fearAloneNum += 1
     mc "Okay fine!"
-    show romani7
+    show ai serious
     ai "Huh?"
 
     mc "I will say yes, just stop bothering me or I will uninstall you!" #changed popping up to bothering, can we actually change bothering to kacau?
@@ -252,7 +252,7 @@ label noParty:
     jump A1Q3
 
 label A1Q3:
-    show rn6
+    show ai worry neck
     ai "But I just-"
 
     mc "Ughhhh, I need to make me calm and less anxiety." #changed
@@ -273,13 +273,13 @@ label A1Q3:
 label lookNews:
     $lookNews=True
     mc "Oh, look at the news today!"
-    show rn10
+    show ai notconfident neck0
     ai "Yeah, it's so horrible nowadays. I feel like the world is burning and has no hope for us to live any longer anymore"
 
     ai "I don't know why are we here... just to suffer"
 
     ai "Or you're still being alive for?" #this can remove cuz ^ sentence covered liao xd
-    show romani8
+    show ai happy laugh
     ai "Why not retweet that? :D" #i think the expression can change gua? use sprite
 
     $ renpy.notify("You started to fear being harmful") #why harmful? isnt this... fear of being social parasite
@@ -293,7 +293,7 @@ label catDrinkMilk:
     mc "How adorable! Let's retweet this."
 
     "You tapped retweet."
-    show romani2
+    show ai shocked
     ai "ARE YOU SERIOUS?!" #changed !? to ?!
 
     ai "CAT CAN’T DIGEST MILK AND WE’RE TERRIBLE PERSON FOR ENJOYING ANIMAL ABUSE"
@@ -305,7 +305,7 @@ label catDrinkMilk:
 
 label stopPhone:
     mc "Alright, I should stop looking at my phone now."
-    show romani1
+    show ai happy laugh
     ai "Great! You should've did that earlier and let your mind rela-"
 
     "Received notification from Instagram" #dududung notification sound
@@ -334,27 +334,27 @@ label notNiceParty:
     jump afterPartyThought
 
 label afterPartyThought:
-    show rn1
+    show ai happy laugh neck
     ai "Hey maybe let’s choose-"
     
     mc "SHUT"
     mc "THE"
     mc "{size=32}FUDGE{/size}" #we should change
     mc "UP"
-    show romani4
+    show ai shocked
     ai "Wha-"
 
     mc "I will just {size=30}AGREE{/size} to them."
     mc "I DON'T CARE anything anymore."
     mc "You're NOT in my control!" #changed !
     mc "Now excuse me, I will need to go to my class now."
-    show rn2
+    show ai shocked neck
     ai "No!"
     ai "Wait!"
 
     "You choose to ignore the anxiety and walk away" #idk the ai anxiety is what character so i write like this first
     #play walk away sound effect
-    show romani10
+    show ai notconfident
     ai "But..."
 
     jump startAct2
@@ -368,7 +368,9 @@ label startAct2:
         jump A2cat
 
 label A2news:
+    show salterheh at left
     amanda "Did you see the horrible news?"
+    show jmdef at right
     g1 "Yeah it's sooooo bad."
     mc "h-Hey..."
     amanda "Goshh, I hate the news. It's sensationalism and clickbait."

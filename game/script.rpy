@@ -186,6 +186,7 @@ label whyNothing:
     jump A1Q2
 
 label A1Q2:
+    show ai normal
     mc "..."
 
     mc "You know what, I should check Facebook now."

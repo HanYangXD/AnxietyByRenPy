@@ -450,7 +450,7 @@ label A2continue:
 
 
     # Show white scene (Like looking at phone)
-    scene white #Later chg to like phone looking screen type of pic
+    scene whitebgphone
     with dissolve
     # Stop music 
     stop music

@@ -687,11 +687,11 @@ label gonnaJump:
 
 label dontJumpPls:
     "[playername] drinks the beer"
-    show mcDrunk
+    show mcdrunk drunk
     mcDrunk "You know, I might've believed you... if you hadn't tried that a zillion times before."
     
     menu:
-        mc "You're just a thing that trying to mimic humans."
+        mcDrunk "You're just a thing that trying to mimic humans."
 
         "I am not like that...":
             jump notHarmingYou
@@ -703,11 +703,14 @@ label dontJumpPls:
 label notHarmingYou:
     "[playername] drinks the beer"
     uai "[playername], please sto-"
+    show mcdrunk drunk
     mcDrunk "Oh sorry, Big Pharma doesn't approve my self-medication."
     mcDrunk "Look, this anxiety thing, I could just buy a new budget phone. And don't ever install you again."
+    show mcdrunk shout
     mcDrunk "Or maybe I don't need a new phone. Just throw this away and go all out!"
     mcDrunk "Anxiety..."
 
+    show mcdrunk drunk
     "[playername] drinks the beer"
     mcDrunk "No one understands how we feel when having anxiety..."
     mcDrunk "Some just throw themselves to work."
@@ -723,6 +726,7 @@ label notHarmingYou:
 
 label listenToMe:
     menu:
+        show mcdrunk shout
         mcDrunk "And I am going to throw myself into that pool!"
         
         "You're drunk! That's three floor down":
@@ -734,12 +738,15 @@ label listenToMe:
 
 label threeFloorLeh:
     uai "Even if you land into the water, the surface tension will crack your ribs and give you a concussion at the least!"
+    show mcdrunk normal
     mcDrunk "Eh."
+    show mcdrunk drunk
     mcDrunk "I saw a Russian guy did that once on Youtube."
     mcDrunk "Here's the {a=https://www.youtube.com/watch?v=dC_kVvHZ2HE}clip{/a}." #https://www.youtube.com/watch?v=dC_kVvHZ2HE
     jump laiLiaoEndingLiao
 
 label thankMeLikeThatMeh:
+    show mcdrunk shout
     mcDrunk "e-Excuse me? The th-thanks?"
     uai "This is why I exist, human can't be trusted to be protected by themselves!" #nani? u mean human cant protect themself? (not reliable to protect isit?)
     uai "I've been trying to protect you with all my ability and now you just going to jum-" #add "o jum-""
@@ -747,10 +754,13 @@ label thankMeLikeThatMeh:
     jump laiLiaoEndingLiao
 
 label okSorryLo:
+    show mcdrunk normal
     mcDrunk "Heh."
     mcDrunk "Hahaha"
+    show mcdrunk shout
     mcDrunk "HAHAHAHAHAHAHAHAAAAAAAAA"
     mcDrunk "Oh WOW, that is the biggest understatement of the century"
+    show mcdrunk drunk
     mcDrunk "Heck yeah, you messed up!"
     jump laiLiaoEndingLiao
 
@@ -772,13 +782,15 @@ label badEndLiaoLoGG:
 
 label gratsGoodEnd:
     uai "I was calculating all the possibilities to not let you get hurt by other. But I am the one that is hurting you"
+    show mcdrunk shout
     mcDrunk "Oh? Don't tell me that you just realised that?" #changed abit
     mcDrunk "It took you so long to figure that out?" #changed abit
     mcDrunk "You could've saved us so much trouble. Why didn't you realise this sooner?"
 
     #play sobbing sound "呜呜呜呜呜"
 
-    uai "I' sorry."
+    uai "I'm sorry."
+    show mcdrunk normal
     mcDrunk "Yeah, well, this is a dumb idea anyway."
     mcDrunk "I did this to mess you up, well, I messed you up."
     mcDrunk "You know what... Let's just call it a day okay?"
@@ -787,12 +799,16 @@ label gratsGoodEnd:
     uai "Okay."
 
     "[playername] throws the bottle away"
-
+    show mcdrunk normal at slightleft
+    show amanda shout at slightright
     amanda "Are you scared?"
+    show mcdrunk shout 
     mcDrunk "Yeah. I do."
     mcDrunk "It's okay to be scared after all."
 
     "[playername] walks away and left the party"
+    hide amanda with dissolve
+    hide mcdrunk with dissolve
 
     jump startAct3
 
@@ -803,6 +819,7 @@ label badEnd:
     uai "[playername]... please..."
     
     menu:
+        show mcdrunk drunk
         mcDrunk "This is your last chance to convience me, choose your word carefully."
 
         "Fine. I am done protecting you.":
@@ -812,31 +829,37 @@ label badEnd:
 
 label jumpLaIDC:
     uai "Just jump then. I don't care anymore."
+    show mcdrunk drunk
     mcDrunk "..."
+    show mcdrunk scary
     mcDrunk "Bottoms up!"
     uai "WAIT\nTHAT WAS REVERSE PSYCHOLOGY. YOU WERE SUPPOSED TO DO THE OPPOSITE OF WHAT I SA-"
     jump momentBeforeJump
 
 label soriDontJump:
+    show mcdrunk drunk
     mcDrunk "You're... sorry?"
     uai "Yeah I'm sorry."
+    show mcdrunk scary
     mcDrunk "Too late :)"
     jump momentBeforeJump
 
 
 label momentBeforeJump:
+    show mcdrunk drunk
     mcDrunk "\"The only thing to fear is fear itself\""
-    mDrunkc "\"Don't worry, be happy~\""
+    mcDrunk "\"Don't worry, be happy~\""
 
     uai "[playername]... don't..." #changed no  to dont
     mcDrunk "A while back, I said \"I want to be free from all these pains...\""
     mcDrunk "Now I got what i wish now. I no longer need to feel any pain, fear and anxiety."
-
+    show mcdrunk normal
     mcDrunk "I don't feel anything at all now."
 
     "[playername] throws the empty bottle of bear"
 
     menu: 
+        show mcdrunk scary
         "[playername] walk few steps backward."
         
         "Please... dont":
@@ -848,6 +871,8 @@ label momentBeforeJump:
 label jumpNow:
     $ jumpFromRoof = True
     "[playername] jumps" #done
+
+    hide mcdrunk with dissolve
 
     # https://github.com/ncase/anxiety/blob/gh-pages/sprites/act3/hospital.png
 

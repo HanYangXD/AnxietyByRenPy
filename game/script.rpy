@@ -635,6 +635,7 @@ label gonnaJump:
 
 label dontJumpPls:
     "Human drinks the beer"
+    show mcDrunk
     mcDrunk "You know, I might've believed you... if you hadn't tried that a zillion times before."
     
     menu:

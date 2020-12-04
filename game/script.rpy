@@ -903,7 +903,9 @@ label startAct3:
     else:
         ai "Not to die…?"
 
+    show ai happy laugh
     ai "But at least. We survived!"
+    show ai smile
     ai "Despite everything we went through."
     
     # Yes, no matter what user choose result will be same xd
@@ -915,26 +917,35 @@ label startAct3:
         "...":
             mc "..."
 
+    show ai worry neck
     ai "Well at least it makes everything else less scary compared to others. This got me to think of…"
     ai "If me fighting you sucks, because it doesn’t protect you..."
     mc "But me fighting you also sucks, it just makes you more panic..." 
+    show ai notconfident
     ai "Then maybe..."
     mc "Maybe we don’t have to argue?"
     mc "Don’t need to…"
+    show ai normal
     ai "Don’t need to…"
 
     mc "Hey…"
     mc "I am sorry for not listening to you."
     
+    show ai smile
     ai "Nah, I am the one who should be sorry. I am just googling around the internet to keep you safe with facts. But not realizing it, whether they are helpful to you or not."
+    show ai notconfident
     ai "Then when I found something that may threaten you, I will just.."
+    show ai shocked
     ai "DANGER DANGER DANGER!" # Shake the sprite
+    show ai notconfident neck
     ai "But I don’t want to just be an imagery friend. I want to be your friend."
+    show ai serious neck
     ai "So [playername]… Would you like to continue to be my friend?"
     mc "I... will try..."
 
     mc "Okay, healthy relationship with emotions. Relationships need communication. So, let’s communicate."
     mc "The next five minutes are going to sound cheesy but let’s just fake it till we make it."
+    show ai smile
     ai "So [playername]… how are you feeling?"
 
     $ totalFearNum = fearAloneNum + fearHarmfulNum + fearBadPNum
@@ -984,7 +995,7 @@ label startConvo:
             mc "But the whole world seems dangerous. Full of tragedy and evil."
 
             mc "I don't know what I should say anymore, I am done. How about you AI?"
-
+            show ai happy laugh
             ai "You’re right. {p}So let’s start protecting ourselves." 
             ai "Or just yourself. {p}Since I am just a system that reacts to your emotions and responses."
             ai "Anyways, after looking through the internet." # Beep sound
@@ -997,52 +1008,60 @@ label startConvo:
                 "Where do we even start?":
                     mc "Where do we even start?"
                     mc "There are so much to do, so much we need to fix about myself.{p}What do we even begin with?"
+                    show ai smile
                     ai "You're doing it now!"
                     mc "Huh."
                     mc "Huh.."
                     mc "Huh...?"
-
+                    show ai normal
                     ai "We are practicing good communication right now.{p}Which helps you detect danger better, with fewer false positives,"
                     ai "And that will help protect yourself from harm!"
+                    show ai notconfident neck
                     ai "So it's kinda considered as a self defense training" # expression that looks like ?
 
                     mc "Hmmm..."
-
+                    show ai normal
                     ai "What?"
 
                     mc "I was expecting more of Taekwando or Kung Fu action pack style."
-
+                    show ai laugh
                     ai "Hahaha!"
                     
                 "What if they still don't work?":
                     mc "What if they still don't work?"
+                    show ai normal
                     ai "True, there is no way to 100 %% protect ourselves…"
+                    show ai smile
                     ai "But even a 1 %% improvement is still worth something, right?"
                     mc "So you’re seeing the glass as not 99 %% empty, but 1 %% full?"
+                    show ai notconfident neck
                     ai "Which is still worth something if you’re stranded in the desert."
                     mc "Well.{p}Bottoms up, then."
 
             ai "So, anything else you wanna chat about?"
-
+            show ai normal
             jump startConvo
         
         label fearAlone:
             mc "I am scared to be alone."
             mc "I am worried if anyone ever knows me,{p}the real me,{p}I may scare them away..."
-
+            show ai notconfident
             ai "I agree, let’s work on our social life."
+            show ai serious
             ai "I mean {i}your{/i} social life."
             ai "You could try practicing your social skill."
+            show ai normal
             ai "Maybe by questioning, listening and emphasizing, being open and vulnerable to others?"
-
+            show ai serious
             ai "Or!"
+            show ai normal
             ai "Make better social habits like schedule your time to meet up with your friends."
             ai "Regularly go to the meetups."
 
             ai "You could also get more comfortable with rejections."
             ai "Or learns to understand people aren’t rejecting you by their emotions."
             ai "Maybe they are just tired or have something going on in their mind."
-
+        
             mc "Thats a lot of options..."
 
             # Alone Decision
@@ -1055,33 +1074,38 @@ label startConvo:
                     mc "If not mistaken, {a=https://en.wikipedia.org/wiki/Charles_Manson}Charles Manson{/a} wins friends and influences people to form a cult?" 
 
                     mc "Look! This is how Wikipedia described!"
-
+                    show ai smile
                     ai "Wikipedia is not a reliable source ya know?"
+                    show ai serious
                     ai "But, you're not wrong."
 
                     ai "“Social skills” mean nothing if we don’t genuinely care for people."
+                    show ai normal
                     ai "Well, just don’t be the bad guy."
 
                     mc "Yeah... understood."
-
+                    show ai smile
                     ai "Good, what else you wanna talk about?"
                     
                 "What if I still fail?":
                     mc "What if I still fail?"
+                    show ai serious
                     ai "You might fail."
                     ai "No, actually."
                     ai "You will fail."
-                    ai "And that’s fine!" 
+                    show ai smile
+                    ai "And that’s fine!"
+                    show ai normal 
                     ai "Failing is how anyone learns anything new at first!"
 
                     ai "So let's fail together, shall we?"
 
                     mc "Sure... Worst case scenario I would just leave town and get a new identity"
-
+                    show ai happy laugh
                     ai "Yeah, roughly cost you around a bitcoin these days."
                     
                     ai "Anyways, anything else?"
-
+                    show ai normal
             jump startConvo
 
         label fearBad:
@@ -1099,6 +1123,7 @@ label startConvo:
             mc "..."
             window hide
             pause
+            show ai serious
             ai "..."
             window hide
             pause
@@ -1108,22 +1133,24 @@ label startConvo:
             mc "Huh."
             mc "Huh.."
             mc "Huh...?"
-
+            show ai notconfident neck
             ai "I mean that is what therapists say right?{p}Accept all your emotions, even the negative ones?"
 
             menu:
                 mc "Wait... do you mean..."
 
                 "“Accept” as in give up?":
-                    mc "“Accept” as in give up?"
+                    mc "“Accept” as in give up?" #no need to say this line bah?
+                    show ai serious
                     ai "Accept bad things as in acknowledging them."
                     ai "Although some may be hard to change."
+                    show ai normal
                     ai "But not necessarily giving up a commitment to change"
 
                     mc "Then the therapists should say “acknowledge”"
                     mc "Not “accept”"
                     mc "=_="
-
+                    show ai notconfident
                     ai "True, “accept” is kinda confusing."
 
                     mc "Well, I acknowledge that now :)" # Express happy and show at side
@@ -1132,7 +1159,7 @@ label startConvo:
                     mc "Like it’s good that we’re broken or something? Heck no!"
                     mc "All those Hollywood screenwriters who romanticize mental illness are full of crud!"
                     mc "Having a mental disorder sucks!{p}It robs people of lives!{p}Why should we “accept” that?!" # Express Angery
-
+                    show ai normal
                     ai "What therapists meant by “accept” is to be patient with them."
                     ai "Like how struggling in quicksand makes you sink faster, and the solution is to patiently lie flat."
 
@@ -1140,11 +1167,12 @@ label startConvo:
                         ai "Fighting against the fear, just like jumping off a roof."
                     else:
                         ai "Fighting against the fear, just like almost led yourself to jump off a roof."
-                    
+                    show ai serious
                     ai "Instead, the solution is to do what we’re doing now.{p}Not to fight, but be patient with each other."
                     mc "Then they should have said that, instead of confusing me like that." # Express Irritate
+                    show ai happy laugh
                     ai "True, “accept” kinda sucks."
-
+            show ai normal
             ai "Anyways, anything else?"
 
             jump startConvo
@@ -1152,7 +1180,7 @@ label startConvo:
             
 label finshFearTalk:
     mc "Nah, I’m good for now."
-
+    show ai normal
     ai "..."
     mc "..."
 
@@ -1160,10 +1188,11 @@ label finshFearTalk:
     mc "Building a healthy relationship with your emotion isn’t as simple as clicking on screen."
     mc "Can me and my emotions get along?"
     mc "Can I work together with them, as a team?"
-
+    show ai notconfident neck
     ai "Well..."
-
+    hide ai with dissolve
     #Femail student instead of name?
+    show grace shy with dissolve at right    
     grace "Ex-excuse me…"
     grace "Would you mind if I sat with you for lunch?"
 

@@ -47,3 +47,7 @@ image mcdrunk normal = "sprite/maincharacter/mcdrunk_normal.png"
 image mcdrunk scary = "sprite/maincharacter/mcdrunk_scary.png"
 image mcdrunk drunk = "sprite/maincharacter/mcdrunk_drunk.png"
 image mcdrunk shout = "sprite/maincharacter/mcdrunk_shout.png"
+
+image blurrooftop1 blurred = im.Blur("bg/rooftop.png", 0.5)
+image blurrooftop2 blurred = im.Blur("bg/rooftop.png", 1.0)
+image blurrooftop3 blurred = im.Blur("bg/rooftop.png", 1.5)

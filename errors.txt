@@ -2,21 +2,9 @@
 errors listed below, and try again.
 
 
-File "game/script.rpy", line 729: expected menuitem
-    show mcdrunk shout
-    ^
-
-File "game/script.rpy", line 822: expected menuitem
-    show mcdrunk drunk
-    ^
-
-File "game/script.rpy", line 862: expected menuitem
-    show mcdrunk scary
-    ^
-
-File "game/script.rpy", line 1199: end of line expected.
-    show graceai tsk with dissolve at slightleft
-                                   ^
+File "game/script.rpy", line 700: choice menuitem expects a non-empty block.
+    "I am not like that...":
+                            ^
 
 Ren'Py Version: Ren'Py 7.3.5.606
-Fri Dec 04 19:46:06 2020
+Fri Dec 04 21:14:42 2020

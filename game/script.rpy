@@ -575,24 +575,24 @@ label goRoof:
 
 
 label startAct2point1:
-    #change bg
+    # At rooftop
     scene rooftop
-
     show amanda smile with dissolve
-    
     
     amanda "Cheers!"
     play sound "audio/clinkglass.wav"
     
     "You drink the glass of drink that Amanda gave you."
 
-    mc "Ahh... that hit the spot!"
+    mc "Ahh... that hit the spot!" 
 
-    "You feel nausea." #changed position with ^
+    scene blurrooftop1 blurred
+    "You feel nausea." # Blurr vision
+
     show amanda normal
     amanda "You know, kiddo..."
 
-    mc "Specifically, the spots that are hitted are my both amygdala" #changed abit
+    mc "Specifically, the spots that are hitted are my both amygdala" 
     show amanda smile
     amanda "You reminds me of my younger self. When anxiety hits me, I also tried the Anxiety Intellegence that was advertised recently."
     show amanda hmph
@@ -604,15 +604,16 @@ label startAct2point1:
     mc "Heh...?"
     amanda "Modern problems require modern solutions. Since I can't uninstall it, all I have to do is to get a new smartphone."
 
-    mc "Wow, you're so rich!" #or rich af idk
+    mc "Wow, you're so rich!" 
 
     amanda "I am so grateful that I am helping you to cope with your anxiety too."
 
     mc "Heck yeah!"
 
-    "You take another sip of the drink" #Gulp sound effect*  24 second https://www.youtube.com/watch?v=BnF1GoUtkqM
-
-    "Your mind started to feel like flying{p}Your vision is getting blur over time{p}You can't think properly" #changed abit
+    play sound "audio/glupsip.ogg"
+    "You take another sip of the drink" 
+    scene blurrooftop2 blurred
+    "Your mind started to feel like flying{p}Your vision is getting blur over time{p}You can't think properly" # Blur vision
     show amanda normal
     amanda "Quick question, truth or dar-"
 
@@ -621,30 +622,32 @@ label startAct2point1:
     amanda "Haha! Good."
     amanda "You see that baby-blue swimming pool down there?"
 
-    mc "y-Yea-hh? Like th-three floors down there?" #added drunken effect LOL
+    mc "y-Yea-hh? Like th-three floors down there?"
+
     show amanda normal
     amanda "Jump in."
 
     mc "."
     mc ".."
-    mc "..." #pause effect? this is what i think of, idk
+    mc "..."
 
     mc "Wait what?"
 
     show amanda smile
     amanda "Your \"Anxiety Ingelligence\" is gonna start whinning isn't it?"
     show amanda hmph
-    amanda "\"Oh, don't do that, it's too dangerous! Yadi yada yada." #blablabla suits malaysia more #localisationXD
+    amanda "\"Oh, don't do that, it's too dangerous! Blablablabla." 
     show amanda normal
-    amanda "Show that thing we don't give a damn about it's whinning. Now... JUMP IN." #whinning same as nagging?
+    amanda "Show that thing we don't give a damn about it's whinning. Now... JUMP IN." 
 
     mc "b-But... fear has a point..."
 
     amanda "I'm sorry? Did you fall for that McMindfulness propaganda that claims feeling bad is good?"
     amanda "These rich guy who run this world give the rest of us anxiety and depression."
+    show amanda normal at round_shake
     amanda "Then makes some \"TED Talks\" to tell us to AcCepT that our life is bad and eMBraCe sadistic demon in our heads!"
     show amanda hmph
-    amanda "Kid, we all know that it hurts people like us. Torture people like us" #what is this supposed to mean?
+    amanda "Kid, we all know that it hurts people like us. Torture people like us" 
     show amanda shout
     amanda "They are not human like us! It's not our friend. They shouldn't control over our decisions!"
     menu:
@@ -658,27 +661,37 @@ label gonnaJump:
     show amanda smile
     amanda "Yeah! I believe in you babe! Now let's do it!"
     hide amanda with dissolve
+
+    scene whitebgphone with fade
     show ai notconfident with dissolve
     ai "[playername]..."
 
     hide ai with dissolve
-    "Be the AI and convince [playername]" #convience as in convince him either jump or no jump?
+    "Now YOU will become AI and convince [playername]" #convience as in convince him either jump or no jump?
+    "Choose wisely."
+    ";)"
 
+    scene rooftop with fade
     uai "NO NO NO NO NO NO NO"
     menu:
         uai "HEYYYYYYYYYYYYY"
     
         "These weirdos aren't even your friends!":
-            jump dontJumpPls
+            uai "These weirdos aren't even your friends!"
 
         "You're going to DIE here, FOR REAL":
-            jump dontJumpPls
+            uai "You're going to DIE here, FOR REAL"
 
         "This is stupid and self-destructive!":
-            jump dontJumpPls
+            uai "This is stupid and self-destructive!"
+        
+    jump dontJumpPls
 
 label dontJumpPls:
+
+    play sound "audio/gulpbeer1.ogg"
     "[playername] drinks the beer"
+
     show mcdrunk drunk
     mcDrunk "You know, I might've believed you... if you hadn't tried that a zillion times before."
     
@@ -686,24 +699,33 @@ label dontJumpPls:
         mcDrunk "You're just a thing that trying to mimic humans."
 
         "I am not like that...":
-            jump notHarmingYou
+            uai "I am not like that..."
         "I am here to HELP YOU":
-            jump notHarmingYou
+            uai "I am here to HELP YOU"
         "......":
-            jump notHarmingYou
+            uai "......"
+
+    jump notHarmingYou
     
 label notHarmingYou:
+
+    play sound "audio/gulpbeer1.ogg"
     "[playername] drinks the beer"
+
     uai "[playername], please sto-"
     show mcdrunk drunk
     mcDrunk "Oh sorry, Big Pharma doesn't approve my self-medication."
-    mcDrunk "Look, this anxiety thing, I could just buy a new budget phone. And don't ever install you again."
+    mcDrunk "Look, this anxiety thing, I could just buy a new budget phone.{p}And don't ever install you again.{p}Stupid T&C."
+    
     show mcdrunk shout
     mcDrunk "Or maybe I don't need a new phone. Just throw this away and go all out!"
-    mcDrunk "Anxiety..."
 
     show mcdrunk drunk
+    mcDrunk "This anxiety..."
+
+    play sound "audio/gulpbeer2.ogg"
     "[playername] drinks the beer"
+
     mcDrunk "No one understands how we feel when having anxiety..."
     mcDrunk "Some just throw themselves to work."
     mcDrunk "Some just get involved with drugs, sex, or refreshing social media feeds all day long."
@@ -712,16 +734,18 @@ label notHarmingYou:
         mcDrunk "Some throw themselves into other people."
 
         "Just listen to me!":
-            jump listenToMe
+            uai "Just listen to me!"
+            
         "...":
-            jump listenToMe
+            uai "..."
+    jump listenToMe
 
 label listenToMe:
     show mcdrunk shout
+    mcDrunk "And I am going to throw myself into that pool!"
+    
     menu:
-        
-        mcDrunk "And I am going to throw myself into that pool!"
-        
+        mcDrunk "You can't stop me!"
         "You're drunk! That's three floor down":
             jump threeFloorLeh
         "Dang it, this is all I get as a thanks?":
@@ -770,7 +794,7 @@ label laiLiaoEndingLiao:
 
 label badEndLiaoLoGG:
     uai "That isn't the answer for this."
-    uai "You shouldn't dr-" #then mc jump liao?
+    uai "You shouldn't dr-"
     jump badEnd
 
 label gratsGoodEnd:
@@ -791,6 +815,7 @@ label gratsGoodEnd:
     uai "..."
     uai "Okay."
 
+    play sound "audio/beerdropsound.ogg"
     "[playername] throws the bottle away"
     show mcdrunk normal at slightleft
     show amanda shout at slightright
@@ -806,7 +831,11 @@ label gratsGoodEnd:
     jump startAct3
 
 label badEnd:
+
+    play sound "audio/gulpbeer2.ogg"
     "[playername] drinks the beer"
+
+    show mcdrunk drunk at x_shake
     "You can feel [playername] starts to loss balance due to the gyroscope" #phone motion
 
     uai "[playername]... please..."
@@ -833,8 +862,13 @@ label soriDontJump:
     show mcdrunk drunk
     mcDrunk "You're... sorry?"
     uai "Yeah I'm sorry."
+    
+
+    scene toolate 
     show mcdrunk scary
     mcDrunk "Too late :)"
+    scene rooftop
+
     jump momentBeforeJump
 
 
@@ -843,36 +877,52 @@ label momentBeforeJump:
     mcDrunk "\"The only thing to fear is fear itself\""
     mcDrunk "\"Don't worry, be happy~\""
 
-    uai "[playername]... don't..." #changed no  to dont
+    uai "[playername]... don't..." 
+
+    
     mcDrunk "A while back, I said \"I want to be free from all these pains...\""
     mcDrunk "Now I got what i wish now. I no longer need to feel any pain, fear and anxiety."
     show mcdrunk normal
     mcDrunk "I don't feel anything at all now."
 
-    "[playername] throws the empty bottle of bear"
+    play sound "audio/beerdropsound.ogg"
+    "[playername] throws the empty bottle of beer"
     show mcdrunk scary
     menu: 
         
         "[playername] walk few steps backward."
         
         "Please... dont":
-            jump jumpNow
+            uai "Please... dont"
         "...":
-            jump jumpNow
+            uai "..."
+    
+    jump jumpNow
 
 
 label jumpNow:
+
+
     $ jumpFromRoof = True
-    "[playername] jumps" #done
-
+    "[playername] jumps"
+    play sound "audio/jumpdown.wav"
     hide mcdrunk with dissolve
+    
+    scene black
+    
+    "...{p}"
 
-    # https://github.com/ncase/anxiety/blob/gh-pages/sprites/act3/hospital.png
+    play sound "audio/ambulance.wav"
+    scene ambulance_bg with fade
+    "[playername] hurt badly"
+    "..."
+    stop sound
 
-    #mc fall from building #https://www.youtube.com/watch?v=VOptr76l3wQ&list=PL4JKIH8uMAXyoPh1E-VWatKqZKFCny64c&index=7
-
-
-
+    # Hospital scene
+    scene hospitalbed_bg with fade
+    mcDrunk "..."
+    show ai worry neck
+    ai "..."
 
 
 
@@ -887,22 +937,38 @@ default talkFearBad = False
 # play sound "Bell rang.mp3" #Play bell rings
 
 label startAct3:
-    mc "..." #Sign sound insert
+
+    scene black with dissolve
+    show screen nextSceneScreen("Few days later...") 
+    $ renpy.pause(2.0)
+    hide screen nextSceneScreen
+
+    scene schoolyard2_bg with fade
+
+    play sound "audio/walkingsound.ogg"
+    mc "..."
+    play sound "audio/signsound.wav"
+
     mc "What is the moral of this story?"
-    mc "What did we even learn? I was being stupid, my “friends” were using me. I almost die there."
+    mc "What did we even learn?{p}I was being stupid, my “friends” were using me. I almost die there."
     if jumpFromRoof:
+        show ai annoyed neck
         ai "Don’t do dumb stuff like..."
+        play sound "audio/shockai.wav"
+        show ai shocked at x_shake with vpunch
         ai "JUMPING FROM 3 FLOORS DOWN!"
     else:
         ai "Not to die…?"
 
+    ai "..."
+    play sound "audio/yaysound.wav"
     show ai happy laugh
     ai "But at least. We survived!"
     show ai smile
     ai "Despite everything we went through."
     
-    # Yes, no matter what user choose result will be same xd
     menu: 
+        mc "Huh..."
         "You seems oddly calm":
             mc "You seem pretty calm considering we went through a near-death experience."
         "Why are you so calm!?":
@@ -925,21 +991,30 @@ label startAct3:
     mc "I am sorry for not listening to you."
     
     show ai smile
-    ai "Nah, I am the one who should be sorry. I am just googling around the internet to keep you safe with facts. But not realizing it, whether they are helpful to you or not."
+    ai "Nah, I am the one who should be sorry."
+    ai "I am just googling around the internet to keep you safe with facts. But not realizing it, whether they are helpful to you or not."
     show ai notconfident
     ai "Then when I found something that may threaten you, I will just.."
-    show ai shocked
-    ai "DANGER DANGER DANGER!" # Shake the sprite
+    
+    play sound "audio/shockai.wav"
+    show ai shocked at x_shake with vpunch
+    ai "DANGER DANGER DANGER!" # Shake the sprite 3 times maybe?
+
     show ai notconfident neck
     ai "But I don’t want to just be an imagery friend. I want to be your friend."
     show ai serious neck
     ai "So [playername]… Would you like to continue to be my friend?"
     mc "I... will try..."
 
-    mc "Okay, healthy relationship with emotions. Relationships need communication. So, let’s communicate."
+    mc "Okay, healthy relationship with emotions.{p}Relationships need communication. So, let’s communicate!"
+    show ai happy laugh
     mc "The next five minutes are going to sound cheesy but let’s just fake it till we make it."
-    show ai smile
+    
     ai "So [playername]… how are you feeling?"
+
+    hide ai with dissolve
+
+    scene cherryblossom_bg with fade
 
     $ totalFearNum = fearAloneNum + fearHarmfulNum + fearBadPNum
     "Total Fears Had [totalFearNum]" # https://www.renpy.org/doc/html/text.html
@@ -957,7 +1032,7 @@ label startAct3:
 label startConvo:
 
     while count < 3:
-        
+        hide ai with dissolve
         menu:
             "What should I talk about?"
             
@@ -1030,9 +1105,10 @@ label startConvo:
                     show ai notconfident neck
                     ai "Which is still worth something if you’re stranded in the desert."
                     mc "Well.{p}Bottoms up, then."
-
+            
+            show ai smile neck
             ai "So, anything else you wanna chat about?"
-            show ai normal
+
             jump startConvo
         
         label fearAlone:
@@ -1114,9 +1190,7 @@ label startConvo:
 
             
             mc "..."
-            window hide
-            pause
-            show ai serious
+            show ai serious with dissolve
             ai "..."
             window hide
             pause
@@ -1184,13 +1258,14 @@ label finshFearTalk:
     show ai notconfident neck
     ai "Well..."
     hide ai with dissolve
-    #Femail student instead of name?
-    show grace scared with dissolve
+    
     grace "Ex-excuse me…"
+    scene schoolyard2_bg with fade
+    show grace scared with dissolve
     grace "Would you mind if I sat with you for lunch?"
-    show grace normal at left
+    show grace scared at left
     show graceai tsk at slightleft with dissolve 
-    grAI "So,{p}This is your crush?{p}Why is he sitting alone like a psycho serial killer?"
+    grAI "So,{p}This is your crush?{p}Why the heck is he sitting alone like a psycho serial killer?"
     show grace normal
     grace "I mean…{p}it’s okay if you can’t…{p}I will just…"
 
@@ -1210,21 +1285,28 @@ label finshFearTalk:
             grAI "THEY’RE BEING TOO KIND! LIKE {a=https://en.wikipedia.org/wiki/Ted_Bundy}TED BUNDY{/a}, THE SERIAL KILLER!"
             show graceai shout
             grAI "{size=22}RUN{/size}"
+            show graceai shout at x_shake
             grAI "{size=32}RUN{/size}"
+            play sound "audio/shockai.wav"
+            show graceai shout at x_shake with vpunch
             grAI "{size=42}RUUUUUUN!{/size}"
 
         "Sorry I need to be alone right now.":
             mc "Sorry I need to be alone right now."
-            show ai shocked
+            show ai shocked at right with dissolve
             ai "Hang on [playername], you may be making them uncomfortable."
             mc "Ah, I don’t mean to be rude!"
             mc "I just need some time to process my emotions. Please don’t take it too personal."
-            show graceai tsk
+            show graceai tsk at x_shake
             grAI "WHAT IS THIS PSYCHO’s THOUGHTS NEED TO PROCESS WITH? HE MAY HAVE DARK DESIRES FILLED."
             show graceai shout
             grAI "{size=22}RUN{/size}"
+            show graceai shout at x_shake
             grAI "{size=32}RUN{/size}"
+            play sound "audio/shockai.wav"
+            show graceai shout at x_shake with vpunch
             grAI "{size=42}RUUUUUUN!{/size}"
+
     show grace normal
     grace "Nevermind. Bye!"
 
@@ -1277,8 +1359,10 @@ label finshFearTalk:
     window hide
     $ renpy.pause(3.0)
     
-    show ai shocked
+    play sound "audio/shockai.wav"
+    show ai shocked at x_shake with vpunch
     ai "YOU’RE NOT DOING ANY PRODUCTIVE WORK.{p}YOU WILL BECOME SOCIAL PARASITE SOON!"
+    show ai shocked at x_shake
     ai "QUICKLY GO DO SOMETHING!"
     mc "..."
 

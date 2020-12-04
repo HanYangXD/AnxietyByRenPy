@@ -2,9 +2,9 @@
 errors listed below, and try again.
 
 
-File "game/script.rpy", line 427: expected menuitem
-    show ai serious neck
-    ^
+File "game/my_screen.rpy", line 6: u'onlayer' is not a keyword argument or valid child for the add statement.
+    add "sprite/act1phone/instaphone.png" onlayer overlay
+                                                 ^
 
 Ren'Py Version: Ren'Py 7.3.5.606
-Thu Dec 03 22:17:26 2020
+Fri Dec 04 13:09:38 2020

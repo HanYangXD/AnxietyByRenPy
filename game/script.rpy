@@ -4,7 +4,7 @@
 # name of the character.
 
 define ai = Character("AI", color="#85B902") # Light Green # AI
-define mc = Character(_("You"), color="#0E6D01", image="mc") # Dark Green # Player
+define mc = Character(_("You"), color="#0E6D01") # Dark Green # Player
 
 define uai = Character("You", color="#85B902") # Light Green # Player but as AI
 define mcDrunk = Character("[playername]", color="#0E6D01") # Player but not Player
@@ -203,7 +203,10 @@ label A1Q2:
     show ai normal
     mc "..."
 
-    mc fbphone "You know what, I should check Facebook now."
+    show screen fbPhone()
+    mc "You know what, I should check Facebook now."
+    hide screen fbPhone
+
     show ai shocked
     ai "Please Nooooooooooooooooooo" #changed noooooooooo
 
@@ -276,10 +279,12 @@ label A1Q3:
 
     mc "Ughhhh, I need to make me calm and less anxiety." 
 
-    mc twitterphone "I will just have a look on Twitter." # Twitter
+    mc "I will just have a look on Twitter." # Twitter
 
+    show screen twitterPhone()
     "You launched Twitter" 
-
+    hide screen twitterPhone
+    
     menu:
         "Hmmm what should I check?"
 
@@ -329,10 +334,13 @@ label stopPhone:
     ai "Great! You should've did that earlier and let your mind rela-"
 
     play sound "audio/notificationsound.ogg"
+
+    show screen instaPhone() 
     "Received notification from Instagram" 
+    hide screen instaPhone
 
-    mc instaphone "Hey! I got notification from Instagram, let's check it out"
-
+    mc "Hey! I got notification from Instagram, let's check it out"
+    
     "You launched Instagram"
 
     if goingparty: 

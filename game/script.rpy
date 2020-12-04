@@ -22,18 +22,6 @@ define lookednews = False
 
 define playername = ""
 
-transform slightleft:
-    xalign 0.25
-    yalign 1.0
-
-transform slightright:
-    xalign 0.75
-    yalign 1.0
-
-transform middle:
-    xalign 0.5
-    yalign 1.0
-
 ## Variables ##
 default totalFearNum = 0
 default fearHarmfulNum = 0

@@ -489,16 +489,20 @@ label A2continue:
     show amanda normal with dissolve#fade in
     amanda "Hey!"
     mc "Huh?"
+    show amanda smile
     amanda "Looks like you caught up a fight with yourself kiddo. What's wrong?" #added whats wrong
     mc "How would you know that? Was that obvious?"
+    show amanda ho
     amanda "You were... erm... talking about carbon monoxide or something to yourself." #changed
     mc "Ah this is so messed up."
-
+    show amanda hmph
     "Amanda pats your shoulder"
+    show amanda normal
     amanda "Hey, kiddo. Anxiety is super common."
     amanda "Listen, I know how it feels."
+    show amanda hmph
     amanda "We ALL do."
-
+    show amanda smile
     amanda "So why not come to the rooftop and have something fun?"
     
 
@@ -514,6 +518,7 @@ label A2continue:
 label passRoof:
     mc "I think-"
     mc "..."
+    hide amanda with dissolve
 
     # amanda "That is the spirit kiddo!"
     # ai "NO HUMAN, DO NOT GOOOOOOOOOOOOOOOO!"
@@ -522,14 +527,16 @@ label passRoof:
 
 label goRoof:
     mc "You know what? Let's go now. Shall we?"
+    show amanda smile
     amanda "That is the spirit kiddo!"
     ai "NO HUMAN, DO NOT GOOOOOOOOOOOOOOOO!"
+    hide amanda with dissolve
     jump startAct2point1
 
 
 label startAct2point1:
     #change bg
-
+    show amanda smile with dissolve
     amanda "Cheers!"
     #play clink sound from https://www.youtube.com/watch?v=7A2pWA5Jq7w
 
@@ -538,15 +545,17 @@ label startAct2point1:
     mc "Ahh... that hit the spot!"
 
     "You feel nausea." #changed position with ^
-
+    show amanda normal
     amanda "You know, kiddo..."
 
     mc "Specifically, the spots that are hitted are my both amygdala" #changed abit
-
+    show amanda smile
     amanda "You reminds me of my younger self. When anxiety hits me, I also tried the Anxiety Intellegence that was advertised recently."
+    show amanda hmph
     amanda "Apparently for some reason, I can't uninstall it once it is installed."
 
     mc "But it seems like you are free from anxiety now... how did you do that?"
+    show amanda smile
     amanda "Heh"
     mc "Heh...?"
     amanda "Modern problems require modern solutions. Since I can't uninstall it, all I have to do is to get a new smartphone."
@@ -560,16 +569,16 @@ label startAct2point1:
     "You take another sip of the drink" #Gulp sound effect*  24 second https://www.youtube.com/watch?v=BnF1GoUtkqM
 
     "Your mind started to feel like flying\nYour vision is getting blur over time\nYou can't think properly" #changed abit
-
+    show amanda normal
     amanda "Quick question, truth or dar-"
 
     mc "DARE!"
-
+    show amanda smile
     amanda "Haha! Good."
     amanda "You see that baby-blue swimming pool down there?"
 
     mc "y-Yea-hh? Like th-three floors down there?" #added drunken effect LOL
-
+    show amanda normal
     amanda "Jump in."
 
     mc "."
@@ -578,8 +587,11 @@ label startAct2point1:
 
     mc "Wait what?"
 
+    show amanda smile
     amanda "Your \"Anxiety Ingelligence\" is gonna start whinning isn't it?"
+    show amanda hmph
     amanda "\"Oh, don't do that, it's too dangerous! Yadi yada yada." #blablabla suits malaysia more #localisationXD
+    show amanda normal
     amanda "Show that thing we don't give a damn about it's whinning. Now... JUMP IN." #whinning same as nagging?
 
     mc "b-But... fear has a point..."
@@ -587,7 +599,9 @@ label startAct2point1:
     amanda "I'm sorry? Did you fall for that McMindfulness propaganda that claims feeling bad is good?"
     amanda "These rich guy who run this world give the rest of us anxiety and depression."
     amanda "Then makes some \"TED Talks\" to tell us to AcCepT that our life is bad and eMBraCe sadistic demon in our heads!"
+    show amanda hmph
     amanda "Kid, we all know that it hurts people like us. Torture people like us" #what is this supposed to mean?
+    show amanda shout
     amanda "They are not human like us! It's not our friend. They shouldn't control over our decisions!"
     menu:
         amanda "If not, you're gonna let it win over you. AGAIN!"
@@ -597,9 +611,13 @@ label startAct2point1:
 
 label gonnaJump:
     mc "I am not letting it win."
+    show amanda smile
     amanda "Yeah! I believe in you babe! Now let's do it!"
+    hide amanda with dissolve
+    show ai notconfident with dissolve
     ai "Human..."
 
+    hide ai with dissolve
     "Be the AI and convince the human" #convience as in convince him either jump or no jump?
 
     uai "NO NO NO NO NO NO NO"
@@ -617,7 +635,7 @@ label gonnaJump:
 
 label dontJumpPls:
     "Human drinks the beer"
-    mc "You know, I might've believed you... if you hadn't tried that a zillion times before."
+    mcDrunk "You know, I might've believed you... if you hadn't tried that a zillion times before."
     
     menu:
         mc "You're just a thing that trying to mimic humans."
@@ -632,18 +650,18 @@ label dontJumpPls:
 label notHarmingYou:
     "Human drinks the beer"
     uai "human, please sto-"
-    mc "Oh sorry, Big Pharma doesn't approve my self-medication."
-    mc "Look, this anxiety thing, I could just buy a new budget phone. And don't ever install you again."
-    mc "Or maybe I don't need a new phone. Just throw this away and go all out!"
-    mc "Anxiety..."
+    mcDrunk "Oh sorry, Big Pharma doesn't approve my self-medication."
+    mcDrunk "Look, this anxiety thing, I could just buy a new budget phone. And don't ever install you again."
+    mcDrunk "Or maybe I don't need a new phone. Just throw this away and go all out!"
+    mcDrunk "Anxiety..."
 
     "Human drinks the beer"
-    mc "No one understands how we feel when having anxiety..."
-    mc "Some just throw themselves to work."
-    mc "Some just get involved with drugs, sex, or refreshing social media feeds all day long."
+    mcDrunk "No one understands how we feel when having anxiety..."
+    mcDrunk "Some just throw themselves to work."
+    mcDrunk "Some just get involved with drugs, sex, or refreshing social media feeds all day long."
     
     menu:
-        mc "Some throw themselves into other people."
+        mcDrunk "Some throw themselves into other people."
 
         "Just listen to me!":
             jump listenToMe
@@ -652,7 +670,7 @@ label notHarmingYou:
 
 label listenToMe:
     menu:
-        mc "And I am going to throw myself into that pool!"
+        mcDrunk "And I am going to throw myself into that pool!"
         
         "You're drunk! That's three floor down":
             jump threeFloorLeh
@@ -663,30 +681,30 @@ label listenToMe:
 
 label threeFloorLeh:
     uai "Even if you land into the water, the surface tension will crack your ribs and give you a concussion at the least!"
-    mc "Eh."
-    mc "I saw a Russian guy did that once on Youtube."
-    mc "Here's the clip." #https://www.youtube.com/watch?v=dC_kVvHZ2HE
+    mcDrunk "Eh."
+    mcDrunk "I saw a Russian guy did that once on Youtube."
+    mcDrunk "Here's the clip." #https://www.youtube.com/watch?v=dC_kVvHZ2HE
     jump laiLiaoEndingLiao
 
 label thankMeLikeThatMeh:
-    mc "e-Excuse me? The th-thanks?"
+    mcDrunk "e-Excuse me? The th-thanks?"
     uai "This is why I exist, human can't be trusted to be protected by themselves!" #nani? u mean human cant protect themself? (not reliable to protect isit?)
     uai "I've been trying to protect you with all my ability and now you just going to jum-" #add "o jum-""
     #uai "Am I a joke to you??" 
     jump laiLiaoEndingLiao
 
 label okSorryLo:
-    mc "Heh."
-    mc "Hahaha"
-    mc "HAHAHAHAHAHAHAHAAAAAAAAA"
-    mc "Oh WOW, that is the biggest understatement of the century"
-    mc "Heck yeah, you messed up!"
+    mcDrunk "Heh."
+    mcDrunk "Hahaha"
+    mcDrunk "HAHAHAHAHAHAHAHAAAAAAAAA"
+    mcDrunk "Oh WOW, that is the biggest understatement of the century"
+    mcDrunk "Heck yeah, you messed up!"
     jump laiLiaoEndingLiao
 
 
 label laiLiaoEndingLiao:
     menu:
-        mc "Any remarks, Caption Obvious?" #what is caption obvious? hahaa
+        mcDrunk "Any remarks, Caption Obvious?" #what is caption obvious? hahaa
 
         "You shouldn't take revenge on me!":
             jump badEndLiaoLoGG #Bad End
@@ -701,16 +719,16 @@ label badEndLiaoLoGG:
 
 label gratsGoodEnd:
     uai "I was calculating all the possibilities to not let you get hurt by other. But I am the one that is hurting you"
-    mc "Oh? Don't tell me that you just realised that?" #changed abit
-    mc "It took you so long to figure that out?" #changed abit
-    mc "You could've saved us so much trouble. Why didn't you realise this sooner?"
+    mcDrunk "Oh? Don't tell me that you just realised that?" #changed abit
+    mcDrunk "It took you so long to figure that out?" #changed abit
+    mcDrunk "You could've saved us so much trouble. Why didn't you realise this sooner?"
 
     #play sobbing sound "呜呜呜呜呜"
 
     uai "I' sorry."
-    mc "Yeah, well, this is a dumb idea anyway."
-    mc "I did this to mess you up, well, I messed you up."
-    mc "You know what... Let's just call it a day okay?"
+    mcDrunk "Yeah, well, this is a dumb idea anyway."
+    mcDrunk "I did this to mess you up, well, I messed you up."
+    mcDrunk "You know what... Let's just call it a day okay?"
 
     uai "..."
     uai "Okay."
@@ -718,8 +736,8 @@ label gratsGoodEnd:
     "Human throws the bottle away"
 
     amanda "Are you scared?"
-    mc "Yeah. I do."
-    mc "It's okay to be scared after all."
+    mcDrunk "Yeah. I do."
+    mcDrunk "It's okay to be scared after all."
 
     "Human walks away and left the party"
 
@@ -732,7 +750,7 @@ label badEnd:
     uai "Human... please..."
     
     menu:
-        mc "This is your last chance to convience me, choose your word carefully."
+        mcDrunk "This is your last chance to convience me, choose your word carefully."
 
         "Fine. I am done protecting you.":
             jump jumpLaIDC
@@ -741,27 +759,27 @@ label badEnd:
 
 label jumpLaIDC:
     uai "Just jump then. I don't care anymore."
-    mc "..."
-    mc "Bottoms up!"
+    mcDrunk "..."
+    mcDrunk "Bottoms up!"
     uai "WAIT\nTHAT WAS REVERSE PSYCHOLOGY. YOU WERE SUPPOSED TO DO THE OPPOSITE OF WHAT I SA-"
     jump momentBeforeJump
 
 label soriDontJump:
-    mc "You're... sorry?"
+    mcDrunk "You're... sorry?"
     uai "Yeah I'm sorry."
-    mc "Too late :)"
+    mcDrunk "Too late :)"
     jump momentBeforeJump
 
 
 label momentBeforeJump:
-    mc "\"The only thing to fear is fear itself\""
-    mc "\"Don't worry, be happy~\""
+    mcDrunk "\"The only thing to fear is fear itself\""
+    mDrunkc "\"Don't worry, be happy~\""
 
     uai "Human... don't..." #changed no  to dont
-    mc "A while back, I said \"I want to be free from all these pains...\""
-    mc "Now I got what i wish now. I no longer need to feel any pain, fear and anxiety."
+    mcDrunk "A while back, I said \"I want to be free from all these pains...\""
+    mcDrunk "Now I got what i wish now. I no longer need to feel any pain, fear and anxiety."
 
-    mc "I don't feel anything at all now."
+    mcDrunk "I don't feel anything at all now."
 
     "Human throws the empty bottle of bear"
 

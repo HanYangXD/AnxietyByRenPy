@@ -737,7 +737,7 @@ label threeFloorLeh:
     uai "Even if you land into the water, the surface tension will crack your ribs and give you a concussion at the least!"
     mcDrunk "Eh."
     mcDrunk "I saw a Russian guy did that once on Youtube."
-    mcDrunk "Here's the clip." #https://www.youtube.com/watch?v=dC_kVvHZ2HE
+    mcDrunk "Here's the {a=https://www.youtube.com/watch?v=dC_kVvHZ2HE}clip{/a}." #https://www.youtube.com/watch?v=dC_kVvHZ2HE
     jump laiLiaoEndingLiao
 
 label thankMeLikeThatMeh:

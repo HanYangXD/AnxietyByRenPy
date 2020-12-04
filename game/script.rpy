@@ -560,7 +560,7 @@ label A2continue:
     
 
     menu:
-        ai "[playername] NO! Heyyyyy!!" # Show side image of AI
+        ai "[playername] NO! Heyyyyy!!"
 
         "I think I will pass":
             jump passRoof
@@ -584,28 +584,14 @@ label goRoof:
     amanda "That is the spirit kiddo!"
     ai "NO [playername], DO NOT GOOOOOOOOOOOOOOOO!"
     hide amanda with dissolve
-
-    stop music
-
-    # Walking to rooftop
-    scene followtorooftop
-    with fade
-    play sound "audio/walkingsound.ogg"
-    "You decided to walk with Amanda and her friends to rooftop"
-
     jump startAct2point1
 
 
 label startAct2point1:
-    
     #change bg
-    scene rooftop
-    with fade
-
     show amanda smile with dissolve
     amanda "Cheers!"
-    
-    play sound "audio/clinkglass.wav"
+    #play clink sound from https://www.youtube.com/watch?v=7A2pWA5Jq7w
 
     "You drink the bottle of drink that Amanda gave you." #change to bottle cuz halal cannot drink beer LOOL
 

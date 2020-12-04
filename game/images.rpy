@@ -43,3 +43,7 @@ image graceai normal = "sprite/grace/grace_normal.png"
 image graceai shout = "sprite/grace/grace_shout.png"
 image graceai tsk = "sprite/grace/grace_tsk.png"
 
+image mcdrunk normal = "sprite/maincharacter/mcdrunk_normal.png"
+image mcdrunk scary = "sprite/maincharacter/mcdrunk_scary.png"
+image mcdrunk drunk = "sprite/maincharacter/mcdrunk_drunk.png"
+image mcdrunk shout = "sprite/maincharacter/mcdrunk_shout.png"

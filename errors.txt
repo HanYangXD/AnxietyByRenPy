@@ -2,9 +2,21 @@
 errors listed below, and try again.
 
 
-File "game/script.rpy", line 456: expected simple expression
-    stop music fadeout
-                      ^
+File "game/script.rpy", line 729: expected menuitem
+    show mcdrunk shout
+    ^
+
+File "game/script.rpy", line 822: expected menuitem
+    show mcdrunk drunk
+    ^
+
+File "game/script.rpy", line 862: expected menuitem
+    show mcdrunk scary
+    ^
+
+File "game/script.rpy", line 1199: end of line expected.
+    show graceai tsk with dissolve at slightleft
+                                   ^
 
 Ren'Py Version: Ren'Py 7.3.5.606
-Fri Dec 04 14:41:14 2020
+Fri Dec 04 19:46:06 2020

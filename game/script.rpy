@@ -30,6 +30,10 @@ transform slightright:
     xalign 0.75
     yalign 1.0
 
+transform middle:
+    xalign 0.5
+    yalign 1.0
+
 ## Variables ##
 default totalFearNum = 0
 default fearHarmfulNum = 0
@@ -620,7 +624,7 @@ label startAct2point1:
 
     "You take another sip of the drink" #Gulp sound effect*  24 second https://www.youtube.com/watch?v=BnF1GoUtkqM
 
-    "Your mind started to feel like flying\nYour vision is getting blur over time\nYou can't think properly" #changed abit
+    "Your mind started to feel like flying{p}Your vision is getting blur over time{p}You can't think properly" #changed abit
     show amanda normal
     amanda "Quick question, truth or dar-"
 
@@ -725,8 +729,9 @@ label notHarmingYou:
             jump listenToMe
 
 label listenToMe:
+    show mcdrunk shout
     menu:
-        show mcdrunk shout
+        
         mcDrunk "And I am going to throw myself into that pool!"
         
         "You're drunk! That's three floor down":
@@ -817,9 +822,9 @@ label badEnd:
     "You can feel [playername] starts to loss balance due to the gyroscope" #phone motion
 
     uai "[playername]... please..."
-    
+    show mcdrunk drunk
     menu:
-        show mcdrunk drunk
+        
         mcDrunk "This is your last chance to convience me, choose your word carefully."
 
         "Fine. I am done protecting you.":
@@ -857,9 +862,9 @@ label momentBeforeJump:
     mcDrunk "I don't feel anything at all now."
 
     "[playername] throws the empty bottle of bear"
-
+    show mcdrunk scary
     menu: 
-        show mcdrunk scary
+        
         "[playername] walk few steps backward."
         
         "Please... dont":
@@ -1196,7 +1201,7 @@ label finshFearTalk:
     grace "Ex-excuse me…"
     grace "Would you mind if I sat with you for lunch?"
     show grace normal at left
-    show graceai tsk with dissolve at slightleft
+    show graceai tsk at slightleft with dissolve 
     grAI "So,{p}This is your crush?{p}Why is he sitting alone like a psycho serial killer?"
     show grace normal
     grace "I mean…{p}it’s okay if you can’t…{p}I will just…"
@@ -1208,9 +1213,10 @@ label finshFearTalk:
             mc "Yeah of course you can!" #i thikn can remove guaa??
             # Grace expression in shocked
             show grace shocked
-            show ai shock with dissolve at right
+            show ai shocked at right with dissolve 
             ai "Hang on [playername], you may be making them uncomfortable."
             mc "Ah, no pressure of course"
+            show graceai normal
             mc "Just saying you can sit here if you want to."
             show graceai tsk
             grAI "THEY’RE BEING TOO KIND! LIKE {a=https://en.wikipedia.org/wiki/Ted_Bundy}TED BUNDY{/a}, THE SERIAL KILLER!"

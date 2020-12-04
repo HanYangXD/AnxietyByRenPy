@@ -39,9 +39,9 @@ image grace normal = "sprite/grace/grace_normal.png"
 image grace scared = "sprite/grace/grace_scared.png"
 image grace shocked = "sprite/grace/grace_shocked.png"
 
-image graceai normal = "sprite/grace/grace_normal.png"
-image graceai shout = "sprite/grace/grace_shout.png"
-image graceai tsk = "sprite/grace/grace_tsk.png"
+image graceai normal = "sprite/graceai/grace_ai_normal.png"
+image graceai shout = "sprite/graceai/grace_ai_shout.png"
+image graceai tsk = "sprite/graceai/grace_ai_tsk.png"
 
 image mcdrunk normal = "sprite/maincharacter/mcdrunk_normal.png"
 image mcdrunk scary = "sprite/maincharacter/mcdrunk_scary.png"

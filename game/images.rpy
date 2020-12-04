@@ -42,3 +42,9 @@ image grace shy = "sprite/grace/grace_shy.png"
 image graceai normal = "sprite/grace/grace_normal.png"
 image graceai shout = "sprite/grace/grace_shout.png"
 image graceai tsk = "sprite/grace/grace_tsk.png"
+
+
+#--- Act 1 Phone ---#
+image side mc fbphone = "sprite/act1phone/facebookphone.png"
+image side mc instaphone = "sprite/act1phone/instaphone.png"
+image side mc twitterphone = "sprite/act1phone/twitterphone.png"

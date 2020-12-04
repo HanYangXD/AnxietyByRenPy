@@ -37,7 +37,7 @@ image g2 smile = "sprite/guytwo/guytwo_smile.png"
 
 image grace normal = "sprite/grace/grace_normal.png"
 image grace scared = "sprite/grace/grace_scared.png"
-image grace shy = "sprite/grace/grace_shy.png"
+image grace shocked = "sprite/grace/grace_shocked.png"
 
 image graceai normal = "sprite/grace/grace_normal.png"
 image graceai shout = "sprite/grace/grace_shout.png"

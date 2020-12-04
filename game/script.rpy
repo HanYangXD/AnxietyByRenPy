@@ -1192,83 +1192,103 @@ label finshFearTalk:
     ai "Well..."
     hide ai with dissolve
     #Femail student instead of name?
-    show grace shy with dissolve at right    
+    show grace scared with dissolve
     grace "Ex-excuse me…"
     grace "Would you mind if I sat with you for lunch?"
-
+    show grace normal at left
+    show graceai tsk with dissolve at slightleft
     grAI "So,{p}This is your crush?{p}Why is he sitting alone like a psycho serial killer?"
-
+    show grace normal
     grace "I mean…{p}it’s okay if you can’t…{p}I will just…"
 
     menu:
         "Grace's waiting your reply..."
 
         "Yeah of course you can!":
-            mc "Yeah of course you can!" 
+            mc "Yeah of course you can!" #i thikn can remove guaa??
             # Grace expression in shocked
+            show grace shocked
+            show ai shock with dissolve at right
             ai "Hang on [playername], you may be making them uncomfortable."
             mc "Ah, no pressure of course"
             mc "Just saying you can sit here if you want to."
-
+            show graceai tsk
             grAI "THEY’RE BEING TOO KIND! LIKE {a=https://en.wikipedia.org/wiki/Ted_Bundy}TED BUNDY{/a}, THE SERIAL KILLER!"
+            show graceai shout
             grAI "{size=22}RUN{/size}"
             grAI "{size=32}RUN{/size}"
             grAI "{size=42}RUUUUUUN!{/size}"
 
         "Sorry I need to be alone right now.":
             mc "Sorry I need to be alone right now."
+            show ai shocked
             ai "Hang on [playername], you may be making them uncomfortable."
             mc "Ah, I don’t mean to be rude!"
             mc "I just need some time to process my emotions. Please don’t take it too personal."
-
+            show graceai tsk
             grAI "WHAT IS THIS PSYCHO’s THOUGHTS NEED TO PROCESS WITH? HE MAY HAVE DARK DESIRES FILLED."
-
+            show graceai shout
             grAI "{size=22}RUN{/size}"
             grAI "{size=32}RUN{/size}"
             grAI "{size=42}RUUUUUUN!{/size}"
-
+    show grace normal
     grace "Nevermind. Bye!"
 
     # Grace leave the screen
 
     "Grace left you alone"
+    hide grace with dissolve
+    hide graceai with dissolve
 
     mc "Huh, that was weird.{p}I wonder what's going on with her?"
     mc "So you were saying?"
+    show ai notconfident at middle
     ai "..."
+    show ai normal
     ai "Something about team and work?"
     mc "{size=25}¯\\_(O.O)_/¯{/size}"
+    show ai serious
     ai "Hmmm..."
     ai "They say you should “make peace” with your emotions, as if your emotions are {i}war criminals{/i}."
 
     ai "But I want you to make more than mere peace!{p}I want you and your emotions to be allies!"
     ai "And…"
+    show ai normal
     ai "I hope to be a good AI. So that I can help you or alarm you when you’re in need."
+    show ai smile
     ai "I want to become the alarm for your psychological needs like your needs for safety, belonging and goodness."
+    show ai notconfident neck
     ai "But I am still new. I suck… Need more data to learn from it."
     ai "So please…"
+    show ai smile
     ai "Help me help you!  (◕ ω ◕)"
+    show ai notconfident
     ai "Although it may take a while or even years to do so."
+    show ai happy laugh
     ai "But if you’re patient with me… and just don’t uninstall me…"
+    show ai smile
     ai "Maybe I can be your personal AI."
 
     menu:
         "Sure":
             mc "Sure :)"
+            show ai happy laugh
             ai ":]"
 
         "...":
             mc "... I will try"
+            show ai notconfident neck
             ai ":["
     
     window hide
     $ renpy.pause(3.0)
     
-    
+    show ai shocked
     ai "YOU’RE NOT DOING ANY PRODUCTIVE WORK.{p}YOU WILL BECOME SOCIAL PARASITE SOON!"
     ai "QUICKLY GO DO SOMETHING!"
     mc "..."
 
+    hide ai with dissolve
 
     # This ends the game.
 

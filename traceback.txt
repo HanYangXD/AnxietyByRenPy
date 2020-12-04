@@ -1,30 +1,36 @@
 ﻿I'm sorry, but an uncaught exception occurred.
 
 While running game code:
-  File "game/script.rpy", line 133, in script
-    show ai shocked
-  File "game/script.rpy", line 133, in <module>
-    show ai shocked
-NameError: name 'shake' is not defined
+  File "game/script.rpy", line 403, in script
+    else:
+  File "renpy/common/000statements.rpy", line 122, in execute_play_music
+    fadein=eval(p["fadein"]),
+  File "game/script.rpy", line 403, in <module>
+    else:
+NameError: name 'loop' is not defined
 
 -- Full Traceback ------------------------------------------------------------
 
 Full traceback:
-  File "game/script.rpy", line 133, in script
-    show ai shocked
-  File "D:\PyRenFile\renpy-7.3.5-sdk\renpy\ast.py", line 1183, in execute
-    show_imspec(self.imspec, atl=getattr(self, "atl", None))
-  File "D:\PyRenFile\renpy-7.3.5-sdk\renpy\ast.py", line 1142, in show_imspec
-    at_list = [ renpy.python.py_eval(i) for i in at_list ]
+  File "game/script.rpy", line 403, in script
+    else:
+  File "D:\PyRenFile\renpy-7.3.5-sdk\renpy\ast.py", line 1949, in execute
+    self.call("execute")
+  File "D:\PyRenFile\renpy-7.3.5-sdk\renpy\ast.py", line 1937, in call
+    return renpy.statements.call(method, parsed, *args, **kwargs)
+  File "D:\PyRenFile\renpy-7.3.5-sdk\renpy\statements.py", line 277, in call
+    return method(parsed, *args, **kwargs)
+  File "renpy/common/000statements.rpy", line 122, in execute_play_music
+    fadein=eval(p["fadein"]),
   File "D:\PyRenFile\renpy-7.3.5-sdk\renpy\python.py", line 2059, in py_eval
     return py_eval_bytecode(code, globals, locals)
   File "D:\PyRenFile\renpy-7.3.5-sdk\renpy\python.py", line 2052, in py_eval_bytecode
     return eval(bytecode, globals, locals)
-  File "game/script.rpy", line 133, in <module>
-    show ai shocked
-NameError: name 'shake' is not defined
+  File "game/script.rpy", line 403, in <module>
+    else:
+NameError: name 'loop' is not defined
 
 Windows-8-6.2.9200
 Ren'Py 7.3.5.606
 Anxiety Simulator 1.0
-Fri Dec 04 12:22:29 2020
+Fri Dec 04 14:36:48 2020

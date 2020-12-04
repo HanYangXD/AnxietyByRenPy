@@ -284,7 +284,7 @@ label A1Q3:
     show screen twitterPhone()
     "You launched Twitter" 
     hide screen twitterPhone
-    
+
     menu:
         "Hmmm what should I check?"
 
@@ -384,17 +384,26 @@ label afterPartyThought:
     play sound "audio/walkingsound.ogg"
     "You choose to ignore the anxiety and walk away" 
     
-    
-
     show ai notconfident
     ai "But..."
+
+    hide ai
 
     jump startAct2
 
 #---------------- Act 2 -------------------#
 
 label startAct2:
-    hide ai
+    
+    scene black
+    show screen nextSceneScreen("At the party")
+    $ renpy.pause(2.0)
+    hide screen nextSceneScreen
+
+    play music "audio/partybeats.ogg" loop
+    scene party_bg
+    with fade
+
     if lookednews:
         jump A2news
     else:
@@ -438,6 +447,14 @@ label A2continue:
     hide amanda
     hide g1
     hide g2
+
+
+    # Show white scene (Like looking at phone)
+    scene white #Later chg to like phone looking screen type of pic
+    with dissolve
+    # Stop music 
+    stop music
+
     show ai shocked neck 
     ai "Oh no they all hate us now!"
     mc "Us...?"
@@ -472,17 +489,22 @@ label A2continue:
     show ai worry
     ai "What if we're just fundamentally incapable of ever being loved, or loving another?"
     ai "What if something irreversibly broke inside of us a long time ago? Or never existed in us in the first place?"
-    show ai notconfident
-    ai "WE'RE BROKEN! SO BROKEN SO BROKEN SO SO BROKEN"
+    show ai shocked # Chg to schocked cuz shout ma
+    ai "WE'RE BROKEN! SO BROKEN SO BROKEN SO-"
+
+    play sound "audio/shockai.wav"
+    show ai shocked at x_shake with vpunch
+    ai "{size=35}BROKEN{/size}"
 
     mc "AAAAAAAAAHHHHHHHHHHH" #changed from faq
     #mc "FACKKKING FACK-FACKITY FACKKKKKK" #srsly meh later gg how
 
+    # Need to show 3 notify at the same time (Fix later)
     $ renpy.notify("You started to fear being bad")
     $ fearBadPNum += 1
     $ renpy.notify("You started to fear being harmful") 
     $ fearHarmfulNum += 1
-    $ renpy.notify("You started to fear being alone") #why need 3
+    $ renpy.notify("You started to fear being alone")
     $ fearAloneNum += 1
 
     show ai smile
@@ -511,7 +533,13 @@ label A2continue:
     ai "All I want you to do is to be patient with me..." #added to do
     hide ai with dissolve
 
+    # Play music back
+    play music "audio/partybeats.ogg" loop
+    scene party_bg
+    with dissolve 
+
     show amanda normal with dissolve#fade in
+
     amanda "Hey!"
     mc "Huh?"
     show amanda smile

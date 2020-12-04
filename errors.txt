@@ -2,9 +2,9 @@
 errors listed below, and try again.
 
 
-File "game/my_screen.rpy", line 6: u'onlayer' is not a keyword argument or valid child for the add statement.
-    add "sprite/act1phone/instaphone.png" onlayer overlay
-                                                 ^
+File "game/script.rpy", line 456: expected simple expression
+    stop music fadeout
+                      ^
 
 Ren'Py Version: Ren'Py 7.3.5.606
-Fri Dec 04 13:09:38 2020
+Fri Dec 04 14:41:14 2020

@@ -517,7 +517,7 @@ label A2continue:
 
     show ai serious
     ai "Well maybe you are NOT SUPPOSED TO GET RID OF ME!"
-    ai "Do you know how I feel, human?"
+    ai "Do you know how I feel, [playername]?"
     show ai serious neck
     ai "I am trying to be your support, make sure you don't mess up anything."
     show ai notconfident neck
@@ -560,7 +560,7 @@ label A2continue:
     
 
     menu:
-        ai "Human NO! Heyyyyy!!"
+        ai "[playername] NO! Heyyyyy!!"
 
         "I think I will pass":
             jump passRoof
@@ -582,7 +582,7 @@ label goRoof:
     mc "You know what? Let's go now. Shall we?"
     show amanda smile
     amanda "That is the spirit kiddo!"
-    ai "NO HUMAN, DO NOT GOOOOOOOOOOOOOOOO!"
+    ai "NO [playername], DO NOT GOOOOOOOOOOOOOOOO!"
     hide amanda with dissolve
     jump startAct2point1
 
@@ -668,10 +668,10 @@ label gonnaJump:
     amanda "Yeah! I believe in you babe! Now let's do it!"
     hide amanda with dissolve
     show ai notconfident with dissolve
-    ai "Human..."
+    ai "[playername]..."
 
     hide ai with dissolve
-    "Be the AI and convince the human" #convience as in convince him either jump or no jump?
+    "Be the AI and convince [playername]" #convience as in convince him either jump or no jump?
 
     uai "NO NO NO NO NO NO NO"
     menu:
@@ -687,7 +687,7 @@ label gonnaJump:
             jump dontJumpPls
 
 label dontJumpPls:
-    "Human drinks the beer"
+    "[playername] drinks the beer"
     show mcDrunk
     mcDrunk "You know, I might've believed you... if you hadn't tried that a zillion times before."
     
@@ -702,14 +702,14 @@ label dontJumpPls:
             jump notHarmingYou
     
 label notHarmingYou:
-    "Human drinks the beer"
-    uai "human, please sto-"
+    "[playername] drinks the beer"
+    uai "[playername], please sto-"
     mcDrunk "Oh sorry, Big Pharma doesn't approve my self-medication."
     mcDrunk "Look, this anxiety thing, I could just buy a new budget phone. And don't ever install you again."
     mcDrunk "Or maybe I don't need a new phone. Just throw this away and go all out!"
     mcDrunk "Anxiety..."
 
-    "Human drinks the beer"
+    "[playername] drinks the beer"
     mcDrunk "No one understands how we feel when having anxiety..."
     mcDrunk "Some just throw themselves to work."
     mcDrunk "Some just get involved with drugs, sex, or refreshing social media feeds all day long."
@@ -787,21 +787,21 @@ label gratsGoodEnd:
     uai "..."
     uai "Okay."
 
-    "Human throws the bottle away"
+    "[playername] throws the bottle away"
 
     amanda "Are you scared?"
     mcDrunk "Yeah. I do."
     mcDrunk "It's okay to be scared after all."
 
-    "Human walks away and left the party"
+    "[playername] walks away and left the party"
 
     jump startAct3
 
 label badEnd:
-    "Human drinks the beer"
-    "You can feel Human starts to loss balance due to the gyroscope" #phone motion
+    "[playername] drinks the beer"
+    "You can feel [playername] starts to loss balance due to the gyroscope" #phone motion
 
-    uai "Human... please..."
+    uai "[playername]... please..."
     
     menu:
         mcDrunk "This is your last chance to convience me, choose your word carefully."
@@ -829,16 +829,16 @@ label momentBeforeJump:
     mcDrunk "\"The only thing to fear is fear itself\""
     mDrunkc "\"Don't worry, be happy~\""
 
-    uai "Human... don't..." #changed no  to dont
+    uai "[playername]... don't..." #changed no  to dont
     mcDrunk "A while back, I said \"I want to be free from all these pains...\""
     mcDrunk "Now I got what i wish now. I no longer need to feel any pain, fear and anxiety."
 
     mcDrunk "I don't feel anything at all now."
 
-    "Human throws the empty bottle of bear"
+    "[playername] throws the empty bottle of bear"
 
     menu: 
-        "Human walk few steps backward."
+        "[playername] walk few steps backward."
         
         "Please... dont":
             jump jumpNow
@@ -848,7 +848,7 @@ label momentBeforeJump:
 
 label jumpNow:
     $ jumpFromRoof = True
-    "Human jumps" #done
+    "[playername] jumps" #done
 
     # https://github.com/ncase/anxiety/blob/gh-pages/sprites/act3/hospital.png
 
@@ -906,12 +906,12 @@ label startAct3:
     ai "Then when I found something that may threaten you, I will just.."
     ai "DANGER DANGER DANGER!" # Shake the sprite
     ai "But I don’t want to just be an imagery friend. I want to be your friend."
-    ai "So human… Would you like to continue to be my friend?"
+    ai "So [playername]… Would you like to continue to be my friend?"
     mc "I... will try..."
 
     mc "Okay, healthy relationship with emotions. Relationships need communication. So, let’s communicate."
     mc "The next five minutes are going to sound cheesy but let’s just fake it till we make it."
-    ai "So human… how are you feeling?"
+    ai "So [playername]… how are you feeling?"
 
     $ totalFearNum = fearAloneNum + fearHarmfulNum + fearBadPNum
     "Total Fears Had [totalFearNum]" # https://www.renpy.org/doc/html/text.html
@@ -1153,7 +1153,7 @@ label finshFearTalk:
         "Yeah of course you can!":
             mc "Yeah of course you can!" 
             # Grace expression in shocked
-            ai "Hang on human, you may be making them uncomfortable."
+            ai "Hang on [playername], you may be making them uncomfortable."
             mc "Ah, no pressure of course"
             mc "Just saying you can sit here if you want to."
 
@@ -1164,7 +1164,7 @@ label finshFearTalk:
 
         "Sorry I need to be alone right now.":
             mc "Sorry I need to be alone right now."
-            ai "Hang on human, you may be making them uncomfortable."
+            ai "Hang on [playername], you may be making them uncomfortable."
             mc "Ah, I don’t mean to be rude!"
             mc "I just need some time to process my emotions. Please don’t take it too personal."
 

@@ -4,7 +4,7 @@
 # name of the character.
 
 define ai = Character("AI", color="#85B902") # Light Green # AI
-define mc = Character(_("You"), color="#0E6D01") # Dark Green # Player
+define mc = Character(_("You"), color="#0E6D01", image="mc") # Dark Green # Player
 
 define uai = Character("You", color="#85B902") # Light Green # Player but as AI
 define mcDrunk = Character("[playername]", color="#0E6D01") # Player but not Player
@@ -75,7 +75,7 @@ label start:
 
     "Have fun!"
 
-    mc "..."
+    mc  "..."
 
     scene black
 
@@ -130,7 +130,9 @@ label playWhat:
     ai "Sometimes they may cause irritability and aggressiveness, especially among children and teenagers."    
     
     mc "K"
-    show ai shocked
+
+    play sound "audio/shockai.wav"
+    show ai shocked at x_shake with vpunch
     ai "WHICH MEANS YOU WILL HAVE CANCER IN NO TIMEEEE."
 
     $ renpy.notify("You started to fear being harmful")
@@ -149,7 +151,9 @@ label eatWhat:
     ai "Anyway, why are you eating while talking to me? Do you know it will make you indigestion, "
 
     ai "and makes your body can’t absorb nutrients, WHICH WILL MAKE YOU-"
-    show ai shocked neck
+
+    play sound "audio/shockai.wav"
+    show ai shocked neck at x_shake with vpunch
     ai "DIEEEEEEEEEEEEEEEEEEEEEEEE"
     show ai worry
     ai "Also, why aren’t you eating with other humans and with me?"
@@ -184,7 +188,9 @@ label whyNothing:
     mc "Uh huh. So?"
 
     ai "The society-body will go to the society-doctor for medication to kill their society-parasites then we will-"
-    
+
+    play sound "audio/shockai.wav"
+    show ai shocked at x_shake with vpunch
     ai "DIEEEEEEEEEEEEEEEEEEEEEEEEE." # Shaek screen    
 
 
@@ -197,7 +203,7 @@ label A1Q2:
     show ai normal
     mc "..."
 
-    mc "You know what, I should check Facebook now."
+    mc fbphone "You know what, I should check Facebook now."
     show ai shocked
     ai "Please Nooooooooooooooooooo" #changed noooooooooo
 
@@ -227,8 +233,10 @@ label goParty:
 
     ai "When you are overdosed with drugs you will get nausea, drowsy, agitation, hallucination, unconsciousness and even worse you will..." #added you will
 
-    mc "Could you sto-" #removed p
-    show ai shocked
+    mc "Could you sto-" 
+
+    play sound "audio/shockai.wav"
+    show ai shocked at x_shake with vpunch
     ai "DIEEEEEEEEEEEEEEEE"
 
     $ renpy.notify("You started to fear being harmful") #wait what? fear of getting harm is it?
@@ -245,9 +253,11 @@ label goParty:
 
 label noParty:
     show ai serious
-    ai "Why not? If you don’t go you will be lonely forever!" #added why not
-    show ai shocked
-    ai "Researchers have found that loneliness is just as lethal as smoking 15 cigarettes per day. Lonely people are 50 percent more likely to die prematurely than those with healthy social relationships"
+    ai "Why not? If you don’t go you will be lonely forever!" 
+
+    play sound "audio/shockai.wav"
+    show ai shocked at x_shake with vpunch
+    ai "Researchers have found that loneliness is just as lethal as smoking 15 cigarettes per day.{p}Lonely people are 50 percent more likely to die prematurely than those with healthy social relationships"
 
     $ renpy.notify("You started to fear being lonely")
     $ fearAloneNum += 1
@@ -264,11 +274,11 @@ label A1Q3:
     show ai worry neck
     ai "But I just-"
 
-    mc "Ughhhh, I need to make me calm and less anxiety." #changed
+    mc "Ughhhh, I need to make me calm and less anxiety." 
 
-    mc "I will just have a look on Twitter." #changed
+    mc twitterphone "I will just have a look on Twitter." # Twitter
 
-    "You launched Twitter" #changed
+    "You launched Twitter" 
 
     menu:
         "Hmmm what should I check?"
@@ -287,11 +297,12 @@ label lookNews:
 
     ai "I don't know why are we here... just to suffer"
 
-    ai "Or you're still being alive for?" #this can remove cuz ^ sentence covered liao xd
+    ai "Or why you're still being alive for?" 
+    
     show ai happy laugh
     ai "Why not retweet that? :D" #i think the expression can change gua? use sprite
 
-    $ renpy.notify("You started to fear being harmful") #why harmful? isnt this... fear of being social parasite
+    $ renpy.notify("You started to fear being harmful") # Sound effect maybe
     $ fearHarmfulNum += 1
     
     jump stopPhone
@@ -303,7 +314,7 @@ label catDrinkMilk:
 
     "You tapped retweet."
     show ai shocked
-    ai "ARE YOU SERIOUS?!" #changed !? to ?!
+    ai "ARE YOU SERIOUS?!" 
 
     ai "CAT CAN’T DIGEST MILK AND WE’RE TERRIBLE PERSON FOR ENJOYING ANIMAL ABUSE"
 
@@ -317,9 +328,10 @@ label stopPhone:
     show ai happy laugh
     ai "Great! You should've did that earlier and let your mind rela-"
 
-    "Received notification from Instagram" #dududung notification sound
+    play sound "audio/notificationsound.ogg"
+    "Received notification from Instagram" 
 
-    mc "Hey! I got notification from Instagram, let's check it out"
+    mc instaphone "Hey! I got notification from Instagram, let's check it out"
 
     "You launched Instagram"
 
@@ -348,21 +360,24 @@ label afterPartyThought:
     
     mc "SHUT"
     mc "THE"
-    mc "{size=32}FUDGE{/size}" #we should change
+    mc "{size=32}FUDGE{/size}" 
     mc "UP"
     show ai shocked
     ai "Wha-"
 
     mc "I will just {size=30}AGREE{/size} to them."
     mc "I DON'T CARE anything anymore."
-    mc "You're NOT in my control!" #changed !
+    mc "You're NOT in my control!"
     mc "Now excuse me, I will need to go to my class now."
     show ai shocked neck
     ai "No!"
     ai "Wait!"
 
-    "You choose to ignore the anxiety and walk away" #idk the ai anxiety is what character so i write like this first
-    #play walk away sound effect
+    play sound "audio/walkingsound.ogg"
+    "You choose to ignore the anxiety and walk away" 
+    
+    
+
     show ai notconfident
     ai "But..."
 
@@ -438,7 +453,9 @@ label A2continue:
     show ai worry
     ai "You think that you took out the batteries from carbon monoxide detector and you will be safe?"
     ai "You won't even smell the poison. You'll get sleepy and then you will..." #added you will
-    show ai shocked
+    
+    play sound "audio/shockai.wav"
+    show ai shocked at x_shake with vpunch
     ai "DIEEEEEEEEEEEEEEEEEEEEEEEEEE"
 
     mc "Stop this..."

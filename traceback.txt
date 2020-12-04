@@ -1,28 +1,30 @@
 ﻿I'm sorry, but an uncaught exception occurred.
 
 While running game code:
-  File "game/script.rpy", line 375, in script
-    if lookNews:
-  File "game/script.rpy", line 375, in <module>
-    if lookNews:
-NameError: name 'lookNews' is not defined
+  File "game/script.rpy", line 133, in script
+    show ai shocked
+  File "game/script.rpy", line 133, in <module>
+    show ai shocked
+NameError: name 'shake' is not defined
 
 -- Full Traceback ------------------------------------------------------------
 
 Full traceback:
-  File "game/script.rpy", line 375, in script
-    if lookNews:
-  File "C:\Users\aaron\Desktop\renpy-7.3.5-sdk\renpy\ast.py", line 1832, in execute
-    if renpy.python.py_eval(condition):
-  File "C:\Users\aaron\Desktop\renpy-7.3.5-sdk\renpy\python.py", line 2059, in py_eval
+  File "game/script.rpy", line 133, in script
+    show ai shocked
+  File "D:\PyRenFile\renpy-7.3.5-sdk\renpy\ast.py", line 1183, in execute
+    show_imspec(self.imspec, atl=getattr(self, "atl", None))
+  File "D:\PyRenFile\renpy-7.3.5-sdk\renpy\ast.py", line 1142, in show_imspec
+    at_list = [ renpy.python.py_eval(i) for i in at_list ]
+  File "D:\PyRenFile\renpy-7.3.5-sdk\renpy\python.py", line 2059, in py_eval
     return py_eval_bytecode(code, globals, locals)
-  File "C:\Users\aaron\Desktop\renpy-7.3.5-sdk\renpy\python.py", line 2052, in py_eval_bytecode
+  File "D:\PyRenFile\renpy-7.3.5-sdk\renpy\python.py", line 2052, in py_eval_bytecode
     return eval(bytecode, globals, locals)
-  File "game/script.rpy", line 375, in <module>
-    if lookNews:
-NameError: name 'lookNews' is not defined
+  File "game/script.rpy", line 133, in <module>
+    show ai shocked
+NameError: name 'shake' is not defined
 
 Windows-8-6.2.9200
 Ren'Py 7.3.5.606
 Anxiety Simulator 1.0
-Thu Dec 03 19:30:35 2020
+Fri Dec 04 12:22:29 2020

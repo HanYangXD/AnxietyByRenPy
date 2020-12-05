@@ -289,12 +289,26 @@ style quick_button_text:
 ## This screen is included in the main and game menus, and provides navigation
 ## to other menus, and to start the game.
 
+screen image_menu():
+    vbox xalign 1.0 yalign 1.0:
+        imagebutton auto "gui/overlay/settings_%s.png" action ShowMenu("preferences")
+        imagebutton auto "gui/overlay/information_%s.png" action ShowMenu("about")
+        
+
+
+
 screen navigation():
 
     vbox:
-        style_prefix "navigation"
 
-        xpos gui.navigation_xpos
+        if not main_menu:
+            style_prefix "navigation"
+            xpos gui.navigation_xpos
+        else:
+            style_prefix "mainmenu"
+            xalign 0.5
+            yalign 0.9
+
         yalign 0.5
 
         spacing gui.navigation_spacing
@@ -311,7 +325,10 @@ screen navigation():
 
         textbutton _("Load") action ShowMenu("load")
 
-        textbutton _("Preferences") action ShowMenu("preferences")
+        if not main_menu:
+            textbutton _("Settings") action ShowMenu("preferences")
+        # else:
+            
 
         if _in_replay:
 
@@ -321,7 +338,8 @@ screen navigation():
 
             textbutton _("Main Menu") action MainMenu()
 
-        textbutton _("About") action ShowMenu("about")
+        if not main_menu:
+            textbutton _("About") action ShowMenu("about")
 
         if renpy.variant("pc") or (renpy.variant("web") and not renpy.variant("mobile")):
 
@@ -344,6 +362,12 @@ style navigation_button:
 
 style navigation_button_text:
     properties gui.button_text_properties("navigation_button")
+
+style mainmenu_button is navigation_button:
+    xalign 0.5
+    
+style mainmenu_button_text is navigation_button_text:
+    xalign 0.5
 
 
 ## Main Menu screen ############################################################
@@ -378,7 +402,6 @@ screen main_menu():
             text "[config.version]":
                 style "main_menu_version"
 
-
 style main_menu_frame is empty
 style main_menu_vbox is vbox
 style main_menu_text is gui_text
@@ -386,20 +409,21 @@ style main_menu_title is main_menu_text
 style main_menu_version is main_menu_text
 
 style main_menu_frame:
-    xsize 280
+    xsize 480
     yfill True
 
     background "gui/overlay/main_menu.png"
 
 style main_menu_vbox:
-    xalign 1.0
-    xoffset -20
-    xmaximum 800
-    yalign 1.0
-    yoffset -20
+    xalign 0.5
+    # xoffset -20
+    # xmaximum 800
+    yalign 0.1
+    # yoffset -20
 
 style main_menu_text:
     properties gui.text_properties("main_menu", accent=True)
+    yalign 0.1
 
 style main_menu_title:
     properties gui.text_properties("title")
@@ -470,8 +494,10 @@ screen game_menu(title, scroll=None, yinitial=0.0):
                 else:
 
                     transclude
-
-    use navigation
+    
+    # Hide the Menus to appear in screen
+    if not main_menu:
+        use navigation
 
     textbutton _("Return"):
         style "return_button"

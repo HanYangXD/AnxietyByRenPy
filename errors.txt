@@ -2,9 +2,9 @@
 errors listed below, and try again.
 
 
-File "game/screens.rpy", line 374: u'vSbox' is not a keyword argument or valid child for the screen statement.
-    vSbox:
+File "game/screens.rpy", line 330: vbox expects a non-empty block.
+    else:
          ^
 
 Ren'Py Version: Ren'Py 7.3.5.606
-Sat Dec 05 15:21:02 2020
+Sat Dec 05 18:07:18 2020

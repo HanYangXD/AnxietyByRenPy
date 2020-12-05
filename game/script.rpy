@@ -33,6 +33,21 @@ default fearHarmfulNum = 0
 default fearAloneNum = 0
 default fearBadPNum = 0
 
+label splashscreen:
+    scene mosaicSplash with fade
+    with Pause(1)
+
+    play sound "audio/oldtvstaticsound.wav"
+    show text "{size=33}Not for {s}Made with{/s} Anxiety{/size}" with dissolve
+    with Pause(2.5)
+
+    hide text with dissolve
+    scene black with fade
+    with Pause(1)
+    
+    return
+
+
 # The game starts here.
 
 label start:

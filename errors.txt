@@ -2,74 +2,9 @@
 errors listed below, and try again.
 
 
-File "game/script.rpy", line 578: expected statement.
-(Perhaps you left out a " at the end of the first line.)
-    narrator You decided to join Amanda and her friends to the rooftop."
-                                                                      ^
-        jump startAct2point1
-    
-    
-    label startAct2point1:
-        # At rooftop
-        scene rooftop
-        show amanda smile with dissolve
-        
-        amanda "Cheers!"
-        play sound "audio/clinkglass.wav"
-        
-        narrator "You drink the glass of drink that Amanda gave you."
-    
-        mc "Ahh... that hit the spot!" 
-    
-        scene blurrooftop1 blurred
-        narrator "You feel nausea." # Blurr vision
-    
-        show amanda normal
-        amanda "You know, kiddo..."
-    
-        mc "Specifically, the spots that are hitted are my both amygdala" 
-        show amanda smile
-        amanda "You reminds me of my younger self. When anxiety hits me, I also tried the Anxiety Intellegence that was advertised recently."
-        show amanda hmph
-        amanda "Apparently for some reason, I can't uninstall it once it is installed."
-    
-        mc "But it seems like you are free from anxiety now... how did you do that?"
-        show amanda smile
-        amanda "Heh"
-        mc "Heh...?"
-        amanda "Modern problems require modern solutions. Since I can't uninstall it, all I have to do is to get a new smartphone."
-    
-        mc "Wow, you're so rich!" 
-    
-        amanda "I am so grateful that I am helping you to cope with your anxiety too."
-    
-        mc "Heck yeah!"
-    
-        play sound "audio/glupsip.ogg"
-        narrator "You take another sip of the drink" 
-        scene blurrooftop2 blurred
-        narrator "Your mind started to feel like flying{p}Your vision is getting blur over time{p}You can't think properly" # Blur vision
-        show amanda normal
-        amanda "Quick question, truth or dar-"
-    
-        mc "DARE!"
-        show amanda smile
-        amanda "Haha! Good."
-        amanda "You see that baby-blue swimming pool down there?"
-    
-        mc "y-Yea-hh? Like th-three floors down there?"
-    
-        show amanda normal
-        amanda "Jump in."
-    
-        mc "."
-        mc ".."
-        mc "..."
-    
-        mc "Wait what?"
-    
-        show amanda smile
-        amanda "Your \"Anxiety Ingelligence\" is gonna start whinning isn't it?"
+File "game/images.rpy", line 61: expected 'comma or end of line' not found.
+    $ flash = Fade(.25, 0, .75, color="#fff")
+    ^
 
 Ren'Py Version: Ren'Py 7.3.5.606
-Sat Dec 05 10:05:32 2020
+Sat Dec 05 13:13:58 2020

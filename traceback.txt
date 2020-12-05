@@ -1,26 +1,32 @@
 ﻿I'm sorry, but an uncaught exception occurred.
 
 While running game code:
-  File "game/script.rpy", line 9, in script
-    define narrator = Character(name=none, callback=callbackcontinue)
-  File "game/script.rpy", line 9, in <module>
-    define narrator = Character(name=none, callback=callbackcontinue)
-NameError: name 'none' is not defined
+  File "renpy/common/00start.rpy", line 233, in script call
+    call _splashscreen from _call_splashscreen_1
+  File "game/script.rpy", line 42, in script
+    show text "{size=33}Not for {s}Made with{/s} Anxiety{/size}" with flash
+  File "game/script.rpy", line 42, in <module>
+    show text "{size=33}Not for {s}Made with{/s} Anxiety{/size}" with flash
+NameError: name 'flash' is not defined
 
 -- Full Traceback ------------------------------------------------------------
 
 Full traceback:
-  File "game/script.rpy", line 9, in script
-    define narrator = Character(name=none, callback=callbackcontinue)
-  File "C:\Users\aaron\Desktop\renpy-7.3.5-sdk\renpy\ast.py", line 2108, in execute
-    value = renpy.python.py_eval_bytecode(self.code.bytecode)
-  File "C:\Users\aaron\Desktop\renpy-7.3.5-sdk\renpy\python.py", line 2052, in py_eval_bytecode
+  File "renpy/common/00start.rpy", line 233, in script call
+    call _splashscreen from _call_splashscreen_1
+  File "game/script.rpy", line 42, in script
+    show text "{size=33}Not for {s}Made with{/s} Anxiety{/size}" with flash
+  File "D:\PyRenFile\renpy-7.3.5-sdk\renpy\ast.py", line 1385, in execute
+    paired = renpy.python.py_eval(self.paired)
+  File "D:\PyRenFile\renpy-7.3.5-sdk\renpy\python.py", line 2059, in py_eval
+    return py_eval_bytecode(code, globals, locals)
+  File "D:\PyRenFile\renpy-7.3.5-sdk\renpy\python.py", line 2052, in py_eval_bytecode
     return eval(bytecode, globals, locals)
-  File "game/script.rpy", line 9, in <module>
-    define narrator = Character(name=none, callback=callbackcontinue)
-NameError: name 'none' is not defined
+  File "game/script.rpy", line 42, in <module>
+    show text "{size=33}Not for {s}Made with{/s} Anxiety{/size}" with flash
+NameError: name 'flash' is not defined
 
 Windows-8-6.2.9200
 Ren'Py 7.3.5.606
 Anxiety Simulator 1.0
-Sat Dec 05 09:42:42 2020
+Sat Dec 05 13:14:12 2020

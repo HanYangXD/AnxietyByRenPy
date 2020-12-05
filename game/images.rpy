@@ -51,3 +51,13 @@ image mcdrunk shout = "sprite/maincharacter/mcdrunk_shout.png"
 image blurrooftop1 blurred = im.Blur("bg/rooftop.png", 0.5)
 image blurrooftop2 blurred = im.Blur("bg/rooftop.png", 1.0)
 image blurrooftop3 blurred = im.Blur("bg/rooftop.png", 1.5)
+
+
+image mosaicSplash:
+    "images/splash/splash1.png"
+    0.2
+    "images/splash/splash2.png"
+    0.2
+    "images/splash/splash3.png"
+    0.2
+    repeat

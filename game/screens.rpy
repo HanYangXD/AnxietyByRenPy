@@ -290,6 +290,7 @@ style quick_button_text:
 ## to other menus, and to start the game.
 
 screen image_menu():
+
     vbox xalign 1.0 yalign 1.0:
         imagebutton auto "gui/overlay/settings_%s.png" action ShowMenu("preferences")
         imagebutton auto "gui/overlay/information_%s.png" action ShowMenu("about")
@@ -315,7 +316,7 @@ screen navigation():
 
         if main_menu:
 
-            textbutton _("Start") action Start()
+            textbutton _("{size=35}Start{/size}") action Start()
 
         else:
 
@@ -327,8 +328,6 @@ screen navigation():
 
         if not main_menu:
             textbutton _("Settings") action ShowMenu("preferences")
-        # else:
-            
 
         if _in_replay:
 
@@ -341,6 +340,7 @@ screen navigation():
         if not main_menu:
             textbutton _("About") action ShowMenu("about")
 
+
         if renpy.variant("pc") or (renpy.variant("web") and not renpy.variant("mobile")):
 
             ## Help isn't necessary or relevant to mobile devices.
@@ -351,7 +351,13 @@ screen navigation():
             ## The quit button is banned on iOS and unnecessary on Android and
             ## Web.
             textbutton _("Quit") action Quit(confirm=not main_menu)
-
+    
+    # Put setting and info at right bottom
+    hbox:
+        xalign 0.98
+        yalign 0.98
+        imagebutton auto "gui/overlay/settings_%s.png" xalign 0.1 yalign 0.15 action ShowMenu("preferences")
+        imagebutton auto "gui/overlay/information_%s.png" xalign 0.15 yalign 0.15 action ShowMenu("about")
 
 style navigation_button is gui_button
 style navigation_button_text is gui_button_text
@@ -383,11 +389,17 @@ screen main_menu():
 
     style_prefix "main_menu"
 
-    add gui.main_menu_background
+    # add gui.main_menu_background
+
+    #ImageButtons
+    
+
 
     ## This empty frame darkens the main menu.
     frame:
-        pass
+        
+        pass 
+
 
     ## The use statement includes another screen inside this one. The actual
     ## contents of the main menu are in the navigation screen.
@@ -494,6 +506,7 @@ screen game_menu(title, scroll=None, yinitial=0.0):
                 else:
 
                     transclude
+    
     
     # Hide the Menus to appear in screen
     if not main_menu:

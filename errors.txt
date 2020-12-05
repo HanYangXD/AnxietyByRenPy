@@ -2,9 +2,9 @@
 errors listed below, and try again.
 
 
-File "game/screens.rpy", line 330: vbox expects a non-empty block.
-    else:
-         ^
+File "game/screens.rpy", line 342: u'image_menu' is not a keyword argument or valid child for the vbox statement.
+    image_menu
+              ^
 
 Ren'Py Version: Ren'Py 7.3.5.606
-Sat Dec 05 18:07:18 2020
+Sat Dec 05 21:19:34 2020

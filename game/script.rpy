@@ -1,20 +1,25 @@
 ﻿# The script of the game goes in this file.
-
+init python:
+    def callbackcontinue(ctc, **kwargs):
+        if ctc == "end":
+            renpy.music.play("audio/pokemonctc.mp3",channel="sound")
 # Declare characters used by this game. The color argument colorizes the
 # name of the character.
 
-define ai = Character("AI", color="#85B902") # Light Green # AI
-define mc = Character(_("You"), color="#0E6D01") # Dark Green # Player
+define narrator = Character(name=None, callback=callbackcontinue)
 
-define uai = Character("You", color="#85B902") # Light Green # Player but as AI
-define mcDrunk = Character("[playername]", color="#0E6D01") # Player but not Player
+define ai = Character("AI", color="#85B902", callback=callbackcontinue) # Light Green # AI
+define mc = Character(_("You"), color="#0E6D01", callback=callbackcontinue) # Dark Green # Player
 
-define amanda = Character("Amanda", color="#091B9B") # Dark Blue
-define g1 = Character("Guy 1", color="#FFF6C0") # Light Yellow
-define g2 = Character("Guy 2", color="#FFD3C9") # Light Red
+define uai = Character("You", color="#85B902", callback=callbackcontinue) # Light Green # Player but as AI
+define mcDrunk = Character("[playername]", color="#0E6D01", callback=callbackcontinue) # Player but not Player
 
-define grace = Character("Grace", color="#7737FF") # Purple
-define grAI = Character("Grace's AI", color="#970052")  # Dark Red
+define amanda = Character("Amanda", color="#091B9B", callback=callbackcontinue) # Dark Blue
+define g1 = Character("Guy 1", color="#FFF6C0", callback=callbackcontinue) # Light Yellow
+define g2 = Character("Guy 2", color="#FFD3C9", callback=callbackcontinue) # Light Red
+
+define grace = Character("Grace", color="#7737FF", callback=callbackcontinue) # Purple
+define grAI = Character("Grace's AI", color="#970052", callback=callbackcontinue)  # Dark Red
 
 define jumpFromRoof = False
 define goingparty = False
@@ -36,46 +41,46 @@ label start:
 
     scene mcdorm_bg
 
-    "On a peaceful day of weekend in your bedroom."
+    narrator "On a peaceful day of weekend in your bedroom."
 
-    "You were just scrolling through social media."
-    "You found an ad."
-    "It was about Anxiety Intelligence (AI)."
-    "You curiously download it and try."
+    narrator "You were just scrolling through social media."
+    narrator "You found an ad."
+    narrator "It was about Anxiety Intelligence (AI)."
+    narrator "You curiously download it and try."
 
-    "You open up the app and it prompt a text box." # Phone sound open
+    narrator "You open up the app and it prompt a text box." # Phone sound open
 
     scene handphoneblur_bg
 
-    "It says {p}What is your name?"
+    narrator "It says {p}What is your name?"
 
     $ playername = renpy.input("Enter name here :")
     $ playername = playername.strip()
 
     if not playername:
         $ playername = "John Doe"
-        "Well then, you don't want to enter your name?"
-        "We will give you one"
-        ":)"
+        narrator "Well then, you don't want to enter your name?"
+        narrator "We will give you one"
+        narrator ":)"
 
 
-    "Welcome [playername]!"
+    narrator "Welcome [playername]!"
 
-    "As you entered your name.{p}You had accepted the T&C."
+    narrator "As you entered your name.{p}You had accepted the T&C."
 
-    "This app could not be uninstall after any further notice."
+    narrator "This app could not be uninstall after any further notice."
 
-    "Have fun!"
+    narrator "Have fun!"
 
     mc  "..."
 
     scene black
 
-    "And so your anxiety journey begins..."
+    narrator "And so your anxiety journey begins..."
 
-    "Quick note: \n\nChoose wisely to protect yourself from something bad."
+    narrator "Quick note: \n\nChoose wisely to protect yourself from something bad."
 
-    "Tip: \n\nChoose the choices that hit your deepest and darkest fear."
+    narrator "Tip: \n\nChoose the choices that hit your deepest and darkest fear."
 
     #---------------- Act 1 -------------------#
 
@@ -274,7 +279,7 @@ label A1Q3:
     mc "I will just have a look on Twitter." # Twitter
 
     show screen twitterPhone()
-    "You launched Twitter" 
+    narrator "You launched Twitter" 
     hide screen twitterPhone
 
     menu:
@@ -309,7 +314,7 @@ label catDrinkMilk:
 
     mc "How adorable! Let's retweet this."
 
-    "You tapped retweet."
+    narrator "You tapped retweet."
     show ai shocked
     ai "ARE YOU SERIOUS?!" 
 
@@ -328,12 +333,12 @@ label stopPhone:
     play sound "audio/notificationsound.ogg"
 
     show screen instaPhone() 
-    "Received notification from Instagram" 
+    narrator "Received notification from Instagram" 
     hide screen instaPhone
 
     mc "Hey! I got notification from Instagram, let's check it out"
     
-    "You launched Instagram"
+    narrator "You launched Instagram"
 
     if goingparty: 
         jump niceParty
@@ -374,7 +379,7 @@ label afterPartyThought:
     ai "Wait!"
 
     play sound "audio/walkingsound.ogg"
-    "You choose to ignore the anxiety and walk away" 
+    narrator "You choose to ignore the anxiety and walk away" 
     
     show ai notconfident
     ai "But..."
@@ -541,7 +546,7 @@ label A2continue:
     amanda "You were... erm... talking about carbon monoxide or something to yourself." #changed
     mc "Ah this is so messed up."
     show amanda hmph
-    "Amanda pats your shoulder"
+    narrator "Amanda pats your shoulder"
     show amanda normal
     amanda "Hey, kiddo. Anxiety is super common."
     amanda "Listen, I know how it feels."
@@ -570,7 +575,7 @@ label goRoof:
     # Walk to rooftop
     scene followtorooftop
     play sound "audio/walkingsound.ogg"
-    "You decided to join Amanda and her friends to the rooftop."
+    narrator "You decided to join Amanda and her friends to the rooftop."
     jump startAct2point1
 
 
@@ -582,12 +587,12 @@ label startAct2point1:
     amanda "Cheers!"
     play sound "audio/clinkglass.wav"
     
-    "You drink the glass of drink that Amanda gave you."
+    narrator "You drink the glass of drink that Amanda gave you."
 
     mc "Ahh... that hit the spot!" 
 
     scene blurrooftop1 blurred
-    "You feel nausea." # Blurr vision
+    narrator "You feel nausea." # Blurr vision
 
     show amanda normal
     amanda "You know, kiddo..."
@@ -611,9 +616,9 @@ label startAct2point1:
     mc "Heck yeah!"
 
     play sound "audio/glupsip.ogg"
-    "You take another sip of the drink" 
+    narrator "You take another sip of the drink" 
     scene blurrooftop2 blurred
-    "Your mind started to feel like flying{p}Your vision is getting blur over time{p}You can't think properly" # Blur vision
+    narrator "Your mind started to feel like flying{p}Your vision is getting blur over time{p}You can't think properly" # Blur vision
     show amanda normal
     amanda "Quick question, truth or dar-"
 
@@ -667,9 +672,9 @@ label gonnaJump:
     ai "[playername]..."
 
     hide ai with dissolve
-    "Now YOU will become AI and convince [playername]" #convience as in convince him either jump or no jump?
-    "Choose wisely."
-    ";)"
+    narrator "Now YOU will become AI and convince [playername]" #convience as in convince him either jump or no jump?
+    narrator "Choose wisely."
+    narrator ";)"
 
     scene rooftop with fade
     uai "NO NO NO NO NO NO NO"
@@ -690,7 +695,7 @@ label gonnaJump:
 label dontJumpPls:
 
     play sound "audio/gulpbeer1.ogg"
-    "[playername] drinks the beer"
+    narrator "[playername] drinks the beer"
 
     show mcdrunk drunk
     mcDrunk "You know, I might've believed you... if you hadn't tried that a zillion times before."
@@ -710,7 +715,7 @@ label dontJumpPls:
 label notHarmingYou:
 
     play sound "audio/gulpbeer1.ogg"
-    "[playername] drinks the beer"
+    narrator "[playername] drinks the beer"
 
     uai "[playername], please sto-"
     show mcdrunk drunk
@@ -724,7 +729,7 @@ label notHarmingYou:
     mcDrunk "This anxiety..."
 
     play sound "audio/gulpbeer2.ogg"
-    "[playername] drinks the beer"
+    narrator "[playername] drinks the beer"
 
     mcDrunk "No one understands how we feel when having anxiety..."
     mcDrunk "Some just throw themselves to work."
@@ -816,7 +821,7 @@ label gratsGoodEnd:
     uai "Okay."
 
     play sound "audio/beerdropsound.ogg"
-    "[playername] throws the bottle away"
+    narrator "[playername] throws the bottle away"
     show mcdrunk normal at slightleft
     show amanda shout at slightright
     amanda "Are you scared?"
@@ -824,7 +829,7 @@ label gratsGoodEnd:
     mcDrunk "Yeah. I do."
     mcDrunk "It's okay to be scared after all."
 
-    "[playername] walks away and left the party"
+    narrator "[playername] walks away and left the party"
     hide amanda with dissolve
     hide mcdrunk with dissolve
 
@@ -833,10 +838,10 @@ label gratsGoodEnd:
 label badEnd:
 
     play sound "audio/gulpbeer2.ogg"
-    "[playername] drinks the beer"
+    narrator "[playername] drinks the beer"
 
     show mcdrunk drunk at x_shake
-    "You can feel [playername] starts to loss balance due to the gyroscope" #phone motion
+    narrator "You can feel [playername] starts to loss balance due to the gyroscope" #phone motion
 
     uai "[playername]... please..."
     show mcdrunk drunk
@@ -886,7 +891,7 @@ label momentBeforeJump:
     mcDrunk "I don't feel anything at all now."
 
     play sound "audio/beerdropsound.ogg"
-    "[playername] throws the empty bottle of beer"
+    narrator "[playername] throws the empty bottle of beer"
     show mcdrunk scary
     menu: 
         
@@ -904,18 +909,18 @@ label jumpNow:
 
 
     $ jumpFromRoof = True
-    "[playername] jumps"
+    narrator "[playername] jumps"
     play sound "audio/jumpdown.wav"
     hide mcdrunk with dissolve
     
     scene black
     
-    "...{p}"
+    narrator "...{p}"
 
     play sound "audio/ambulance.wav"
     scene ambulance_bg with fade
-    "[playername] hurt badly"
-    "..."
+    narrator "[playername] hurt badly"
+    narrator "..."
     stop sound
 
     # Hospital scene
@@ -1017,15 +1022,15 @@ label startAct3:
     scene cherryblossom_bg with fade
 
     $ totalFearNum = fearAloneNum + fearHarmfulNum + fearBadPNum
-    "Total Fears Had [totalFearNum]" # https://www.renpy.org/doc/html/text.html
+    narrator "Total Fears Had [totalFearNum]" # https://www.renpy.org/doc/html/text.html
 
-    "You feared being harmful : [fearHarmfulNum] times"
+    narrator "You feared being harmful : [fearHarmfulNum] times"
 
-    "You feared being alone : [fearAloneNum] times"
+    narrator "You feared being alone : [fearAloneNum] times"
 
-    "You feared being bad person : [fearBadPNum] times"
+    narrator "You feared being bad person : [fearBadPNum] times"
 
-    "Which fear do you want to talk about? The other options can be talk later"
+    narrator "Which fear do you want to talk about? The other options can be talk later"
 
     jump startConvo
 
@@ -1270,7 +1275,7 @@ label finshFearTalk:
     grace "I mean…{p}it’s okay if you can’t…{p}I will just…"
 
     menu:
-        "Grace's waiting your reply..."
+        narrator "Grace's waiting your reply..."
 
         "Yeah of course you can!":
             mc "Yeah of course you can!" #i thikn can remove guaa??
@@ -1312,7 +1317,7 @@ label finshFearTalk:
 
     # Grace leave the screen
 
-    "Grace left you alone"
+    narrator "Grace left you alone"
     hide grace with dissolve
     hide graceai with dissolve
 

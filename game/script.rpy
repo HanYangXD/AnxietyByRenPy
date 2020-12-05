@@ -44,7 +44,7 @@ label splashscreen:
     hide text with dissolve
     scene black with fade
     with Pause(1)
-    
+    stop sound
     return
 
 
@@ -121,7 +121,7 @@ label start:
         "Eating my lunch.":
             jump eatWhat
 
-        "doing nothing.":
+        "Doing nothing.":
             jump whyNothing
 
 label playWhat:

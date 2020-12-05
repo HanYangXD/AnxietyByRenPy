@@ -2,9 +2,9 @@
 errors listed below, and try again.
 
 
-File "game/images.rpy", line 61: expected 'comma or end of line' not found.
-    $ flash = Fade(.25, 0, .75, color="#fff")
-    ^
+File "game/screens.rpy", line 374: u'vSbox' is not a keyword argument or valid child for the screen statement.
+    vSbox:
+         ^
 
 Ren'Py Version: Ren'Py 7.3.5.606
-Sat Dec 05 13:13:58 2020
+Sat Dec 05 15:21:02 2020

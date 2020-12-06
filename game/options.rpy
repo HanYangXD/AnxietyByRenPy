@@ -65,8 +65,8 @@ Note: These phone calls are in Malaysia applicable only.""")
 ## distribution. This must be ASCII-only, and must not contain spaces, colons,
 ## or semicolons.
 
-define build.name = "Anxiety Simulator"
-
+define build.name = "AnxietySimulator"
+config.window_icon = "window_icon.ico"
 
 ## Sounds and music ############################################################
 

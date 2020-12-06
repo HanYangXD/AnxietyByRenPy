@@ -29,8 +29,36 @@ define config.version = "1.0"
 ## Text that is placed on the game's about screen. Place the text between the
 ## triple-quotes, and leave a blank line between paragraphs.
 
-define gui.about = _p("""
+define gui.about = _p(""" 
+The story of this game is about a person (you) downloaded an app called Anxiety Intelligence (AI).\n
+Through the story, you will feel and understand more how a person communicate with his/her/their anxiety daily.\n
+--------------------------------------------------------------------------\n
+This story was adapted from {a=https://github.com/ncase/anxiety}here{/a}!\n
+Thanks to the origin author, {a=https://github.com/ncase}Nicky Case{/a}.\n
+This game wouldn't be made without the story.\n
+--------------------------------------------------------------------------\n
+PS: This is an assignment for First City University College.\n
+:D \n
 """)
+
+define gui.helpinfo = _p("""
+If you ever feel like you want to harm yourself, feel free contact any hotlines below:\n
+1. {b}BEFRIENDERS{/b}
+
++ KL: 03-7956 8145 (24 hours)\n
++ Ipoh: 05-547 7933 (4pm to 11pm)\n
++ Penang: 04-281 5161 (3pm to midnight)\n
++ E-Mail: sam@befrienders.org.my\n
++ Website: {a=https://www.befrienders.org.my/}https://www.befrienders.org.my/{/a}
+\n 
+2. {b}MALAYSIAN MENTAL HEALTH ASSOCIATION (MMHA){/b}
+
++ Ph: 03-2780 6803\n
++ E-Mail: admin@mmha.org.my\n
++ Website: {a=https://mmha.org.my/}https://mmha.org.my/{/a}\n\n
+Other references hotlines refer to {a=https://www.aia.com.my/en/what-matters/seetheotherside/mental-health-helpline-resources.html}here{/a}.
+\n
+Note: These phone calls are in Malaysia applicable only.""")
 
 
 ## A short name for the game used for executables and directories in the built

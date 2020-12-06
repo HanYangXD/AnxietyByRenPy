@@ -2,9 +2,12 @@
 errors listed below, and try again.
 
 
-File "game/screens.rpy", line 298: expected statement.
-    def my_function():
-                   ^
+File "game/screens.rpy", line 593: u'_p' is not a keyword argument or valid child for the vbox statement.
+(Perhaps you left out a " at the end of the first line.)
+    _p(""" 
+      ^
+                Seek help if needed!
+                """)
 
 Ren'Py Version: Ren'Py 7.3.5.606
-Sun Dec 06 10:42:45 2020
+Sun Dec 06 12:35:36 2020

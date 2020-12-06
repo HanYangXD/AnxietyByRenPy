@@ -326,6 +326,9 @@ screen navigation():
 
         textbutton _("Load") action ShowMenu("load")
 
+        if main_menu:
+            textbutton _("Help") action ShowMenu("helpinfo")
+
         if renpy.variant("pc") or (renpy.variant("web") and not renpy.variant("mobile")):
 
             ## Help isn't necessary or relevant to mobile devices.
@@ -389,17 +392,9 @@ screen main_menu():
 
     style_prefix "main_menu"
 
-    # add gui.main_menu_background
-
-    #ImageButtons
-    
-
-
     ## This empty frame darkens the main menu.
     frame:
-        
         pass 
-
 
     ## The use statement includes another screen inside this one. The actual
     ## contents of the main menu are in the navigation screen.
@@ -573,6 +568,39 @@ style return_button:
     xpos gui.navigation_xpos
     yalign 1.0
     yoffset -30
+
+
+## Help screen ################################################################
+##
+## This screen gives some help such as hotlines for depression and anxiety.
+
+screen helpinfo():
+
+    tag menu
+
+    use game_menu(_("Help Info"), scroll="viewport"):
+
+        style_prefix "helpinfo"
+
+        vbox:
+
+            label "{size=35}{b}Hotlines{/b}{/size}"
+            
+            if gui.helpinfo:
+                text "[gui.helpinfo!t]\n"
+
+
+
+## This is redefined in options.rpy to add text to the helpinfo screen.
+define gui.helpinfo = ""
+
+style helpinfo_label is gui_label
+style helpinfo_label_text is gui_label_text
+style helpinfo_text is gui_text
+
+style helpinfo_label_text:
+    size gui.label_text_size
+
 
 
 ## About screen ################################################################

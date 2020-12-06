@@ -2,9 +2,9 @@
 errors listed below, and try again.
 
 
-File "game/screens.rpy", line 342: u'image_menu' is not a keyword argument or valid child for the vbox statement.
-    image_menu
-              ^
+File "game/screens.rpy", line 298: expected statement.
+    def my_function():
+                   ^
 
 Ren'Py Version: Ren'Py 7.3.5.606
-Sat Dec 05 21:19:34 2020
+Sun Dec 06 10:42:45 2020

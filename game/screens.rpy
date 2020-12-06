@@ -326,6 +326,12 @@ screen navigation():
 
         textbutton _("Load") action ShowMenu("load")
 
+        if renpy.variant("pc") or (renpy.variant("web") and not renpy.variant("mobile")):
+
+            ## Help isn't necessary or relevant to mobile devices.
+            if not main_menu:
+                textbutton _("Controls") action ShowMenu("help")
+
         if not main_menu:
             textbutton _("Settings") action ShowMenu("preferences")
 
@@ -337,20 +343,14 @@ screen navigation():
 
             textbutton _("Main Menu") action MainMenu()
 
-        if not main_menu:
-            textbutton _("About") action ShowMenu("about")
 
 
-        if renpy.variant("pc") or (renpy.variant("web") and not renpy.variant("mobile")):
-
-            ## Help isn't necessary or relevant to mobile devices.
-            textbutton _("Help") action ShowMenu("help")
 
         if renpy.variant("pc"):
 
             ## The quit button is banned on iOS and unnecessary on Android and
             ## Web.
-            textbutton _("Quit") action Quit(confirm=not main_menu)
+            textbutton _("Quit Game") action Quit(confirm=not main_menu)
     
     # Put setting and info at right bottom
     hbox:
@@ -595,7 +595,7 @@ screen about():
 
         vbox:
 
-            label "[config.name!t]"
+            label "{size=35}{b}[config.name!t]{/b}{/size}"
             text _("Version [config.version!t]\n")
 
             ## gui.about is usually set in options.rpy.
@@ -759,7 +759,7 @@ screen preferences():
 
     tag menu
 
-    use game_menu(_("Preferences"), scroll="viewport"):
+    use game_menu(_("Settings"), scroll="viewport"):
 
         vbox:
 
@@ -1018,7 +1018,7 @@ screen help():
 
     default device = "keyboard"
 
-    use game_menu(_("Help"), scroll="viewport"):
+    use game_menu(_("Controls"), scroll="viewport"):
 
         style_prefix "help"
 

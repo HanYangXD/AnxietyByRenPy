@@ -88,7 +88,7 @@ define config.has_voice = True
 ## the player is at the main menu. This file will continue playing into the
 ## game, until it is stopped or another file is played.
 
-# define config.main_menu_music = "main-menu-theme.ogg"
+define config.main_menu_music = "audio/music/mainmenu_bgm.wav"
 
 
 ## Transitions #################################################################
@@ -209,7 +209,6 @@ init python:
     build.classify('**/.**', None)
     build.classify('**/#**', None)
     build.classify('**/thumbs.db', None)
-    config.window_icon = "icon.ico"
     ## To archive files, classify them as 'archive'.
 
     # build.classify('game/**.png', 'archive')

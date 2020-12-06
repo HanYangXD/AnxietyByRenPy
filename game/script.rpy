@@ -2,7 +2,7 @@
 init python:
     def callbackcontinue(ctc, **kwargs):
         if ctc == "end":
-            renpy.music.play("audio/pokemonctc.mp3",channel="sound")
+            renpy.sound.play("audio/pokemonctc.mp3",channel="sound")
 # Declare characters used by this game. The color argument colorizes the
 # name of the character.
 
@@ -53,7 +53,8 @@ label splashscreen:
 label start:
 
     # Intro
-
+    stop music
+    play music "audio/music/firstroom_bgm.wav" loop
     scene mcdorm_bg
     show screen locationNow("Dorm room") with dissolve
 
@@ -97,6 +98,7 @@ label start:
     narrator "Quick note: \n\nChoose wisely to protect yourself from something bad."
 
     narrator "Tip: \n\nChoose the choices that hit your deepest and darkest fear."
+    stop music
 
     #---------------- Act 1 -------------------#
 
@@ -105,6 +107,7 @@ label start:
     hide screen nextSceneScreen
 
     # Show School Yard Scene
+    play music "audio/music/act1_bgm.wav" loop
     scene schoolyard1_bg with fade
     show screen locationNow("School Yard") with dissolve
 
@@ -133,7 +136,7 @@ label playWhat:
     #with dissolve
     ai "What are you playing?"
     
-    mc "Why are you concerning me?"
+    mc "Why do you care?"
     show ai serious neck
     ai "Because it is lunch time, and you are not eating but instead you are playing phone."
 
@@ -176,6 +179,7 @@ label eatWhat:
     show ai shocked
     ai "at this rate, you will get LONELY FOREVERRRRRRRRR"
 
+    play sound "audio/notifypopupsound.ogg"
     $ renpy.notify("You started to being lonely") #change colour? add sound? idk decide later
     $ fearAloneNum += 1
 
@@ -209,7 +213,7 @@ label whyNothing:
     show ai shocked at x_shake with vpunch
     ai "DIEEEEEEEEEEEEEEEEEEEEEEEEE." # Shaek screen    
 
-
+    play sound "audio/notifypopupsound.ogg"
     $ renpy.notify("You started to fear being a bad person") #change colour? add sound? idk decide later
     $ fearBadPNum += 1
 
@@ -262,6 +266,7 @@ label goParty:
     show ai shocked at x_shake with vpunch
     ai "DIEEEEEEEEEEEEEEEE"
 
+    play sound "audio/notifypopupsound.ogg"
     $ renpy.notify("You started to fear being harmful") #wait what? fear of getting harm is it?
     $ fearHarmfulNum += 1
 
@@ -282,6 +287,7 @@ label noParty:
     show ai shocked at x_shake with vpunch
     ai "Researchers have found that loneliness is just as lethal as smoking 15 cigarettes per day.{p}Lonely people are 50 percent more likely to die prematurely than those with healthy social relationships"
 
+    play sound "audio/notifypopupsound.ogg"
     $ renpy.notify("You started to fear being lonely")
     $ fearAloneNum += 1
     mc "Okay fine!"
@@ -327,6 +333,7 @@ label lookNews:
     show ai happy laugh
     ai "Why not retweet that? :D" #i think the expression can change gua? use sprite
 
+    play sound "audio/notifypopupsound.ogg"
     $ renpy.notify("You started to fear being harmful") # Sound effect maybe
     $ fearHarmfulNum += 1
     
@@ -343,6 +350,7 @@ label catDrinkMilk:
 
     ai "CAT CAN’T DIGEST MILK AND WE’RE TERRIBLE PERSON FOR ENJOYING ANIMAL ABUSE"
 
+    play sound "audio/notifypopupsound.ogg"
     $ renpy.notify("You started to feat being bad person")
     $ fearBadPNum += 1
 
@@ -412,6 +420,8 @@ label afterPartyThought:
 
     hide ai
     hide screen locationNow
+    stop music
+
     jump startAct2
 
 #---------------- Act 2 -------------------#
@@ -472,10 +482,9 @@ label A2continue:
 
     hide screen locationNow
     # Show white scene (Like looking at phone)
+    stop music
     scene whitebgphone with dissolve
     show screen locationNow("Phone Screen") with dissolve
-    # Stop music 
-    stop music
 
     show ai shocked neck 
     ai "Oh no they all hate us now!"
@@ -522,6 +531,7 @@ label A2continue:
     #mc "FACKKKING FACK-FACKITY FACKKKKKK" #srsly meh later gg how
 
     # Need to show 3 notify at the same time (Fix later)
+    play sound "audio/notifypopupsound.ogg"
     $ renpy.notify("You started to fear being bad")
     $ fearBadPNum += 1
     $ renpy.notify("You started to fear being harmful") 
@@ -613,6 +623,7 @@ label startAct2point1:
     
     hide screen locationNow
     # At rooftop
+    play music "audio/music/rooftopbgm.wav" loop
     scene rooftop
     show screen locationNow("Rooftop") with dissolve
     show amanda smile with dissolve
@@ -700,6 +711,7 @@ label gonnaJump:
     amanda "Yeah! I believe in you babe! Now let's do it!"
     hide amanda with dissolve
 
+    stop music
     hide screen locationNow
     scene whitebgphone with fade
     show screen locationNow("Phone Screen") with dissolve
@@ -712,6 +724,7 @@ label gonnaJump:
     narrator ";)"
     hide screen locationNow
 
+    play music "audio/music/rooftopbgm.wav" loop
     scene rooftop with fade
     show screen locationNow("Rooftop") with dissolve
 
@@ -875,6 +888,7 @@ label gratsGoodEnd:
     narrator "[playername] walks away and left the party"
     hide amanda with dissolve
     hide mcdrunk with dissolve
+    stop music
 
     jump startAct3
 
@@ -965,6 +979,7 @@ label jumpNow:
     $ jumpFromRoof = True
     narrator "[playername] jumps"
     play sound "audio/jumpdown.wav"
+    stop music
     hide screen locationNow
     hide mcdrunk with dissolve
 
@@ -1008,10 +1023,16 @@ label startAct3:
     $ renpy.pause(2.0)
     hide screen nextSceneScreen
 
+    play music "audio/music/act3_bgm.wav" loop
     scene schoolyard2_bg with fade
     show screen locationNow("School Yard") with dissolve
 
-    play sound "audio/walkingsound.ogg"
+    if jumpFromRoof:
+        play sound "audio/wheelchairsound.ogg"
+    else:
+        play sound "audio/walkingsound.ogg"
+
+
     mc "..."
     play sound "audio/signsound.wav"
 
@@ -1023,6 +1044,10 @@ label startAct3:
         play sound "audio/shockai.wav"
         show ai shocked at x_shake with vpunch
         ai "JUMPING FROM 3 FLOORS DOWN!"
+        show ai worry
+        ai "..."
+        ai "And now you end up with a wheelchair!"
+        mc "Yeah..."
     else:
         ai "Not to die…?"
 
@@ -1401,7 +1426,7 @@ label finshFearTalk:
     ai "But I am still new. I suck… Need more data to learn from it."
     ai "So please…"
     show ai smile
-    ai "Help me help you!  (◕ ω ◕)"
+    ai "Help me help you!  (OωO)"
     show ai notconfident
     ai "Although it may take a while or even years to do so."
     show ai happy laugh
@@ -1432,12 +1457,16 @@ label finshFearTalk:
 
     hide ai with dissolve
     hide screen locationNow
+    stop music
 
     jump endCredits
 
 label endCredits:
 
     scene black with fade
+
+    show text "The End" with dissolve
+    $ renpy.pause(4.5)
 
     show text "Huge thanks to Nicky Case\nWithout him, the story cannot be made." with dissolve
     $ renpy.pause(2.5)

@@ -117,12 +117,15 @@ label start:
         mc "I am..."
 
         "Playing phone.":
+            mc "Playing phone lo."
             jump playWhat
 
         "Eating my lunch.":
+            mc "Eating lunch lo."
             jump eatWhat
 
         "Doing nothing.":
+            mc "Nothing la."
             jump whyNothing
 
 label playWhat:
@@ -239,8 +242,10 @@ label A1Q2:
         "I am..."
 
         "Going":
+            mc "Yea, I'm going."
             jump goParty
         "Not going":
+            mc "Nah, I'm not going."
             jump noParty
 
 label goParty:
@@ -330,7 +335,7 @@ label lookNews:
 label catDrinkMilk:
     mc "Awww, the cat is drinking milk."
 
-    mc "How adorable! Let's retweet this."
+    mc "It's so cute! Let's retweet this."
 
     narrator "You tapped retweet."
     show ai shocked
@@ -352,7 +357,7 @@ label stopPhone:
     play sound "audio/notificationsound.ogg"
     narrator "Received notification from Instagram" 
 
-    mc "Hey! I got notification from Instagram, let's check it out"
+    mc "Eh? I got notification from Instagram, let's check it out"
     
     show screen instaPhone() with dissolve
     narrator "You launched Instagram"
@@ -394,13 +399,13 @@ label afterPartyThought:
     mc "I will just {size=30}AGREE{/size} to them."
     mc "I DON'T CARE anything anymore."
     mc "You're NOT in my control!"
-    mc "Now excuse me, I will need to go to my class now."
+    mc "Now excuse me, I am going to my class now."
     show ai shocked neck
     ai "No!"
     ai "Wait!"
 
     play sound "audio/walkingsound.ogg"
-    narrator "You choose to ignore the anxiety and walk away" 
+    narrator "You choose to ignore the anxiety and walk away." 
     
     show ai notconfident
     ai "But..."
@@ -413,7 +418,7 @@ label afterPartyThought:
 
 label startAct2:
     
-    scene black
+    scene black with fade
     show screen nextSceneScreen("At the party") with fade
     $ renpy.pause(2.0)
     hide screen nextSceneScreen
@@ -428,41 +433,40 @@ label startAct2:
         jump A2cat
 
 label A2news:
-    show amanda normal at left
+    show amanda normal at left with dissolve
     amanda "Did you see the horrible news?"
-    show g1 normal at right
+    show g1 normal at right with dissolve
     g1 "Yeah it's sooooo bad."
     mc "h-Hey..."
     amanda "Goshh, I hate the news. It's sensationalism and clickbait."
     mc "n-Nice party... eh...?"
-    show g2 normal
+    show g2 normal with dissolve
     g2 "True, but they're just following incentives. The real problem is those who clicked on it."
     show g1 shout
-    hide g2
-    g1 "Who would retween that rerrible news and make others feel bad?"
+    hide g2 with dissolve
+    g1 "Who would retweet that terrible news and make others feel bad?"
     show amanda hmph
     amanda "Ughh, I know right?"
     jump A2continue
 
 label A2cat:
-    show amanda normal at left
+    show amanda normal at left with dissolve
     amanda "Like I was saying, the Meme Industrial Complex is exploiting the cats."
     mc "h-Hey..."
-    show g1 normal at right
-    g1 "Please explain in detail Amanda" #added amanda
+    show g1 normal at right with dissolve
+    g1 "Please explain in detail Amanda" 
     mc "n-Nice party... eh...?"
-    show g2 normal 
+    show g2 normal with dissolve
     g2 "Well, yesterday I saw someone retweeted a GIF of a cat drinking milk."
-    #g2 "but the person remove the tweet moments later, thinking that nobody would ever notice him doing it"
-    hide g2
+    hide g2 with dissolve
     show g1 surprised
-    g1 "Wait what?? Cat can't digest that! who would retween GIF that is abusing animal like that?" #changed to g1 talking
+    g1 "Wait what?? Cat can't digest that! who would retween GIF that is abusing animal like that?" 
     show amanda hmph
     amanda "Ughh, I know right?"
     jump A2continue
 
 label A2continue:
-    hide amanda
+    hide amanda 
     hide g1
     hide g2
 
@@ -786,10 +790,13 @@ label listenToMe:
     menu:
         mcDrunk "You can't stop me!"
         "You're drunk! That's three floor down":
+            uai "You're drunk! That's three floor down"
             jump threeFloorLeh
         "Dang it, this is all I get as a thanks?":
+            uai "Dang it, this is all I get as a thanks?"
             jump thankMeLikeThatMeh
         "Okay, I admit. I messed up!":
+            uai "Okay, I admit. I messed up!"
             jump okSorryLo
 
 label threeFloorLeh:
@@ -826,8 +833,10 @@ label laiLiaoEndingLiao:
         mcDrunk "Any remarks, Caption Obvious?" #what is caption obvious? hahaa
 
         "You shouldn't take revenge on me!":
+            uai "You shouldn't take revenge on me!"
             jump badEndLiaoLoGG #Bad End
         "I've hurt you.":
+            uai "I've hurt you."
             jump gratsGoodEnd #Good End
 
 
@@ -884,8 +893,10 @@ label badEnd:
         mcDrunk "This is your last chance to convience me, choose your word carefully."
 
         "Fine. I am done protecting you.":
+            uai "Fine. I am done protecting you."
             jump jumpLaIDC
         "I'm sorry":
+            uai "I'm sorry"
             jump soriDontJump
 
 label jumpLaIDC:
@@ -1327,8 +1338,7 @@ label finshFearTalk:
         narrator "Grace's waiting your reply..."
 
         "Yeah of course you can!":
-            mc "Yeah of course you can!" #i thikn can remove guaa??
-            # Grace expression in shocked
+            mc "Yeah of course you can!" 
             show grace shocked
             show ai shocked at right with dissolve 
             ai "Hang on [playername], you may be making them uncomfortable."

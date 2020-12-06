@@ -216,9 +216,10 @@ label A1Q2:
     show ai normal
     mc "..."
 
-    show screen fbPhone()
+    
     mc "You know what, I should check Facebook now."
-    hide screen fbPhone
+    show screen fbPhone() with dissolve
+    narrator "You launched Facebook"
 
     show ai shocked
     ai "Please Nooooooooooooooooooo" #changed noooooooooo
@@ -232,6 +233,7 @@ label A1Q2:
     mc "Wait, I got an invitation too." #added wait
     show ai normal
     ai "Well then, What's your decision?"
+    hide screen fbPhone with dissolve
 
     menu:
         "I am..."
@@ -294,9 +296,9 @@ label A1Q3:
 
     mc "I will just have a look on Twitter." # Twitter
 
-    show screen twitterPhone()
+    show screen twitterPhone() with dissolve
     narrator "You launched Twitter" 
-    hide screen twitterPhone
+    
 
     menu:
         "Hmmm what should I check?"
@@ -342,6 +344,7 @@ label catDrinkMilk:
     jump stopPhone
 
 label stopPhone:
+    hide screen twitterPhone with dissolve
     mc "Alright, I should stop looking at my phone now."
     show ai happy laugh
     ai "Great! You should've did that earlier and let your mind rela-"
@@ -351,9 +354,9 @@ label stopPhone:
 
     mc "Hey! I got notification from Instagram, let's check it out"
     
-    show screen instaPhone() 
+    show screen instaPhone() with dissolve
     narrator "You launched Instagram"
-    hide screen instaPhone
+    
     
     mc "Wow, this party looks kinda nice."
 
@@ -384,6 +387,7 @@ label afterPartyThought:
     mc "THE"
     mc "{size=32}FUDGE{/size}" 
     mc "UP"
+    hide screen instaPhone with dissolve
     show ai shocked
     ai "Wha-"
 

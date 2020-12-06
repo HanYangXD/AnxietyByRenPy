@@ -55,6 +55,7 @@ label start:
     # Intro
 
     scene mcdorm_bg
+    show screen locationNow("Dorm room") with dissolve
 
     narrator "On a peaceful day of weekend in your bedroom."
 
@@ -88,7 +89,7 @@ label start:
     narrator "Have fun!"
 
     mc  "..."
-
+    hide screen locationNow with dissolve
     scene black
 
     narrator "And so your anxiety journey begins..."
@@ -99,13 +100,13 @@ label start:
 
     #---------------- Act 1 -------------------#
 
-    show screen nextSceneScreen("Some days later")
+    show screen nextSceneScreen("Some days later") with fade
     $ renpy.pause(2.0)
     hide screen nextSceneScreen
 
     # Show School Yard Scene
-    scene schoolyard1_bg
-    with fade
+    scene schoolyard1_bg with fade
+    show screen locationNow("School Yard") with dissolve
 
     show ai normal
     with dissolve
@@ -401,7 +402,7 @@ label afterPartyThought:
     ai "But..."
 
     hide ai
-
+    hide screen locationNow
     jump startAct2
 
 #---------------- Act 2 -------------------#
@@ -409,13 +410,13 @@ label afterPartyThought:
 label startAct2:
     
     scene black
-    show screen nextSceneScreen("At the party")
+    show screen nextSceneScreen("At the party") with fade
     $ renpy.pause(2.0)
     hide screen nextSceneScreen
 
     play music "audio/partybeats.ogg" loop
-    scene party_bg
-    with fade
+    scene party_bg with fade
+    show screen locationNow("Party Room") with dissolve
 
     if lookednews:
         jump A2news
@@ -461,10 +462,10 @@ label A2continue:
     hide g1
     hide g2
 
-
+    hide screen locationNow
     # Show white scene (Like looking at phone)
-    scene whitebgphone
-    with dissolve
+    scene whitebgphone with dissolve
+    show screen locationNow("Phone Screen") with dissolve
     # Stop music 
     stop music
 
@@ -544,12 +545,14 @@ label A2continue:
     ai "Which means I need more time to learn to feel like a human."
     show ai serious
     ai "All I want you to do is to be patient with me..." #added to do
+
     hide ai with dissolve
+    hide screen locationNow
 
     # Play music back
     play music "audio/partybeats.ogg" loop
-    scene party_bg
-    with dissolve 
+    scene party_bg with dissolve 
+    show screen locationNow("Party Room") with dissolve
 
     show amanda normal with dissolve#fade in
 
@@ -587,17 +590,23 @@ label goRoof:
     amanda "That is the spirit kiddo!"
     ai "NO [playername], DO NOT GOOOOOOOOOOOOOOOO!"
     hide amanda with dissolve
+    hide screen locationNow
     stop music
+
     # Walk to rooftop
     scene followtorooftop
+    show screen locationNow("Pathway") with dissolve
     play sound "audio/walkingsound.ogg"
     narrator "You decided to join Amanda and her friends to the rooftop."
     jump startAct2point1
 
 
 label startAct2point1:
+    
+    hide screen locationNow
     # At rooftop
     scene rooftop
+    show screen locationNow("Rooftop") with dissolve
     show amanda smile with dissolve
     
     amanda "Cheers!"
@@ -683,7 +692,9 @@ label gonnaJump:
     amanda "Yeah! I believe in you babe! Now let's do it!"
     hide amanda with dissolve
 
+    hide screen locationNow
     scene whitebgphone with fade
+    show screen locationNow("Phone Screen") with dissolve
     show ai notconfident with dissolve
     ai "[playername]..."
 
@@ -691,8 +702,11 @@ label gonnaJump:
     narrator "Now YOU will become AI and convince [playername]" #convience as in convince him either jump or no jump?
     narrator "Choose wisely."
     narrator ";)"
+    hide screen locationNow
 
     scene rooftop with fade
+    show screen locationNow("Rooftop") with dissolve
+
     uai "NO NO NO NO NO NO NO"
     menu:
         uai "HEYYYYYYYYYYYYY"
@@ -874,21 +888,30 @@ label jumpLaIDC:
     uai "Just jump then. I don't care anymore."
     show mcdrunk drunk
     mcDrunk "..."
+
+    scene toolate 
+    show screen locationNow("???")
     show mcdrunk scary
     mcDrunk "Bottoms up!"
     uai "WAIT\nTHAT WAS REVERSE PSYCHOLOGY. YOU WERE SUPPOSED TO DO THE OPPOSITE OF WHAT I SA-"
+
+    scene rooftop
+    show screen locationNow("Rooftop")
+
     jump momentBeforeJump
 
 label soriDontJump:
     show mcdrunk drunk
     mcDrunk "You're... sorry?"
     uai "Yeah I'm sorry."
-    
 
     scene toolate 
+    show screen locationNow("???")
     show mcdrunk scary
     mcDrunk "Too late :)"
+
     scene rooftop
+    show screen locationNow("Rooftop")
 
     jump momentBeforeJump
 
@@ -927,25 +950,31 @@ label jumpNow:
     $ jumpFromRoof = True
     narrator "[playername] jumps"
     play sound "audio/jumpdown.wav"
+    hide screen locationNow
     hide mcdrunk with dissolve
-    
+
     scene black
     
     narrator "...{p}"
 
     play sound "audio/ambulance.wav"
     scene ambulance_bg with fade
+    show screen locationNow("Ambulance") with dissolve
+
     narrator "[playername] hurt badly"
     narrator "..."
     stop sound
 
+    hide screen locationNow
     # Hospital scene
     scene hospitalbed_bg with fade
+    show screen locationNow("Hospital")with dissolve
     mcDrunk "..."
     show ai worry neck
     ai "..."
-
-
+    hide ai with dissolve
+    hide screen locationNow
+    jump startAct3
 
 #---------------- Act 3 -------------------#
 
@@ -965,6 +994,7 @@ label startAct3:
     hide screen nextSceneScreen
 
     scene schoolyard2_bg with fade
+    show screen locationNow("School Yard") with dissolve
 
     play sound "audio/walkingsound.ogg"
     mc "..."
@@ -1036,7 +1066,6 @@ label startAct3:
     hide ai with dissolve
 
     scene cherryblossom_bg with fade
-
     $ totalFearNum = fearAloneNum + fearHarmfulNum + fearBadPNum
     narrator "Total Fears Had [totalFearNum]" # https://www.renpy.org/doc/html/text.html
 
@@ -1388,6 +1417,8 @@ label finshFearTalk:
     mc "..."
 
     hide ai with dissolve
+    hide screen locationNow
+
     jump endCredits
 
 label endCredits:

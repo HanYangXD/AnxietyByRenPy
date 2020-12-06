@@ -66,7 +66,6 @@ Note: These phone calls are in Malaysia applicable only.""")
 ## or semicolons.
 
 define build.name = "AnxietySimulator"
-config.window_icon = "window_icon.ico"
 
 ## Sounds and music ############################################################
 
@@ -210,7 +209,7 @@ init python:
     build.classify('**/.**', None)
     build.classify('**/#**', None)
     build.classify('**/thumbs.db', None)
-
+    config.window_icon = "icon.ico"
     ## To archive files, classify them as 'archive'.
 
     # build.classify('game/**.png', 'archive')

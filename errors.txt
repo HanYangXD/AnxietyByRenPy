@@ -2,12 +2,7 @@
 errors listed below, and try again.
 
 
-File "game/screens.rpy", line 593: u'_p' is not a keyword argument or valid child for the vbox statement.
-(Perhaps you left out a " at the end of the first line.)
-    _p(""" 
-      ^
-                Seek help if needed!
-                """)
+File "game/script.rpy", line 1410: indentation mismatch.
 
 Ren'Py Version: Ren'Py 7.3.5.606
-Sun Dec 06 12:35:36 2020
+Sun Dec 06 15:07:08 2020

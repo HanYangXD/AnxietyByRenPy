@@ -61,3 +61,15 @@ image mosaicSplash:
     "images/splash/splash3.png"
     0.2
     repeat
+
+image catFaceScare:
+    "gui/overlay/main_menu_secret1.png"
+    0.5
+    "gui/overlay/main_menu_secret2.png"
+    0.2
+    "gui/overlay/main_menu_secret3.png"
+    0.5
+    "gui/overlay/main_menu.png"
+    0.5 
+
+    repeat

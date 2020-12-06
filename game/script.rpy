@@ -346,14 +346,15 @@ label stopPhone:
     ai "Great! You should've did that earlier and let your mind rela-"
 
     play sound "audio/notificationsound.ogg"
-
-    show screen instaPhone() 
     narrator "Received notification from Instagram" 
-    hide screen instaPhone
 
     mc "Hey! I got notification from Instagram, let's check it out"
     
+    show screen instaPhone() 
     narrator "You launched Instagram"
+    hide screen instaPhone
+    
+    mc "Wow, this party looks kinda nice."
 
     if goingparty: 
         jump niceParty
@@ -1387,6 +1388,35 @@ label finshFearTalk:
     mc "..."
 
     hide ai with dissolve
+    jump endCredits
+
+label endCredits:
+
+    scene black with fade
+
+    show text "Huge thanks to Nicky Case\nWithout him, the story cannot be made." with dissolve
+    $ renpy.pause(2.5)
+
+    show text "Also Renpy for creating this game.\nFor more information can see in About." with dissolve
+    $ renpy.pause(3.5)
+
+    show text "And last but not least." with dissolve
+    $ renpy.pause(2.5)
+
+    show text "You, [playername]." with dissolve
+    $ renpy.pause(1.5)
+
+    hide text with dissolve
+    $ renpy.pause(1)
+
+    jump fakeMainMenu
+
+label fakeMainMenu:
+
+    play sound "audio/lastjumpscare.wav"
+    scene catFaceScare with fade
+    
+
 
     # This ends the game.
 

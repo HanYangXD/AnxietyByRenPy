@@ -904,7 +904,7 @@ label badEnd:
     show mcdrunk drunk
     menu:
         
-        mcDrunk "This is your last chance to convience me, choose your word carefully."
+        mcDrunk "This is your last chance to convince me, choose your word carefully."
 
         "Fine. I am done protecting you.":
             uai "Fine. I am done protecting you."
@@ -1153,7 +1153,7 @@ label startConvo:
             mc "But the whole world seems dangerous. Full of tragedy and evil."
 
             mc "I don't know what I should say anymore, I am done. How about you AI?"
-            show ai happy laugh
+            show ai happy laugh with dissolve
             ai "You’re right. {p}So let’s start protecting ourselves." 
             ai "Or just yourself. {p}Since I am just a system that reacts to your emotions and responses."
             ai "Anyways, after looking through the internet." # Beep sound
@@ -1182,7 +1182,7 @@ label startConvo:
                     ai "What?"
 
                     mc "I was expecting more of Taekwando or Kung Fu action pack style."
-                    show ai laugh
+                    show ai happy laugh
                     ai "Hahaha!"
                     
                 "What if they still don't work?":
@@ -1204,7 +1204,7 @@ label startConvo:
         label fearAlone:
             mc "I am scared to be alone."
             mc "I am worried if anyone ever knows me,{p}the real me,{p}I may scare them away..."
-            show ai notconfident
+            show ai notconfident with dissolve
             ai "I agree, let’s work on our social life."
             show ai serious
             ai "I mean {i}your{/i} social life."
@@ -1353,7 +1353,7 @@ label finshFearTalk:
     scene schoolyard2_bg with fade
     show grace scared with dissolve
     grace "Would you mind if I sat with you for lunch?"
-    show grace scared at left
+    show grace scared at left with dissolve
     show graceai tsk at slightleft with dissolve 
     grAI "So,{p}This is your crush?{p}Why the heck is he sitting alone like a psycho serial killer?"
     show grace normal
@@ -1407,7 +1407,7 @@ label finshFearTalk:
 
     mc "Huh, that was weird.{p}I wonder what's going on with her?"
     mc "So you were saying?"
-    show ai notconfident at middle
+    show ai notconfident at middle with dissolve
     ai "..."
     show ai normal
     ai "Something about team and work?"

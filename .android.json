@@ -1,0 +1,1 @@
+{"layout": null, "package": "com.google.anxietysim", "include_pil": false, "numeric_version": "100", "expansion": false, "name": "Anxiety Simulator", "update_always": true, "source": false, "icon_name": "Anxiety Simulator", "version": "1.0", "update_icons": true, "permissions": ["VIBRATE", "INTERNET"], "include_sqlite": false, "store": "none", "orientation": "sensorLandscape"}

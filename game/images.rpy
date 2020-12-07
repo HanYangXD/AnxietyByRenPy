@@ -71,5 +71,3 @@ image catFaceScare:
     0.5
     "gui/overlay/main_menu.png"
     0.5 
-
-    repeat

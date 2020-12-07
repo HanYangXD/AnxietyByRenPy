@@ -2,9 +2,9 @@
 errors listed below, and try again.
 
 
-File "game/script.rpy", line 836: end of line expected.
-    uai "You shouldn't take revenge on me!":
-                                           ^
+File "game/script.rpy", line 1502: expected 'image_name_component' not found.
+    show "XD"
+         ^
 
 Ren'Py Version: Ren'Py 7.3.5.606
-Sun Dec 06 21:53:52 2020
+Mon Dec 07 17:12:40 2020

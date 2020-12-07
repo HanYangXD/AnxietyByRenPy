@@ -36,8 +36,13 @@ Through the story, you will feel and understand more how a person communicate wi
 This story was adapted from {a=https://github.com/ncase/anxiety}here{/a}!\n
 Thanks to the origin author, {a=https://github.com/ncase}Nicky Case{/a}.\n
 This game wouldn't be made without the story.\n
+The music, sound and character images are not our stuff. 
 --------------------------------------------------------------------------\n
 PS: This is an assignment for First City University College.\n
+
+Creator 1 : {a=https://github.com/HanYangXD}Choo Han Yang{/a} \n
+Creator 2 : {a=https://github.com/neohks}Neoh Kim Seng{/a} \n
+
 :D \n
 """)
 

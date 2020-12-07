@@ -25,7 +25,7 @@ define jumpFromRoof = False
 define goingparty = False
 define lookednews = False
 
-define playername = ""
+define playername = "John Doe"
 
 ## Variables ##
 default totalFearNum = 0
@@ -136,7 +136,7 @@ label playWhat:
     #with dissolve
     ai "What are you playing?"
     
-    mc "Why do you care?"
+    mc "Why are you concerning me?"
     show ai serious neck
     ai "Because it is lunch time, and you are not eating but instead you are playing phone."
 
@@ -180,7 +180,7 @@ label eatWhat:
     ai "at this rate, you will get LONELY FOREVERRRRRRRRR"
 
     play sound "audio/notifypopupsound.ogg"
-    $ renpy.notify("You started to being lonely") #change colour? add sound? idk decide later
+    $ renpy.notify("You started to being lonely") 
     $ fearAloneNum += 1
 
     jump A1Q2 
@@ -195,14 +195,16 @@ label whyNothing:
     show ai serious neck
     ai "If you are not doing anything, this means you are not productive!"
 
-    mc "So?" #added myself
+    mc "So?" 
     show ai annoyed neck
     ai "Go read some book or at least do something!"
 
-    mc "But I am not feeling to anythin-" #removed 'g' from anything
+    mc "But I am not feeling to anythin-" 
     show ai notconfident
     ai "If we are not contributing to society then we are the so called..."
-    show ai shocked
+    
+    play sound "audio/shockai.wav"
+    show ai shocked at x_shake with vpunch
     ai "SOCIETY PARASITE!"
 
     mc "Uh huh. So?"
@@ -211,10 +213,10 @@ label whyNothing:
 
     play sound "audio/shockai.wav"
     show ai shocked at x_shake with vpunch
-    ai "DIEEEEEEEEEEEEEEEEEEEEEEEEE." # Shaek screen    
+    ai "DIEEEEEEEEEEEEEEEEEEEEEEEEE." 
 
     play sound "audio/notifypopupsound.ogg"
-    $ renpy.notify("You started to fear being a bad person") #change colour? add sound? idk decide later
+    $ renpy.notify("You started to fear being a bad person")
     $ fearBadPNum += 1
 
     jump A1Q2
@@ -229,15 +231,15 @@ label A1Q2:
     narrator "You launched Facebook"
 
     show ai shocked
-    ai "Please Nooooooooooooooooooo" #changed noooooooooo
+    ai "Please Nooooooooooooooooooo"
 
-    mc "Huh? Amanda is hosting a party this weekend." #changed abit
+    mc "Huh? Amanda is hosting a party this weekend." 
     show ai annoyed neck
     ai "Doesn't that weirdo throw a party every weekend?"
     show ai annoyed neck
     ai "What inner void are they trying to fill? They must be deeply messed up inside."
 
-    mc "Wait, I got an invitation too." #added wait
+    mc "Wait, I got an invitation too." 
     show ai normal
     ai "Well then, What's your decision?"
     hide screen fbPhone with dissolve
@@ -267,14 +269,14 @@ label goParty:
     ai "DIEEEEEEEEEEEEEEEE"
 
     play sound "audio/notifypopupsound.ogg"
-    $ renpy.notify("You started to fear being harmful") #wait what? fear of getting harm is it?
+    $ renpy.notify("You started to fear being harmful") 
     $ fearHarmfulNum += 1
 
     mc "Okay fine!"
     show ai serious
     ai "Huh?"
 
-    mc "I will say no, just stop bothering me or I will uninstall you!" #changed popping up to bothering, can we actually change bothering to kacau?
+    mc "I will say no, just stop bothering me or I will uninstall you!" 
     $goingparty=False
     
     jump A1Q3
@@ -282,9 +284,8 @@ label goParty:
 label noParty:
     show ai serious
     ai "Why not? If you don’t go you will be lonely forever!" 
-
-    play sound "audio/shockai.wav"
-    show ai shocked at x_shake with vpunch
+    ai "Based on this {a=https://www.inc.com/amy-morin/americas-loneliness-epidemic-is-more-lethal-than-smoking-heres-what-you-can-do-to-combat-isolation.html}article{/a}."
+    show ai shocked at x_shake
     ai "Researchers have found that loneliness is just as lethal as smoking 15 cigarettes per day.{p}Lonely people are 50 percent more likely to die prematurely than those with healthy social relationships"
 
     play sound "audio/notifypopupsound.ogg"
@@ -294,14 +295,14 @@ label noParty:
     show ai serious
     ai "Huh?"
 
-    mc "I will say yes, just stop bothering me or I will uninstall you!" #changed popping up to bothering, can we actually change bothering to kacau?
+    mc "I will say yes, just stop bothering me or I will uninstall you!"
     $goingparty=True
 
     jump A1Q3
 
 label A1Q3:
-    show ai worry neck
-    ai "But I just-"
+    show ai smile
+    ai "But you can't :)"
 
     mc "Ughhhh, I need to calm myself and feel less anxious." 
 
@@ -327,7 +328,7 @@ label lookNews:
     ai "Yeah, it's so horrible nowadays. I feel like the world is burning and has no hope for us to live any longer anymore"
 
     ai "I don't know why are we here... just to suffer"
-
+    show ai serious neck
     ai "Or why you're still being alive for?" 
     
     show ai happy laugh
@@ -345,13 +346,13 @@ label catDrinkMilk:
     mc "It's so cute! Let's retweet this."
 
     narrator "You tapped retweet."
-    show ai shocked
+    show ai shocked at x_shake
     ai "ARE YOU SERIOUS?!" 
 
     ai "CAT CAN’T DIGEST MILK AND WE’RE TERRIBLE PERSON FOR ENJOYING ANIMAL ABUSE"
 
     play sound "audio/notifypopupsound.ogg"
-    $ renpy.notify("You started to feat being bad person")
+    $ renpy.notify("You started to fear being bad person")
     $ fearBadPNum += 1
 
     jump stopPhone
@@ -406,7 +407,7 @@ label afterPartyThought:
 
     mc "I will just {size=30}AGREE{/size} to them."
     mc "I DON'T CARE anything anymore."
-    mc "I'm NOT in your control!" #edited
+    mc "I'm NOT in your control!"
     mc "Now excuse me, I am going to my class now."
     show ai shocked neck
     ai "No!"
@@ -482,7 +483,8 @@ label A2continue:
 
     hide screen locationNow
     # Show white scene (Like looking at phone)
-    stop music
+
+    $ renpy.music.set_volume(0.3, .5, channel="music")
     scene whitebgphone with dissolve
     show screen locationNow("Phone Screen") with dissolve
 
@@ -568,7 +570,8 @@ label A2continue:
     hide screen locationNow
 
     # Play music back
-    play music "audio/partybeats.ogg" loop
+    # play music "audio/partybeats.ogg" loop
+    $ renpy.music.set_volume(1.0, .5, channel="music")
     scene party_bg with dissolve 
     show screen locationNow("Party Room") with dissolve
 
@@ -659,7 +662,7 @@ label startAct2point1:
 
     mc "Heck yeah!"
 
-    play sound "audio/glupsip.ogg"
+    play voice "audio/glupsip.ogg"
     narrator "You take another sip of the drink" 
     scene blurrooftop2 blurred
     narrator "Your mind started to feel like flying{p}Your vision is getting blurry over time{p}You can't think properly" # Blur vision #edited blur -> blurry
@@ -1203,7 +1206,7 @@ label startConvo:
         
         label fearAlone:
             mc "I am scared to be alone."
-            mc "I am worried if anyone ever knows me,{p}the real me,{p}I may scare them away..."
+            mc "I am worried if anyone ever knows me,{p}the real me,{p}I might scare them away..."
             show ai notconfident with dissolve
             ai "I agree, let’s work on our social life."
             show ai serious
@@ -1430,7 +1433,7 @@ label finshFearTalk:
     show ai notconfident
     ai "Although it may take a while or even years to do so."
     show ai happy laugh
-    ai "But if you’re patient with me… and just don’t uninstall me…"
+    ai "But if you’re patient with me… and just don’t leave me…"
     show ai smile
     ai "Maybe I can be your personal AI."
 
@@ -1480,6 +1483,12 @@ label endCredits:
     show text "You, [playername]." with dissolve
     $ renpy.pause(1.5)
 
+    show text "If you ever need help, please look in our Help in main menu or {a=https://www.aia.com.my/en/what-matters/seetheotherside/mental-health-helpline-resources.html}here{/a}" with dissolve
+    $ renpy.pause(4)
+
+    show text "Good Bye!" with dissolve
+    $ renpy.pause(1)
+
     hide text with dissolve
     $ renpy.pause(1)
 
@@ -1490,8 +1499,8 @@ label fakeMainMenu:
     play sound "audio/lastjumpscare.wav"
     scene catFaceScare with fade
     
-
-
+    show text "XD"
+    $ renpy.pause(0.5)
     # This ends the game.
 
     return

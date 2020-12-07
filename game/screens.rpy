@@ -333,7 +333,7 @@ screen navigation():
 
             ## Help isn't necessary or relevant to mobile devices.
             if not main_menu:
-                textbutton _("Controls") action ShowMenu("help")
+                textbutton _("Shortcuts") action ShowMenu("help")
 
         if not main_menu:
             textbutton _("Settings") action ShowMenu("preferences")
@@ -1046,7 +1046,7 @@ screen help():
 
     default device = "keyboard"
 
-    use game_menu(_("Controls"), scroll="viewport"):
+    use game_menu(_("Shortcuts"), scroll="viewport"):
 
         style_prefix "help"
 

@@ -65,7 +65,7 @@ label start:
     narrator "It was about Anxiety Intelligence (AI)."
     narrator "You curiously download it and try."
 
-    narrator "You open up the app and it prompt a text box." # Phone sound open
+    narrator "You open up the app and it prompts a text box." # Phone sound open
 
     scene handphoneblur_bg
 
@@ -85,7 +85,7 @@ label start:
 
     narrator "As you entered your name.{p}You had accepted the T&C."
 
-    narrator "This app could not be uninstall after any further notice."
+    narrator "This app could not be uninstalled after any further notice."
 
     narrator "Have fun!"
 
@@ -303,7 +303,7 @@ label A1Q3:
     show ai worry neck
     ai "But I just-"
 
-    mc "Ughhhh, I need to make me calm and less anxiety." 
+    mc "Ughhhh, I need to calm myself and feel less anxious." 
 
     mc "I will just have a look on Twitter." # Twitter
 
@@ -406,7 +406,7 @@ label afterPartyThought:
 
     mc "I will just {size=30}AGREE{/size} to them."
     mc "I DON'T CARE anything anymore."
-    mc "You're NOT in my control!"
+    mc "I'm NOT in your control!" #edited
     mc "Now excuse me, I am going to my class now."
     show ai shocked neck
     ai "No!"
@@ -541,7 +541,7 @@ label A2continue:
 
     show ai smile
     ai "Don't worry! I will always be by your side! Anxiety Intelligence will never be obsolete!"
-    mc "I had enough of this!"
+    mc "I've had enough of this!" #edited I had enough of this!
     show ai worry neck
     ai "Huh...?"
     mc "I can't appease you\nI can't ignore you\nI can't even run away from you!" #change delete to run away
@@ -557,9 +557,9 @@ label A2continue:
     ai "So I try to make you realise more dangers could happen to US."
     ai "No matter how hard I try. You still think I am your enemy."
     show ai notconfident
-    ai "What am i doing WRONG?"
+    ai "What did i do WRONG?" # edited What am i doing WRONG?
 #    ai "AM I A JOKE TO YOU??" #should we? xd
-    ai "I am stil new to this environment and I am using neural network model" #need to change?
+    ai "I am still new to this environment and I am using neural network model" #need to change? #edited stil to still
     ai "Which means I need more time to learn to feel like a human."
     show ai serious
     ai "All I want you to do is to be patient with me..." #added to do
@@ -662,7 +662,7 @@ label startAct2point1:
     play sound "audio/glupsip.ogg"
     narrator "You take another sip of the drink" 
     scene blurrooftop2 blurred
-    narrator "Your mind started to feel like flying{p}Your vision is getting blur over time{p}You can't think properly" # Blur vision
+    narrator "Your mind started to feel like flying{p}Your vision is getting blurry over time{p}You can't think properly" # Blur vision #edited blur -> blurry
     show amanda normal
     amanda "Quick question, truth or dar-"
 
@@ -683,11 +683,11 @@ label startAct2point1:
     mc "Wait what?"
 
     show amanda smile
-    amanda "Your \"Anxiety Ingelligence\" is gonna start whinning isn't it?"
+    amanda "Your \"Anxiety Ingelligence\" is gonna start whinning isn't it?" #edited whinning -> whining 
     show amanda hmph
     amanda "\"Oh, don't do that, it's too dangerous! Blablablabla." 
     show amanda normal
-    amanda "Show that thing we don't give a damn about it's whinning. Now... JUMP IN." 
+    amanda "Show that thing we don't give a damn about its whining. Now... JUMP IN." #edited whinning -> whining #edited it's -> its
 
     mc "b-But... fear has a point..."
 
